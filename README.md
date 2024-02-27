@@ -1,23 +1,25 @@
-# TÍTULO DO PROJETO
+# PRODUTOS ORTOPÉDICOS - REcomeçar
 
-`CURSO`
+`Tecnologia em Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Desenvolvimento de uma Aplicação Distribuída `
 
-`SEMESTRE`
+`EIXO 4`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O Projeto “Recomeçar” é uma ideia criada para facilitar e incentivar o acesso de equipamentos ortopédicos para a população através de um software moderno e eficiente. Com o software sendo criado para desktops e dispositivos mobile, promovemos o acesso a várias pessoas com bastante intuição. O software permite com que os usuários se cadastrem, façam login na aplicação e realizem a compra e consulta de produtos ortopédicos disponíveis em estoque, gerenciado por administradores que são responsáveis pelos produtos.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Ian Merlo Corrêa
+* Janaína Pinheiro Leal do Couto
+* Leandro Henrique de Oliveira Reis
+* Marcos Paulo Assiz Maciel
+* Ricardo Moreira Siqueira Junior
+* Silmara Eugênia Barbosa
 
 ## Orientador
 
-* Nome completo do professor 1
+* Pedro Alves de Oliveira
 
 ## Instruções de utilização
 
