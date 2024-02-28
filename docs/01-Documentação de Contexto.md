@@ -1,46 +1,23 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+O Projeto “Recomeçar” é uma idéia criada para facilitar e incentivar o acesso de equipamentos ortopédicos para a população por meio de um software moderno e eficiente. Com o software criado para desktops e dispositivos mobile, promovemos o acesso a várias pessoas com bastante intuição. O software permite com que os usuários se cadastrem, façam login na aplicação e realizem a compra e consulta de produtos ortopédicos disponíveis em estoque, gerenciado por administradores responsáveis pelos produtos. Sentimos a necessidade de um espaço em que pessoas que estejam necessitadas, mas que não possam arcar com os custos desses equipamentos, podem utilizar, caso seja de interesse, de uma função voluntária do nosso software. Pensamos em facilitar e informar ao máximo sobre produtos que auxiliam as pessoas em momentos de fragilidade, facilitando acesso, conforto, informações e disponibilizando para compras esses mesmos produtos.
+
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
+Pouco se escuta falar sobre facilidade e praticidade ao pensar em produtos ortopédicos, infelizmente produtos que podem fazer parte da vida de qualquer pessoa, acreditamos faltar divulgação, acesso prático e facilidade na hora de consultar e comprar esses produtos que fazem toda diferença.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Nos comprometemos a criar um software prático que irá resolver a usabilidade e dificuldade de se consultar e comprar produtos ortopédicos em um só lugar, com responsáveis especialistas prontos para ajudar os clientes e divulgando o fácil acesso.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+Visamos a facilidade e conforto na hora de disponibilizar um software para o público em que as pessoas possam confiar, se informar e no mesmo lugar entender o que deseja e comprar o que precisa, em momentos complicados como os que nossos clientes podem acabar vivendo, a praticidade e conforto de resolver tudo num software moderno em que você tenha informação e orientação dos responsáveis, acreditamos ser diferencial e de bastante sucesso.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
-
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+Focamos em um público-alvo de pessoas que, por alguma questão pessoal médica, necessita de materiais ou objetos ortopédicos para sua saúde, nossos clientes que irão entrar no site e, caso queiram, realizar a compra sem dificuldades.
+Também pensamos em responsáveis especialistas que irão manter e gerenciar os produtos e realizar os atendimentos via chat com nossos clientes.
