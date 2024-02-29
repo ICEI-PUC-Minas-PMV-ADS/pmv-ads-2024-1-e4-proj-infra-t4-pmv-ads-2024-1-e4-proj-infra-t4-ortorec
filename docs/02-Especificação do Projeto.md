@@ -77,17 +77,33 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
+
+
 |ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|--------|-----------------------------------------|----|
+|RF-01| O sistema deve permitir o cadastro, alteração e cancelamento de perfil do usuário | ALTA | 
+|RF-02| O sistema deve permitir ao usuário criar, alterar e recuperar sua senha | ALTA |
+|RF-03| O sistema deve permitir ao usuário criar, alterar e recuperar sua senha | ALTA |
+|RF-04| Deve ser possível ao administrador cadastrar, alterar e excluir produtos no sistema | ALTA |
+|RF-05| O sistema deve possibilitar a busca de um produto específico | BAIXA |
+|RF-06| O sistema deve permitir o controle do estoque de produtos | MÉDIA |
+|RF-07| O sistema deve emitir alertas automáticos para níveis baixos de estoque | BAIXO |
+|RF-08| O sistema deve ter integração com meios de pagamento online e offline (cartões de crédito, débito, boleto bancário, pix) | ALTA |
+|RF-09| O sistema deve ter integração com sistemas de teleatendimento e chat online para oferecer suporte ao cliente em tempo real | BAIXA |
+|RF-10|O sistema deve permitir ao usuário visualizar os produtos oferecidos por categorias | MÉDIA |
+|RF-11| O sistema deve oferecer ao usuário opções de agendamento (data) para execução de manutenção de equipamentos | MÉDIA |
+|RF-12| O sistema deve fornecer um formulário para recebimento de doações de produtos | BAIXA |
+|RF-13| O sistema deve oferecer ao usuário opções de agendamento (data/horário) para ser atendido na loja (página de ação social) | ALTA |
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-001| O sistema deve ser executado em dispositivos móveis e em computadores | ALTA | 
+|RNF-002| O tempo de resposta da aplicação deve ser inferior a 5 segundos para operações críticas, como login, pesquisa de produtos e finalização de compra |  MÉDIA | 
+|RNF-003| O sistema deve apresentar uma interface de usuário intuitiva | ALTA |
+|RNF-004| O sistema deve ser distribuído executando na nuvem  | ALTA | 
+|RNF-001| O sistema deve utilizar o SGBD NoSQL | ALTA | 
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
