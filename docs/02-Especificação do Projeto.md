@@ -78,31 +78,30 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 ### Requisitos Funcionais
 
 |ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|--------|-----------------------------------------|----|
+|RF001| O sistema deve permitir o cadastro, alteração e cancelamento de perfil do usuário | ALTA | 
+|RF002| O sistema deve permitir ao usuário criar, alterar e recuperar sua senha | ALTA |
+|RF003| O sistema deve permitir ao usuário criar, alterar e recuperar sua senha | ALTA |
+|RF004| Deve ser possível ao administrador cadastrar, alterar e excluir produtos no sistema | ALTA |
+|RF005| O sistema deve possibilitar a busca de um produto específico | BAIXA |
+|RF006| O sistema deve permitir o controle do estoque de produtos | MÉDIA |
+|RF007| O sistema deve emitir alertas automáticos para níveis baixos de estoque | BAIXO |
+|RF008| O sistema deve ter integração com meios de pagamento online e offline (cartões de crédito, débito, boleto bancário, pix) | ALTA |
+|RF009| O sistema deve ter integração com sistemas de teleatendimento e chat online para oferecer suporte ao cliente em tempo real | BAIXA |
+|RF010|O sistema deve permitir ao usuário visualizar os produtos oferecidos por categorias | MÉDIA |
+|RF011| O sistema deve oferecer ao usuário opções de agendamento (data) para execução de manutenção de equipamentos | MÉDIA |
+|RF012| O sistema deve fornecer um formulário para recebimento de doações de produtos | BAIXA |
+|RF013| O sistema deve oferecer ao usuário opções de agendamento (data/horário) para ser atendido na loja (página de ação social) | ALTA |
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+|-----------|-------------------------|----|
+|RNF001| O sistema deve ser executado em dispositivos móveis e em computadores | ALTA | 
+|RNF002| O tempo de resposta da aplicação deve ser inferior a 5 segundos para operações críticas, como login, pesquisa de produtos e finalização de compra |  MÉDIA | 
+|RNF003| O sistema deve apresentar uma interface de usuário intuitiva | ALTA |
+|RNF004| O sistema deve ser distribuído executando na nuvem  | ALTA | 
+|RNF005| O sistema deve utilizar o SGBD NoSQL | ALTA | 
 
 ## Restrições
 
