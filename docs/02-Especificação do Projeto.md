@@ -39,11 +39,54 @@ A partir da análise das personas, foram identificadas as seguintes histórias d
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+O projeto da loja online de aparelhos de produtos ortopedicos, apresenta uma abordagem robusta e bem estruturada, destacando-se pela escolha da arquitetura distribuída, que visa garantir escalabilidade, disponibilidade e desempenho.
+O projeto está bem estruturado e alinhado com boas práticas de desenvolvimento, mas exige uma atenção contínua aos desafios específicos de uma loja online, como a gestão eficiente do tráfego variável e a manutenção da segurança dos dados. O monitoramento proativo e a rápida adaptação às mudanças nas demandas do sistema são aspectos críticos para o sucesso contínuo do projeto. 
+A seguir, são destacados alguns pontos relevantes.
+
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+#### 1. Introdução
+A loja online de aparelhos de reabilitação visa fornecer uma plataforma conveniente para clientes que procuram comprar produtos de reabilitação. A arquitetura distribuída foi escolhida para garantir escalabilidade, disponibilidade e desempenho.
+### 2. Visão Geral da Arquitetura
+A arquitetura é composta por vários componentes distribuídos, incluindo um frontend web e mobile, um backend de aplicativo, um serviço de gerenciamento de inventário, um sistema de pagamento e um banco de dados distribuído.
+#### 3. Requisitos de Sistema
+Funcionais: Permitir que os clientes naveguem pelos produtos, façam pedidos, realizem pagamentos e acompanhem os pedidos.
+Não Funcionais: Alta disponibilidade, desempenho escalável, segurança de dados e integridade.
+#### 4. Tecnologias Utilizadas
+Frontend: React.js, HTML, CSS.
+Backend: Node.js, Express.js.
+Serviço de Gerenciamento de Inventário: Microsserviço em Node.js.
+Banco de Dados: NoSQL
+#### 5. Topologia da Rede
+A arquitetura é hospedada em nuvem, utilizando serviços de computação e armazenamento escaláveis. O tráfego é distribuído através de um balanceador de carga.
+#### 6. Componentes da Arquitetura
+Frontend Web: Interface de usuário para navegar e comprar produtos.
+Backend de Aplicativo: Lógica de negócios para processar pedidos, gerenciar usuários e autenticação.
+Serviço de Gerenciamento de Inventário: Responsável por rastrear o estoque de produtos.
+Sistema de Pagamento: Integração com um serviço de pagamento para processar transações.
+Banco de Dados Distribuído: Armazenamento de dados de clientes, produtos e pedidos.
+#### 7. Padrões de Projeto
+Arquitetura de Microsserviços: Cada componente é desenvolvido como um microsserviço independente.
+RESTful API: Comunicação entre os componentes via APIs REST.
+#### 8. Segurança
+Autenticação e Autorização: Utilização de tokens JWT para autenticar usuários e autorizar acessos.
+HTTPS: Comunicação segura entre o cliente e o servidor.
+#### 9. Monitoramento e Gerenciamento
+Utilização de ferramentas de monitoramento para acompanhar o desempenho do sistema e identificar problemas.
+Automação de implantação e escalabilidade usando contêineres e orquestradores como Docker e Kubernetes.
+#### 10. Escalabilidade e Tolerância a Falhas
+Escalabilidade Horizontal: Adição dinâmica de recursos para lidar com aumentos de tráfego.
+Replicação de Dados: Dados distribuídos e replicados para garantir disponibilidade e tolerância a falhas.
+#### 11. Considerações de Implantação
+Implantação automatizada usando pipelines de CI/CD.
+Testes de carga e estresse para validar a escalabilidade da arquitetura.
+#### 12. Exemplos de Uso
+Navegar pelos produtos.
+Adicionar produtos ao carrinho.
+Realizar pagamentos.
+Acompanhar o status do pedido.
+
 
 ### Processo 1 – NOME DO PROCESSO
 
@@ -117,14 +160,7 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 
 O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Casos de Uso”.
-
-> **Links Úteis**:
-> - [Criando Casos de Uso](https://www.ibm.com/docs/pt-br/elm/6.0?topic=requirements-creating-use-cases)
-> - [Como Criar Diagrama de Caso de Uso: Tutorial Passo a Passo](https://gitmind.com/pt/fazer-diagrama-de-caso-uso.html/)
-> - [Lucidchart](https://www.lucidchart.com/)
-> - [Astah](https://astah.net/)
-> - [Diagrams](https://app.diagrams.net/)
+![Persona-1]()
 
 # Matriz de Rastreabilidade
 
