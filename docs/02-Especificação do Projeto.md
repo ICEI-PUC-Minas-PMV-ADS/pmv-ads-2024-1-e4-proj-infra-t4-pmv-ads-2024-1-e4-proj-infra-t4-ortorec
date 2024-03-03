@@ -48,7 +48,7 @@ A seguir, são destacados alguns pontos relevantes.
 
 #### 1. Introdução
 A loja online de aparelhos de reabilitação visa fornecer uma plataforma conveniente para clientes que procuram comprar produtos de reabilitação. A arquitetura distribuída foi escolhida para garantir escalabilidade, disponibilidade e desempenho.
-### 2. Visão Geral da Arquitetura
+#### 2. Visão Geral da Arquitetura
 A arquitetura é composta por vários componentes distribuídos, incluindo um frontend web e mobile, um backend de aplicativo, um serviço de gerenciamento de inventário, um sistema de pagamento e um banco de dados distribuído.
 #### 3. Requisitos de Sistema
 Funcionais: Permitir que os clientes naveguem pelos produtos, façam pedidos, realizem pagamentos e acompanhem os pedidos.
