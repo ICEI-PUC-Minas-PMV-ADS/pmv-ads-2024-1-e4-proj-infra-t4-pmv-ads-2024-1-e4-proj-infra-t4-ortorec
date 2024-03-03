@@ -1,26 +1,23 @@
 # Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
-
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+A determinação exata do problema, suas personas, requisitos funcionais e não-funcionais foram acordadas em reuniões online entre os membros da equipe. Através de pesquisas e observações, foi possível reunir as informações que auxiliaram na construção de personas e histórias de usuários.
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+As personas levantadas durante o processo de entendimento do problema são apresentadas na Figuras que se seguem.
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+![Persona-1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/1042692c54aa19026282def7fbaa1064fbe462ca/docs/img/Persona-1.png)
 
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+![Persona-2](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/1042692c54aa19026282def7fbaa1064fbe462ca/docs/img/Persona-2.png)
+
+![Persona-3](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/1042692c54aa19026282def7fbaa1064fbe462ca/docs/img/Persona-3.png)
+
+![Persona-4](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/1042692c54aa19026282def7fbaa1064fbe462ca/docs/img/Persona-4.png)
+
+![Persona-5](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/1042692c54aa19026282def7fbaa1064fbe462ca/docs/img/Persona-5.png)
+
+![Persona-6](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/1042692c54aa19026282def7fbaa1064fbe462ca/docs/img/Persona-6.png)
+
 
 ## Histórias de Usuários
 
@@ -28,17 +25,15 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|Camila Larissa    | Uma cadeira ergonômica e suporte para laptop ajustável ou almofada ergonómica.                 | Melhorar minha postura durante longas horas de pesquisa sobre benefícios alimentares e análise de opções disponíveis. |
+|Marina Silva   | Almofadas ergonômicas para suporte lombar.                 | As almofadas ergonômicas proporcionarão suporte lombar, melhorando a postura durante longas horas de trabalho como gerente de projetos. |
+|Marina Silva   | Joelheiras para corrida.                 | As joelheiras garantirão conforto e proteção durante minhas corridas, permitindo-me manter minha rotina de exercícios sem preocupações com lesões. |
+|Caio Lucas  | Opção de aluguel na loja online de produtos ortopédicos para muletas temporárias e outros produtos ortopédicos.               | Alugar muletas temporárias e obter outros produtos ortopédicos, como suportes para tornozelo, joelheiras ou itens que proporcionem conforto e acelerem o processo de recuperação.  |
+|Isabela Rodrigues | Uma solução rápida e eficiente para a manutenção da cama hospitalar da avó, que teve uma peça essencial quebrada.     | Oferta de serviços de manutenção para cadeiras de rodas e uma variedade de acessórios ergonômicos na loja online de produtos ortopédicos, garantindo durabilidade, eficiência e conforto personalizado. |
+|Carolina Lemos | Serviços de manutenção especializada para minha cadeira de rodas e acessórios que proporcionem melhor conforto durante o uso diário.     | Oferta de serviços de manutenção para cadeiras de rodas |
+|Carolina Lemos | Acessórios que proporcionem melhor conforto durante o uso diário.     | Variedade de acessórios ergonômicos na loja online de produtos ortopédicos, garantindo durabilidade, eficiência e conforto personalizado. |
+|Soraia Alves | Sistema online de empréstimo de equipamentos ortopédicos na loja, oferecendo uma variedade de opções e agilidade no processo para atender às necessidades imediatas da comunidade     | Garantir que todos, independentemente de suas circunstâncias financeiras, tenham acesso a recursos essenciais para promover a melhoria de seu bem-estar. Como assistente social, quero atuar como facilitadora, proporcionando o suporte necessário para aqueles que atendo. |
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
 
 ## Modelagem do Processo de Negócio 
 
