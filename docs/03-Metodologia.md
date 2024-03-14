@@ -68,8 +68,8 @@ Apresente a divisão de papéis entre os membros do grupo.
 Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
 - Scrum Master: Ricardo Moreira;
 - Product Owner: Silmara Eugênio;
-- Equipe de Desenvolvimento: Janaina Marilda, Marcos Maciel, Leandro Henrique;
-- Equipe de Design: Ian Merlo.
+- Equipe de Desenvolvimento: Janaina Marilda, Marcos Maciel, Ian Merlo;
+- Equipe de Design: Leandro Henrique.
 
 > **Links Úteis**:
 > - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
