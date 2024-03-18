@@ -78,20 +78,24 @@ Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum 
 
 ### Processo
 
-Coloque  informações sobre detalhes da implementação do Scrum seguido pelo grupo. O grupo deverá fazer uso do recurso de gerenciamento de projeto oferecido pelo GitHub, que permite acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
+A equipe utiliza do Framework Scrum, sendo assim utilizando o quadro Kanban para gerenciar o backlog do produto, backlog das sprints e andamento das tarefas necessárias para o desenvolvimento da solução.
+
+O quadro está descrito da seguinte forma:
+
+Backlog do produto: Apresenta todas a tarefas no geral que deverão ser realizadas durante todo o projeto. <br> 
+- To Do: Apresenta as tarefas de forma descrita que deversão ser entregues em uma determinada sprint. <br>
+- Doing: Apresenta as tarefas que já foram designadas para algum dos membro da equipe e já foi iniciado o processo de desenvolvimento da mesma.<br>
+- Review: Apresenta as tarefas que já foram concluídas e estão prontas para serem colocadas em produção. <br>
+- Done: Apresenta as tarefas que já foram concluídas e enviadas para a produção, nesta etapa ocorre o fechamento das Issues e o arquivamento das tarefas do backlog do produto que estão relacionadas à Issue em questão.
+
+Abaixo a imagem do quadro Kanban utilizado pela equipe:
+
+![print trello](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/115049867/bd755f13-2a11-47b4-bb90-3d13272926d6)
 
 A implementação do método Scrum está sendo feita utilizando a ferramenta de gerenciamento de projeto Trello. Lá estão os cards que estamos trabalhando junto com as divisões de tarefas, status e o andamento do projeto.
 
 Link do Trello: https://trello.com/b/8sILiOpm/grupo-1-turma-4-projeto-recome%C3%A7ar
  
-> **Links Úteis**:
-> - [Planejamento e Gestáo Ágil de Projetos](https://pucminas.instructure.com/courses/87878/pages/unidade-2-tema-2-utilizacao-de-ferramentas-para-controle-de-versoes-de-software)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards)
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/github/managing-your-work-on-github/about-project-boards)
-> - [Como criar Backlogs no Github](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
-
 ### Ferramentas
 
 As ferramentas empregadas no projeto são:
