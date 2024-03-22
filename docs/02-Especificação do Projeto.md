@@ -176,23 +176,65 @@ A matriz deve contemplar todos os elementos relevantes que fazem parte do sistem
 
 # Gerenciamento de Projeto
 
-De acordo com o PMBoK v6 as dez áreas que constituem os pilares para gerenciar projetos, e que caracterizam a multidisciplinaridade envolvida, são: Integração, Escopo, Cronograma (Tempo), Custos, Qualidade, Recursos, Comunicações, Riscos, Aquisições, Partes Interessadas. Para desenvolver projetos um profissional deve se preocupar em gerenciar todas essas dez áreas. Elas se complementam e se relacionam, de tal forma que não se deve apenas examinar uma área de forma estanque. É preciso considerar, por exemplo, que as áreas de Escopo, Cronograma e Custos estão muito relacionadas. Assim, se eu amplio o escopo de um projeto eu posso afetar seu cronograma e seus custos.
+Considerando o desenvolvimento do código de programação para a nossa loja online de aparelhos ortopédicos, é fundamental abordar as áreas-chave de gerenciamento de projetos para garantir o sucesso da iniciativa, onde são elas:
+
+## Integração
+Na área de Integração, enfocamos a coordenação de todos os aspectos do projeto de desenvolvimento de software, desde a definição dos requisitos do cliente até a entrega final do produto. Isso inclui a criação de um plano de projeto abrangente que leve em consideração todas as etapas do desenvolvimento, desde a configuração do ambiente de desenvolvimento até a implantação do código.
+
+## Escopo
+O Gerenciamento de Escopo concentra-se em definir claramente quais funcionalidades e características estarão presentes na loja online. Isso inclui estabelecer os limites do projeto de codificação, identificar os requisitos do cliente e garantir que todas as expectativas estejam alinhadas com as capacidades técnicas da equipe de desenvolvimento.
+
+## Cronograma (Tempo)
+O Gerenciamento do Cronograma é crucial para garantir que o desenvolvimento do código ocorra dentro do prazo previsto. Isso envolve a criação de um cronograma detalhado que mapeia todas as atividades de codificação necessárias, desde a configuração do ambiente de desenvolvimento até os testes finais e a implantação.
+
+## Custos
+No Gerenciamento de Custos, estamos focados em estimar e controlar os recursos financeiros necessários para o desenvolvimento do código. Isso inclui a alocação de fundos para a contratação de desenvolvedores, aquisição de ferramentas de desenvolvimento e infraestrutura de hospedagem, bem como despesas operacionais contínuas.
+
+## Qualidade
+A qualidade do código é fundamental para garantir o desempenho e a segurança da loja online. Portanto, o Gerenciamento da Qualidade envolve a definição de padrões de codificação, a realização de revisões de código e a execução de testes de unidade e integração para garantir que o código atenda aos requisitos do cliente e esteja livre de erros.
+
+## Recursos
+O Gerenciamento de Recursos aborda a alocação eficiente de recursos humanos e tecnológicos para o desenvolvimento do código. Isso inclui a identificação das habilidades necessárias da equipe de desenvolvimento, a configuração de ambientes de desenvolvimento adequados e o uso eficaz de ferramentas de colaboração e controle de versão.
+
+## Comunicações
+A comunicação eficaz entre os membros da equipe de desenvolvimento é essencial para o sucesso do projeto. O Gerenciamento de Comunicações envolve o estabelecimento de canais de comunicação claros, a realização de reuniões regulares de acompanhamento e o compartilhamento de informações relevantes sobre o progresso do desenvolvimento.
+
+## Riscos
+O Gerenciamento de Riscos é fundamental para identificar e mitigar possíveis problemas que possam surgir durante o desenvolvimento do código. Isso inclui a análise de riscos relacionados a bugs de software, atrasos no desenvolvimento e mudanças nos requisitos do cliente, bem como a implementação de planos de contingência para lidar com esses desafios.
+
+## Aquisições
+No Gerenciamento de Aquisições, consideramos a aquisição de ferramentas e recursos externos necessários para o desenvolvimento do código. Isso pode incluir a compra de licenças de software, contratação de serviços de hospedagem na web e aquisição de plugins e bibliotecas de terceiros para estender a funcionalidade do sistema.
+
+## Partes Interessadas
+O Gerenciamento das Partes Interessadas aborda o envolvimento e gerenciamento de todas as partes interessadas no projeto de desenvolvimento de software. Isso inclui os clientes, a equipe de desenvolvimento, os investidores e quaisquer outras partes interessadas que possam ser afetadas pelo projeto. É importante garantir que todas as partes estejam alinhadas com os objetivos do projeto e informadas sobre o progresso do desenvolvimento.
+
+Ao abordar todas essas áreas de gerenciamento de projetos de forma integrada e holística, estamos posicionando nosso projeto de desenvolvimento de software para a loja online de aparelhos ortopédicos para alcançar seus objetivos com sucesso, entregando um código de alta qualidade que atenda às necessidades dos clientes e proporcione uma experiência de usuário excepcional.
+
+| Atividade                      | Duração Estimada | Área          |
+|--------------------------------|------------------|---------------|
+| Planejamento e Análise         | 2 semanas        | Integração    |
+| Definição de Escopo            | 1 semana         | Escopo        |
+| Definição de Cronograma        | 1 semana         | Cronograma    |
+| Estimativa de Custos           | 1 semana         | Custos        |
+| Planejamento de Qualidade      | 1 semana         | Qualidade     |
+| Aloc. de Recursos e Equipe     | 2 semanas        | Recursos      |
+| Plano de Comunicações          | 1 semana         | Comunicações  |
+| Identificação de Riscos        | 1 semana         | Riscos        |
+| Planejamento de Aquisições     | 1 semana         | Aquisições    |
+| Engajamento de Partes Interess.| 2 semanas        | Partes Int.   |
+
+
 
 ## Gerenciamento de Tempo
 
-Com diagramas bem organizados que permitem gerenciar o tempo nos projetos, o gerente de projetos agenda e coordena tarefas dentro de um projeto para estimar o tempo necessário de conclusão.
+![Diagrama de Rede Simplificado](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/115120672/657f4d2d-9e18-4167-95bd-5e554aa64855)
 
-![Diagrama de rede simplificado notação francesa (método francês)](img/02-diagrama-rede-simplificado.png)
-
-O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
-
-![Gráfico de Gantt](img/02-grafico-gantt.png)
 
 ## Gerenciamento de Equipe
+ 
 
-O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
+![Gerenciamento_Tarefas](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/115120672/2aaf88b7-5a34-41e7-afe0-a47c92753596)
 
-![Simple Project Timeline](img/02-project-timeline.png)
 
 ## Gestão de Orçamento
 
