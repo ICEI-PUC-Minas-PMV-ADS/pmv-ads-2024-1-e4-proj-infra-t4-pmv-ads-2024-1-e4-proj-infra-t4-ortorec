@@ -1,10 +1,13 @@
 # Arquitetura da Solução
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
+![image](https://github.com/sil-barbosa/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/8b0f748d-a39a-4b5d-9fc3-46e1072f15dd)
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
-
-![Arquitetura da Solução](img/02-mob-arch.png)
+#### **Legenda:** 
+Camada de API Gateway: ícones azuis \
+Camada de Cache: ícone amarelo \
+Camada de Segurança: ícone verde \
+Camada de Serviços: ícones laranja \
+Camada de Banco de dados: ícones cinza
 
 ## Diagrama de Classes
 
