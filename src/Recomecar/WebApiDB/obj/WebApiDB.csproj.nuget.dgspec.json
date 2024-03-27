@@ -1,27 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\WebApiDB\\WebApiDB.csproj": {}
+    "C:\\Users\\MADOS\\OneDrive - sga.pucminas.br\\Área de Trabalho\\Faculdade\\4º Período\\Workspace\\Repos\\src\\Recomecar\\WebApiDB\\WebApiDB.csproj": {}
   },
   "projects": {
-    "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\WebApiDB\\WebApiDB.csproj": {
+    "C:\\Users\\MADOS\\OneDrive - sga.pucminas.br\\Área de Trabalho\\Faculdade\\4º Período\\Workspace\\Repos\\src\\Recomecar\\WebApiDB\\WebApiDB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\WebApiDB\\WebApiDB.csproj",
+        "projectUniqueName": "C:\\Users\\MADOS\\OneDrive - sga.pucminas.br\\Área de Trabalho\\Faculdade\\4º Período\\Workspace\\Repos\\src\\Recomecar\\WebApiDB\\WebApiDB.csproj",
         "projectName": "WebApiDB",
-        "projectPath": "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\WebApiDB\\WebApiDB.csproj",
-        "packagesPath": "C:\\Users\\janai\\.nuget\\packages\\",
-        "outputPath": "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\WebApiDB\\obj\\",
+        "projectPath": "C:\\Users\\MADOS\\OneDrive - sga.pucminas.br\\Área de Trabalho\\Faculdade\\4º Período\\Workspace\\Repos\\src\\Recomecar\\WebApiDB\\WebApiDB.csproj",
+        "packagesPath": "C:\\Users\\MADOS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MADOS\\OneDrive - sga.pucminas.br\\Área de Trabalho\\Faculdade\\4º Período\\Workspace\\Repos\\src\\Recomecar\\WebApiDB\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\janai\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\MADOS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,6 +55,16 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
             }
           },
           "imports": [
@@ -69,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

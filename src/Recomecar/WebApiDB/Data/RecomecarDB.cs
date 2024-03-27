@@ -18,7 +18,7 @@ namespace WebApiDB.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Usuario>().HasKey(
+            modelBuilder.Entity<Usuario>().HasKey(u => u.UsuarioId
               //  new Usuario() {UsuarioId = 1, Nome = "Alexandre Couto",Email = "aecmart@hotmail", Password = "", Image = "", Pedidos = ""}
 
                 );
