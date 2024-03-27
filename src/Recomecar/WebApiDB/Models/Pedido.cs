@@ -17,6 +17,7 @@ namespace WebApiDB.Models
 
         public IList<Servico>? Servicos { get; set; }
 
+        [Column(TypeName ="decimal(5.2)")]
         public decimal ValorTotal { get; set; } = 0;
 
         public bool PagamentoConfirmado { get; set; }
