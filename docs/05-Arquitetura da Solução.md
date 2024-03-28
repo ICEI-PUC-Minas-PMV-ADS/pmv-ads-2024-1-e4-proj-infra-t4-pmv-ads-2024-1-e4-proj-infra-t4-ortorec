@@ -1,6 +1,6 @@
 # Arquitetura da Solução
 
-![image](https://github.com/sil-barbosa/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/8b0f748d-a39a-4b5d-9fc3-46e1072f15dd)
+![image](https://github.com/sil-barbosa/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/6bcbd85b-a330-4d31-a957-cef3ec9693c3)
 
 #### **Legenda:** 
 Camada de API Gateway: ícones azuis \
