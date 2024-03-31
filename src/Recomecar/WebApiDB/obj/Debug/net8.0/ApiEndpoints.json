@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "WebApiDB.Controllers.CategoriaController",
+    "Method": "GetAll",
+    "RelativePath": "api/Categoria",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiDB.Controllers.CategoriaController",
+    "Method": "Create",
+    "RelativePath": "api/Categoria",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "WebApiDB.Models.Categoria",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
