@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebApiDB.Data;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,13 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<RecomecarDB>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+//Cofiguraçao do Swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApiDB", Version = "v1" });
+});
 
 var app = builder.Build();
 
@@ -25,6 +33,13 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+//Configuração Middleware do Swagger
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApiDB v1");
+});
 
 app.MapControllerRoute(
     name: "default",

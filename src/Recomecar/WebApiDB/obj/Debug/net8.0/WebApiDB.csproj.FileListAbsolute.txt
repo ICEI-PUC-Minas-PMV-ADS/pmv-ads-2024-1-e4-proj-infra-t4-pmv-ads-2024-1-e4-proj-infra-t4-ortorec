@@ -170,3 +170,8 @@ C:\Users\MADOS\OneDrive - sga.pucminas.br\Área de Trabalho\Faculdade\4º Perío
 C:\Users\MADOS\OneDrive - sga.pucminas.br\Área de Trabalho\Faculdade\4º Período\Workspace\Repos\src\Recomecar\WebApiDB\obj\Debug\net8.0\WebApiDB.pdb
 C:\Users\MADOS\OneDrive - sga.pucminas.br\Área de Trabalho\Faculdade\4º Período\Workspace\Repos\src\Recomecar\WebApiDB\obj\Debug\net8.0\WebApiDB.genruntimeconfig.cache
 C:\Users\MADOS\OneDrive - sga.pucminas.br\Área de Trabalho\Faculdade\4º Período\Workspace\Repos\src\Recomecar\WebApiDB\obj\Debug\net8.0\ref\WebApiDB.dll
+C:\Users\MADOS\OneDrive - sga.pucminas.br\Área de Trabalho\Faculdade\4º Período\Workspace\Repos\src\Recomecar\WebApiDB\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\MADOS\OneDrive - sga.pucminas.br\Área de Trabalho\Faculdade\4º Período\Workspace\Repos\src\Recomecar\WebApiDB\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\MADOS\OneDrive - sga.pucminas.br\Área de Trabalho\Faculdade\4º Período\Workspace\Repos\src\Recomecar\WebApiDB\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\MADOS\OneDrive - sga.pucminas.br\Área de Trabalho\Faculdade\4º Período\Workspace\Repos\src\Recomecar\WebApiDB\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\MADOS\OneDrive - sga.pucminas.br\Área de Trabalho\Faculdade\4º Período\Workspace\Repos\src\Recomecar\WebApiDB\obj\Debug\net8.0\WebApiDB.MvcApplicationPartsAssemblyInfo.cs
