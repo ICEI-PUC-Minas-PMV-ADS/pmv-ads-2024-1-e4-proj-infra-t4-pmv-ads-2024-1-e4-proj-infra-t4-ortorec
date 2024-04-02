@@ -11,7 +11,7 @@ using WebApiDB.Data;
 
 namespace WebApiDB.Migrations
 {
-    [DbContext(typeof(RecomecarDB))]
+    [DbContext(typeof(RecomecarDBContext))]
     [Migration("20240327195817_M00")]
     partial class M00
     {
