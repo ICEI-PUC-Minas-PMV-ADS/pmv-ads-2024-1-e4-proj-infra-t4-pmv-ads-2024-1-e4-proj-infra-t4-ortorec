@@ -10,7 +10,7 @@ using WebApiDB.Models;
 
 namespace WebApiExternalAccess.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class UsuariosController : ControllerBase
     {
