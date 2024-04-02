@@ -1,0 +1,6 @@
+@WebApiExternalAccess_HostAddress = http://localhost:5122
+
+GET {{WebApiExternalAccess_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
