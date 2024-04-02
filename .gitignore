@@ -1,1 +1,13 @@
 .vs/
+/src/Recomecar/AcessWebApi/obj
+/src/Recomecar/AcessWebApi/bin
+/src/Recomecar/WebApiDB/obj
+/src/Recomecar/WebApiDB/bin
+/src/Recomecar/WebApiDB/Controllers
+/src/Recomecar/WebApiDB/bin/Debug/net8.0/WebApiDB.dll
+/src/Recomecar/WebApiDB/obj/Debug/net8.0/ref/WebApiDB.dll
+/src/Recomecar/WebApiDB/obj/Debug/net8.0/refint/WebApiDB.dll
+/src/Recomecar/WebApiDB/obj/Debug/net8.0/scopedcss/bundle/WebApiDB.styles.css
+/src/Recomecar/WebApiDB/obj/Debug/net8.0/scopedcss/projectbundle/WebApiDB.bundle.scp.css
+/src/Recomecar/WebApiDB/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/src/Recomecar/WebApiDB/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.WebApiDB.props
