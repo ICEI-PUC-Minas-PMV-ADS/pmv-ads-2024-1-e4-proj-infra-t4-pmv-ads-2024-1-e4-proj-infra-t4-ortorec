@@ -25,7 +25,11 @@ namespace WebApiExternalAccess.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
         {
-            return await _context.Usuarios.ToListAsync();
+            //return await _context.Usuarios.ToListAsync();
+            var model = await _context.Usuarios.ToListAsync();
+
+            return Ok(model);
+
         }
 
         // GET: api/Usuarios/5
