@@ -10,7 +10,7 @@ using WebApiDB.Data;
 
 namespace WebApiDB.Migrations
 {
-    [DbContext(typeof(RecomecarDB))]
+    [DbContext(typeof(RecomecarDBContext))]
     partial class RecomecarDBModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

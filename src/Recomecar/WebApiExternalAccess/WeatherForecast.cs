@@ -1,4 +1,4 @@
-namespace AcessWebApi
+namespace WebApiExternalAccess
 {
     public class WeatherForecast
     {
