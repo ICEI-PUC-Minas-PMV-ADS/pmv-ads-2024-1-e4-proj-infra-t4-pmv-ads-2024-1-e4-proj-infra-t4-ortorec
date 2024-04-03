@@ -23,9 +23,18 @@ namespace WebApiDB.Models
         public int? ProdutoId { get; set; }
         public Produto? Produtos { get; set; }
 
+<<<<<<< HEAD
         [ForeignKey("Servico")]
         public int? ServicoId { get; set; }
         public Servico? Servicos { get; set; }
         public IList<AgendamentoServico>? AgendamentoServicos { get; set; }
+=======
+        public IList<Servico>? Servicos { get; set; }
+
+        [Column(TypeName ="decimal(5.2)")]
+        public decimal ValorTotal { get; set; } = 0;
+
+        public bool PagamentoConfirmado { get; set; }
+>>>>>>> ec071db6541c3a5e4978a16d8281193eb9a4d74b
     }
 }
