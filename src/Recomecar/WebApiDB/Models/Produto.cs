@@ -1,5 +1,5 @@
-﻿    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApiDB.Models
 {
@@ -15,14 +15,6 @@ namespace WebApiDB.Models
         [ForeignKey("Categoria")]
         public int? CategoriaID { get; set; }
         public Categoria Categorias { get; set; }
-        public IList<Pedido> Pedidos { get; set; } 
+        public IList<Pedido> Pedidos { get; set; }
     }
 }
-            [ForeignKey("Categoria")]
-            public int? CategoriaID { get; set; }
-            public Categoria Categorias { get; set; }
-
-
-            public IList<Pedido> Pedidos { get; set; } 
-        }
-    }
