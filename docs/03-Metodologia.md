@@ -46,18 +46,6 @@ etiquetas:
 - `wontfix`: indica que o problema não será corrigido.
 - `question`: usada para perguntas ou dúvidas.
 
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
-
-A ferramenta de configuração do projeto escolhida foi o Git, por ser a de conhecimento da equipe e a recomendada pela faculdade. A gerência das branchs foi realizada de acordo com o fluxo estabelecido pelo Git Flow, que mostra um trabalho claro para o desenvolvimento colaborativo, que garante que as mudanças sejam gerenciadas de forma eficiente. A gerência das Issues foi realizada buscando categorizar os problemas, tarefas e melhorias que o projeto de desenvolvimento venha a ter, ajudando a contextualizar e a entender o estado de cada item.
- 
-
-> **Links Úteis**:
-> - [Microfundamento: Gerência de Configuração](https://pucminas.instructure.com/courses/87878/)
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
->  - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
 
 ## Gerenciamento de Projeto
 
@@ -71,10 +59,6 @@ Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum 
 - Equipe de Desenvolvimento: Janaina Marilda, Marcos Maciel, Ian Merlo;
 - Equipe de Design: Leandro Henrique.
 
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-> - [Os papéis do Scrum e a verdade sobre cargos nessa técnica](https://www.atlassian.com/br/agile/scrum/roles)
 
 ### Processo
 
@@ -107,8 +91,5 @@ As ferramentas empregadas no projeto são:
 
 O Visual Studio e o Visual Studio Code foram escolhidos porque eles possuem uma integração com o sistema de versão. O Figma foi escolhido para criar os diagramas, pois será a ferramenta que melhor capta as necessidades da nossa solução. O google meet foi escolhido pela facilidade de uso.
 
-Liste quais ferramentas foram empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível.
+
  
-> **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
-> - [Slack](https://slack.com/)
-> - [Github](https://github.com/)
