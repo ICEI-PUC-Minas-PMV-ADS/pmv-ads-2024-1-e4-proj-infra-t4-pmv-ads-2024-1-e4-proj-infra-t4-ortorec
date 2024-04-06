@@ -4288,26 +4288,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ricar\\.nuget\\packages\\": {}
+    "C:\\Users\\MADOS\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projetos\\Faculdade\\Recomecar\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
+      "projectUniqueName": "C:\\Users\\MADOS\\OneDrive - sga.pucminas.br\\Área de Trabalho\\Faculdade\\4º Período\\Workspace\\Repos\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
       "projectName": "API-Recomecar-Login",
-      "projectPath": "D:\\Projetos\\Faculdade\\Recomecar\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
-      "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-      "outputPath": "D:\\Projetos\\Faculdade\\Recomecar\\src\\Recomecar\\API-Recomecar-Login\\obj\\",
+      "projectPath": "C:\\Users\\MADOS\\OneDrive - sga.pucminas.br\\Área de Trabalho\\Faculdade\\4º Período\\Workspace\\Repos\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
+      "packagesPath": "C:\\Users\\MADOS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MADOS\\OneDrive - sga.pucminas.br\\Área de Trabalho\\Faculdade\\4º Período\\Workspace\\Repos\\src\\Recomecar\\API-Recomecar-Login\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\MADOS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4377,7 +4386,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
