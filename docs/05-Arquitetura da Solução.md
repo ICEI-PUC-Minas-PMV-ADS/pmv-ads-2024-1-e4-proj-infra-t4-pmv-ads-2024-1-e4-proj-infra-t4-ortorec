@@ -33,42 +33,52 @@ Alinhado com a expectativa de nosso projeto, ao termos o objeto de criar um soft
 
 Exemplos práticos de suas funcionalidades:
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/IntroducaoAtlas.png?raw=true) 
+
 Tela Inicial usando o Data Explorer, funcionalidade web do próprio MongoDB.
 
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/ConectarMongoDb.png?raw=true)
+
 Diferentes maneiras de se conectar e comunicar aos softwares, serviços, IDE´s e etc.
 
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/AnalisePerfomance.png?raw=true) 
+
 Análise em tempo real da perfomance e processo do banco.
 
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/ExibirColecoes.png?raw=true)
+
 Exibição das coleções, contendo os dados dos objetos, os diferentes bancos e etc.
 
  
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/CriandoColecoes.png?raw=true)
+
 Teste criando o primeiro database e a primeira coleção.
 
  
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/CriandoDocumento.png?raw=true)
+
 Teste criando o primeiro documento.
 
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/CRUD.png?raw=true)
+
 Funcionalidades de atualizar, copiar, clonar ou excluir o documento.
 
  
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/CriandoEAtualizandoDocumentos.png?raw=true)
+
 Clonando coleções e alterando os atributos.
 
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/DadosDiferentes.png?raw=true)
+
 Adicionando diferentes dados a diferentes documentos.
 
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/FuncaoAgregacao.png?raw=true)
+
 Função de agregar em ação.
 
 
