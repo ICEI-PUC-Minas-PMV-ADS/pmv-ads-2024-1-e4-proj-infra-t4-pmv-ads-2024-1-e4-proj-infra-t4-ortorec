@@ -50,7 +50,7 @@ Análise em tempo real da perfomance e processo do banco.
 
 
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/ExibirColecoes.png?raw=true)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/ExibirColecoes.png)
 
 Exibição das coleções, contendo os dados dos objetos, os diferentes bancos e etc.
 
@@ -98,13 +98,13 @@ Benefícios e razões do porquê o MongoDB foi escolhido para uma parte do proje
 - Escalabilidade: Os bancos de dados NoSQL são projetados para escalar horizontalmente, o que significa que podem lidar com grandes volumes de dados distribuindo-os em vários servidores. Essa escalabilidade é particularmente útil para lidar com aplicativos de big data e aplicativos em escala web.
 - Flexibilidade de Esquema: Bancos de dados NoSQL geralmente oferecem flexibilidade de esquema, permitindo que desenvolvedores armazenem vários tipos de dados sem precisar de um esquema pré-definido. Isso é particularmente útil em cenários onde a estrutura de dados é dinâmica ou evolui rapidamente.
 
-Alto Desempenho: Bancos de dados NoSQL são frequentemente otimizados para tipos específicos de consultas ou padrões de acesso aos dados, levando a um melhor desempenho em comparação com bancos de dados relacionais tradicionais em determinados cenários. Isso pode ser especialmente benéfico para aplicativos com alto throughput ou requisitos de baixa latência.
+- Alto Desempenho: Bancos de dados NoSQL são frequentemente otimizados para tipos específicos de consultas ou padrões de acesso aos dados, levando a um melhor desempenho em comparação com bancos de dados relacionais tradicionais em determinados cenários. Isso pode ser especialmente benéfico para aplicativos com alto throughput ou requisitos de baixa latência.
 
-Suporte para Dados Não Estruturados e Semi-estruturados: Bancos de dados NoSQL excelentes em lidar com formatos de dados não estruturados ou semi-estruturados, como JSON, XML ou pares chave-valor. Isso os torna adequados para casos de uso envolvendo tipos de dados complexos ou estruturas de dados hierárquicas.
+- Suporte para Dados Não Estruturados e Semi-estruturados: Bancos de dados NoSQL excelentes em lidar com formatos de dados não estruturados ou semi-estruturados, como JSON, XML ou pares chave-valor. Isso os torna adequados para casos de uso envolvendo tipos de dados complexos ou estruturas de dados hierárquicas.
 
-Facilidade de Desenvolvimento: Bancos de dados NoSQL geralmente têm APIs e modelos de dados mais simples em comparação com bancos de dados relacionais tradicionais, tornando-os mais fáceis de aprender e usar para os desenvolvedores, especialmente em ambientes de desenvolvimento ágil onde os requisitos podem mudar frequentemente.
+- Facilidade de Desenvolvimento: Bancos de dados NoSQL geralmente têm APIs e modelos de dados mais simples em comparação com bancos de dados relacionais tradicionais, tornando-os mais fáceis de aprender e usar para os desenvolvedores, especialmente em ambientes de desenvolvimento ágil onde os requisitos podem mudar frequentemente.
 
-Suporte para Computação Distribuída: Bancos de dados NoSQL são adequados para ambientes de computação distribuída, como computação em nuvem ou arquiteturas de microsserviços, onde os dados precisam ser distribuídos e processados entre vários nós ou serviços.
+- Suporte para Computação Distribuída: Bancos de dados NoSQL são adequados para ambientes de computação distribuída, como computação em nuvem ou arquiteturas de microsserviços, onde os dados precisam ser distribuídos e processados entre vários nós ou serviços.
 
 
 #### **Estrutura do Banco De Dados NoSQL Usado:** 
