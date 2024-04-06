@@ -9,6 +9,110 @@ Camada de Segurança: ícone verde \
 Camada de Serviços: ícones laranja \
 Camada de Banco de dados: ícones cinza
 
+
+
+#### **Banco De Dados NoSQL:** 
+
+O que é e como funciona o MongoDB?
+ O MongoDB é um sistema de gerenciamento de banco de dados não relacional, que utiliza documentos flexíveis em vez de tabelas e linhas para processar e armanezenar os dados. Sendo categorizado como um banco de dados não sequencial (NoSQL), não necessita de nenhum gerenciamento de tabelas ou bancos com esquemas relacionais, ele oferece um modelo de armazenamento de dados flexível, que permite aos usuários armazenar e consultar muitos dados diferentes com facilidade. Isso não apenas simplifica o gerenciamento do banco mas também cria um ambiente poderoso e escalável para serviços, aplicações e etc.
+Os documentos ou coleções de documentos do MongoDB são as unidades básicas de dados, representando as tabelas no modelo relacional, são salvos como Binary JSON dentro do esquema, e podem armazenar vários tipos de dados simultâneos e ser distribuídos para diversos sistemas. A consulta desses dados são feitas atraves dos agregados, que trazem um documento podendo conter multiplas informações do, ou dos, objetos.
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/DiagramaNoSQL.png?raw=true)
+
+
+Por quê o MongoDB e quais as vantagens dessa escolha?
+ O MongoDB possui um altissímo desempenho, bastante escalável e intuitívo, a escolha desse modelo de banco para o projeto foi escolhida principalmente visando o alto desempenho, praticidade e visando trabalhar com multiplas plataformas ao mesmo tempo, como web e mobile.
+O MongoDB não é somente um banco NoSQL que armazena grandes quantidades de informações, mas tambem possui diversas funções e vantagens:
+	-  Soluções de armazenamento baseadas em cloud.
+	- Análises em tempo real convertendo documentos em objetos.
+	- Balanceamento de carga através da sua funcionalidade de fragmentação, escalonamento horizontal e etc.
+	- Consultas de banco de dados ad hoc.
+	- Aceita diversas linguagens de programação. 
+
+Alinhado com a expectativa de nosso projeto, ao termos o objeto de criar um softaware robusto e com otimo tempo de resposta, optamos por localizar uma parte dos dados no MongoDB, para manter a perfomance  de acordo com os requisitos RNF001, RNF002 e RNF005.
+
+Exemplos práticos de suas funcionalidades:
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/IntroducaoAtlas.png?raw=true) 
+
+Tela Inicial usando o Data Explorer, funcionalidade web do próprio MongoDB.
+
+
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/ConectarMongoDb.png?raw=true)
+
+Diferentes maneiras de se conectar e comunicar aos softwares, serviços, IDE´s e etc.
+
+
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/AnalisePerformance.png?raw=true)
+
+Análise em tempo real da perfomance e processo do banco.
+
+
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/ExibirColecoes.png?raw=true)
+
+Exibição das coleções, contendo os dados dos objetos, os diferentes bancos e etc.
+
+
+ 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/CriandoColecoes.png?raw=true)
+
+Teste criando o primeiro database e a primeira coleção.
+
+
+ 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/CriandoDocumento.png?raw=true)
+
+Teste criando o primeiro documento.
+
+
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/CRUD.png?raw=true)
+
+Funcionalidades de atualizar, copiar, clonar ou excluir o documento.
+
+
+ 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/CriandoEAtualizandoDocumentos.png?raw=true)
+
+Clonando coleções e alterando os atributos.
+
+
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/DadosDiferentes.png?raw=true)
+
+Adicionando diferentes dados a diferentes documentos.
+
+
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/FuncaoAgregacao.png?raw=true)
+
+Função de agregar em ação.
+
+
+
+
+Benefícios e razões do porquê o MongoDB foi escolhido para uma parte do projeto:
+
+- Escalabilidade: Os bancos de dados NoSQL são projetados para escalar horizontalmente, o que significa que podem lidar com grandes volumes de dados distribuindo-os em vários servidores. Essa escalabilidade é particularmente útil para lidar com aplicativos de big data e aplicativos em escala web.
+- Flexibilidade de Esquema: Bancos de dados NoSQL geralmente oferecem flexibilidade de esquema, permitindo que desenvolvedores armazenem vários tipos de dados sem precisar de um esquema pré-definido. Isso é particularmente útil em cenários onde a estrutura de dados é dinâmica ou evolui rapidamente.
+
+- Alto Desempenho: Bancos de dados NoSQL são frequentemente otimizados para tipos específicos de consultas ou padrões de acesso aos dados, levando a um melhor desempenho em comparação com bancos de dados relacionais tradicionais em determinados cenários. Isso pode ser especialmente benéfico para aplicativos com alto throughput ou requisitos de baixa latência.
+
+- Suporte para Dados Não Estruturados e Semi-estruturados: Bancos de dados NoSQL excelentes em lidar com formatos de dados não estruturados ou semi-estruturados, como JSON, XML ou pares chave-valor. Isso os torna adequados para casos de uso envolvendo tipos de dados complexos ou estruturas de dados hierárquicas.
+
+- Facilidade de Desenvolvimento: Bancos de dados NoSQL geralmente têm APIs e modelos de dados mais simples em comparação com bancos de dados relacionais tradicionais, tornando-os mais fáceis de aprender e usar para os desenvolvedores, especialmente em ambientes de desenvolvimento ágil onde os requisitos podem mudar frequentemente.
+
+- Suporte para Computação Distribuída: Bancos de dados NoSQL são adequados para ambientes de computação distribuída, como computação em nuvem ou arquiteturas de microsserviços, onde os dados precisam ser distribuídos e processados entre vários nós ou serviços.
+
+
+#### **Estrutura do Banco De Dados NoSQL Usado:** 
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/EstruturaNoSQL.png?raw=true)
+
+
+
 ## Diagrama de Classes
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
