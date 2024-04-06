@@ -13,14 +13,14 @@ Camada de Banco de dados: ícones cinza
 
 #### **Banco De Dados NoSQL:** 
 
-1 - Descrever como os dados são armazenados e acessados no banco de dados NoSQL.
+O que é e como funciona o MongoDB?
  O MongoDB é um sistema de gerenciamento de banco de dados não relacional, que utiliza documentos flexíveis em vez de tabelas e linhas para processar e armanezenar os dados. Sendo categorizado como um banco de dados não sequencial (NoSQL), não necessita de nenhum gerenciamento de tabelas ou bancos com esquemas relacionais, ele oferece um modelo de armazenamento de dados flexível, que permite aos usuários armazenar e consultar muitos dados diferentes com facilidade. Isso não apenas simplifica o gerenciamento do banco mas também cria um ambiente poderoso e escalável para serviços, aplicações e etc.
 Os documentos ou coleções de documentos do MongoDB são as unidades básicas de dados, representando as tabelas no modelo relacional, são salvos como Binary JSON dentro do esquema, e podem armazenar vários tipos de dados simultâneos e ser distribuídos para diversos sistemas. A consulta desses dados são feitas atraves dos agregados, que trazem um documento podendo conter multiplas informações do, ou dos, objetos.
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/DiagramaNoSQL.png?raw=true)
 
 
-2 - Explicar por que um banco de dados NoSQL foi escolhido em vez de um banco de dados relacional, destacando as vantagens e os requisitos específicos do projeto. 
+Por quê o MongoDB e quais as vantagens dessa escolha?
  O MongoDB possui um altissímo desempenho, bastante escalável e intuitívo, a escolha desse modelo de banco para o projeto foi escolhida principalmente visando o alto desempenho, praticidade e visando trabalhar com multiplas plataformas ao mesmo tempo, como web e mobile.
 O MongoDB não é somente um banco NoSQL que armazena grandes quantidades de informações, mas tambem possui diversas funções e vantagens:
 	-  Soluções de armazenamento baseadas em cloud.
@@ -31,8 +31,7 @@ O MongoDB não é somente um banco NoSQL que armazena grandes quantidades de inf
 
 Alinhado com a expectativa de nosso projeto, ao termos o objeto de criar um softaware robusto e com otimo tempo de resposta, optamos por localizar uma parte dos dados no MongoDB, para manter a perfomance  de acordo com os requisitos RNF001, RNF002 e RNF005.
 
-3 - Fornecer exemplos ou cenários que demonstram as funcionalidades do banco de dados NoSQL em ação.
-
+Exemplos práticos de suas funcionalidades:
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/IntroducaoAtlas.png?raw=true) 
 Tela Inicial usando o Data Explorer, funcionalidade web do próprio MongoDB.
 
@@ -73,7 +72,8 @@ Adicionando diferentes dados a diferentes documentos.
 Função de agregar em ação.
 
 
-4 - Documentar quaisquer considerações importantes de desempenho, escalabilidade, consistência ou outras que influenciaram a escolha do banco de dados NoSQL.
+
+Benefícios e razões do porquê o MongoDB foi escolhido para uma parte do projeto:
 
 - Escalabilidade: Os bancos de dados NoSQL são projetados para escalar horizontalmente, o que significa que podem lidar com grandes volumes de dados distribuindo-os em vários servidores. Essa escalabilidade é particularmente útil para lidar com aplicativos de big data e aplicativos em escala web.
 - Flexibilidade de Esquema: Bancos de dados NoSQL geralmente oferecem flexibilidade de esquema, permitindo que desenvolvedores armazenem vários tipos de dados sem precisar de um esquema pré-definido. Isso é particularmente útil em cenários onde a estrutura de dados é dinâmica ou evolui rapidamente.
