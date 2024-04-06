@@ -42,7 +42,7 @@ Tela Inicial usando o Data Explorer, funcionalidade web do próprio MongoDB.
 Diferentes maneiras de se conectar e comunicar aos softwares, serviços, IDE´s e etc.
 
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/AnalisePerfomance.png?raw=true) 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/AnalisePerformance.png?raw=true)
 
 Análise em tempo real da perfomance e processo do banco.
 
