@@ -50,7 +50,7 @@ Análise em tempo real da perfomance e processo do banco.
 
 
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/ExibirColecoes.png)
+![image](docs/img/ExibirColecoes.png)
 
 Exibição das coleções, contendo os dados dos objetos, os diferentes bancos e etc.
 
