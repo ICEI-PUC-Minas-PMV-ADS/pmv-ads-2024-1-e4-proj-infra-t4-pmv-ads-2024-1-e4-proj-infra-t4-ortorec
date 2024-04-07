@@ -115,7 +115,7 @@ Benefícios e razões do porquê o MongoDB foi escolhido para uma parte do proje
 
 ## Diagrama de Classes
 
-![Diagrama de Classes ORTO](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/115049867/1018fd01-9e6a-4b78-ae37-67bf8fbfbbb2)
+![Untitled (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/115049867/50b2e413-f399-45f6-85d3-e602df928e65)
 
 ## Modelo ER
 
