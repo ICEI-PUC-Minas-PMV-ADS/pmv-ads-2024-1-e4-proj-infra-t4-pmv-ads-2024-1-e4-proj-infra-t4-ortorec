@@ -56,7 +56,7 @@ Exibição das coleções, contendo os dados dos objetos, os diferentes bancos e
 
 
  
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/CriandoColecoes.png?raw=true)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/CriandoColecao.png?raw=true)
 
 Teste criando o primeiro database e a primeira coleção.
 
