@@ -11,6 +11,23 @@ Camada de Banco de dados: ícones cinza
 
 
 
+
+
+
+## Diagrama de Classes
+
+![Untitled (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/115049867/50b2e413-f399-45f6-85d3-e602df928e65)
+
+## Modelo ER
+
+![Imagem do WhatsApp de 2024-04-07 à(s) 16 18 36_99bcd0b6](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/115049867/8e9ecdc9-8e62-4533-a042-dd913df662a1)
+
+## Esquema Relacional
+
+![Modelo ER ORTO](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/115049867/9e1edab0-d903-4065-8f9d-d0374519cdb7)
+
+## Modelo Físico
+
 #### **Banco De Dados NoSQL:** 
 
 O que é e como funciona o MongoDB?
@@ -111,21 +128,6 @@ Benefícios e razões do porquê o MongoDB foi escolhido para uma parte do proje
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/EstruturaNoSQL.png?raw=true)
 
-
-
-## Diagrama de Classes
-
-![Untitled (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/115049867/50b2e413-f399-45f6-85d3-e602df928e65)
-
-## Modelo ER
-
-![Imagem do WhatsApp de 2024-04-07 à(s) 16 18 36_99bcd0b6](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/115049867/8e9ecdc9-8e62-4533-a042-dd913df662a1)
-
-## Esquema Relacional
-
-![Modelo ER ORTO](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/115049867/9e1edab0-d903-4065-8f9d-d0374519cdb7)
-
-## Modelo Físico
 
 ### Banco de dados - criação de tabelas SQL Server (APIs)
 
