@@ -119,15 +119,11 @@ Benefícios e razões do porquê o MongoDB foi escolhido para uma parte do proje
 
 ## Modelo ER
 
-![Modelo ER ORTO](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/115049867/9e1edab0-d903-4065-8f9d-d0374519cdb7)
+
 
 ## Esquema Relacional
 
-O Esquema Relacional corresponde à representação dos dados em tabelas juntamente com as restrições de integridade e chave primária.
- 
-As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Relacional”.
-
-> - [Criando um modelo relacional - Documentação da IBM](https://www.ibm.com/docs/pt-br/cognos-analytics/10.2.2?topic=designer-creating-relational-model)
+![Modelo ER ORTO](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/115049867/9e1edab0-d903-4065-8f9d-d0374519cdb7)
 
 ## Modelo Físico
 
