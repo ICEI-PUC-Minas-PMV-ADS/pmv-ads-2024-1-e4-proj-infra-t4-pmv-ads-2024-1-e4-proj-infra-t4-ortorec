@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projetos\\Faculdade\\Recomecar\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj": {}
+    "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj": {}
   },
   "projects": {
-    "D:\\Projetos\\Faculdade\\Recomecar\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj": {
+    "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projetos\\Faculdade\\Recomecar\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
+        "projectUniqueName": "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
         "projectName": "API-Recomecar-Login",
-        "projectPath": "D:\\Projetos\\Faculdade\\Recomecar\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
-        "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-        "outputPath": "D:\\Projetos\\Faculdade\\Recomecar\\src\\Recomecar\\API-Recomecar-Login\\obj\\",
+        "projectPath": "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
+        "packagesPath": "C:\\Users\\janai\\.nuget\\packages\\",
+        "outputPath": "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\API-Recomecar-Login\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\janai\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
