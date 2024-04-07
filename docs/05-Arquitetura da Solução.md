@@ -56,7 +56,7 @@ Exibição das coleções, contendo os dados dos objetos, os diferentes bancos e
 
 
  
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/CriandoColecoes.png?raw=true)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/main/docs/img/CriandoColecao.png?raw=true)
 
 Teste criando o primeiro database e a primeira coleção.
 
@@ -371,9 +371,9 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 
 
 ### API-Recomecar-Login
-![Criação do Banco de Dados 1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106103247/54b16136-6312-4462-8a52-300e64679152)
-![Criação do Banco de Dados 2](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106103247/12fb28c6-045d-4a97-bdcc-cbc9e5eb0b5c)
-
+![API-Recomecar-Login Banco de Dados 1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106103247/174811fa-b316-4407-909c-4e58d1dc8013)
+![API-Recomecar-Login Banco de Dados 2](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106103247/6d7e087d-d7c9-44b3-90db-520141357f19)
+[Uploading 20240405170611_M01.cs…]()
 
 
 ## Tecnologias Utilizadas
