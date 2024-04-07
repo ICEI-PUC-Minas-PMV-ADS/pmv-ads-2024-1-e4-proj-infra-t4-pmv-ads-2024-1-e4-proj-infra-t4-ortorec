@@ -85,7 +85,8 @@ Link do Trello: https://trello.com/b/8sILiOpm/grupo-1-turma-4-projeto-recome%C3%
 As ferramentas empregadas no projeto são:
 
 - Visual Studio
-- Visual Studio Code
+- Swagger
+- Insomnia 
 - Figma
 - Google Meet
 
