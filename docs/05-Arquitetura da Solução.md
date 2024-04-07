@@ -616,9 +616,7 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+No desenvolvimento da nossa API de Banco de Dados, utilizamos C# com .NET Core, Entity Framework Core para acesso ao banco de dados SQL Server e ASP.NET Core MVC para construir a API RESTful. Utilizamos o Swagger para documentação e teste da API, e o Insomnia para testar e registrar requisições. Essas tecnologias combinadas nos proporcionaram um ambiente eficiente e robusto para o desenvolvimento da nossa aplicação.
 
 ## Hospedagem
 
