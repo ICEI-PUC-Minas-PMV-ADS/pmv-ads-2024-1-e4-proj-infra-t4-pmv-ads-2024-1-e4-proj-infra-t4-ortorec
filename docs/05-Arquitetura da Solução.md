@@ -119,7 +119,7 @@ Benefícios e razões do porquê o MongoDB foi escolhido para uma parte do proje
 
 ## Modelo ER
 
-
+![Imagem do WhatsApp de 2024-04-07 à(s) 16 18 36_99bcd0b6](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/115049867/8e9ecdc9-8e62-4533-a042-dd913df662a1)
 
 ## Esquema Relacional
 
