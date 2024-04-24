@@ -4294,11 +4294,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projetos\\Teste\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
+      "projectUniqueName": "D:\\Projetos\\API-Recomecar\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
       "projectName": "API-Recomecar-Login",
-      "projectPath": "D:\\Projetos\\Teste\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
+      "projectPath": "D:\\Projetos\\API-Recomecar\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
       "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-      "outputPath": "D:\\Projetos\\Teste\\src\\Recomecar\\API-Recomecar-Login\\obj\\",
+      "outputPath": "D:\\Projetos\\API-Recomecar\\src\\Recomecar\\API-Recomecar-Login\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

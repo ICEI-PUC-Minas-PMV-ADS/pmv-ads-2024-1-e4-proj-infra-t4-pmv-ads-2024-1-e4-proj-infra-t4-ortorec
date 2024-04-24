@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rhEQkU6DKrRnJzemvOV7I0G9JMmHJ6znmFyNT70DaJkQ9gYzRIwwzgfopa2TRny6wXMQ8+sbs+a2xBSn+uJoxQ==",
+  "dgSpecHash": "wgqufmfFIWfqEffKE4+OiSlmg2jK+zcQ9qwrHAP3CPkMHrykC04T4IH8dYCZ5k315eN/RLNY+P17btlpr72vAg==",
   "success": true,
-  "projectFilePath": "D:\\Projetos\\Teste\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
+  "projectFilePath": "D:\\Projetos\\API-Recomecar\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ricar\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\ricar\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
