@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj": {}
+    "D:\\Projetos\\Teste\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj": {}
   },
   "projects": {
-    "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj": {
+    "D:\\Projetos\\Teste\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
+        "projectUniqueName": "D:\\Projetos\\Teste\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
         "projectName": "API-Recomecar-Login",
-        "projectPath": "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
-        "packagesPath": "C:\\Users\\janai\\.nuget\\packages\\",
-        "outputPath": "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\API-Recomecar-Login\\obj\\",
+        "projectPath": "D:\\Projetos\\Teste\\src\\Recomecar\\API-Recomecar-Login\\API-Recomecar-Login.csproj",
+        "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
+        "outputPath": "D:\\Projetos\\Teste\\src\\Recomecar\\API-Recomecar-Login\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\janai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -91,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
