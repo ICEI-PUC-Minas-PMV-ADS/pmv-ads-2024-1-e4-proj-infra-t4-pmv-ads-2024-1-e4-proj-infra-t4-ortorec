@@ -1,6 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using WebApiDB.Data;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +12,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<RecomecarDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 //Cofiguraçao do Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -31,6 +35,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
 
 app.UseAuthorization();
 

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BCrypt.Net;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Scripting;
 using Microsoft.EntityFrameworkCore;
 using WebApiDB.Data;
 using WebApiDB.Models;
@@ -80,12 +82,22 @@ namespace WebApiExternalAccess.Controllers
         // POST: api/Usuarios
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
+        public async Task<ActionResult<Usuario>> PostUsuario(UsuarioDto model)
         {
-            _context.Usuarios.Add(usuario);
+            Usuario novo = new Usuario
+            {
+                Nome = model.Nome,
+                Password = BCrypt.Net.BCrypt.HashPassword(model.Password),
+                Email = model.Email,
+                TipoUsuario = model.TipoUsuario
+            };
+
+            model.Password = BCrypt.Net.BCrypt.HashPassword(model.Password);
+
+            _context.Usuarios.Add(novo);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUsuario", new { id = usuario.UsuarioId }, usuario);
+            return CreatedAtAction("GetUsuario", new { id = model.UsuarioId }, model);
         }
 
         // DELETE: api/Usuarios/5
