@@ -17,6 +17,7 @@ using WebApiDB.Models;
 
 namespace WebApiExternalAccess.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class UsuariosController : ControllerBase
@@ -55,6 +56,7 @@ namespace WebApiExternalAccess.Controllers
 
         // PUT: api/Usuarios/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize(Roles = "Admin, User")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
         {
@@ -86,6 +88,7 @@ namespace WebApiExternalAccess.Controllers
 
         // POST: api/Usuarios
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(UsuarioDto model)
         {
@@ -139,9 +142,10 @@ namespace WebApiExternalAccess.Controllers
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
-        } 
+        }
 
         // DELETE: api/Usuarios/5
+        [Authorize(Roles = "Admin, User")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUsuario(int id)
         {

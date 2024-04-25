@@ -41,13 +41,6 @@ namespace WebApiDB.Migrations
                     b.HasIndex("PedidoId");
 
                     b.ToTable("AgendamentoServicos");
-
-                    b.HasData(
-                        new
-                        {
-                            AgendamentoServicoId = 1,
-                            DataAgendamento = "01/01/2030"
-                        });
                 });
 
             modelBuilder.Entity("WebApiDB.Models.Categoria", b =>
@@ -64,23 +57,6 @@ namespace WebApiDB.Migrations
                     b.HasKey("CategoriaID");
 
                     b.ToTable("Categorias");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoriaID = 1,
-                            CategoriaNome = "Cadeira de Rodas"
-                        },
-                        new
-                        {
-                            CategoriaID = 2,
-                            CategoriaNome = "Andarilho"
-                        },
-                        new
-                        {
-                            CategoriaID = 3,
-                            CategoriaNome = "Cama Articulada"
-                        });
                 });
 
             modelBuilder.Entity("WebApiDB.Models.Pedido", b =>
@@ -118,18 +94,6 @@ namespace WebApiDB.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("Pedidos");
-
-                    b.HasData(
-                        new
-                        {
-                            PedidoId = 1,
-                            PagamentoConfirmado = false,
-                            ProdutoId = 1,
-                            Quantidade = 1,
-                            ServicoId = 1,
-                            UsuarioId = 1,
-                            ValorTotal = 200m
-                        });
                 });
 
             modelBuilder.Entity("WebApiDB.Models.Produto", b =>
@@ -160,35 +124,6 @@ namespace WebApiDB.Migrations
                     b.HasIndex("CategoriaID");
 
                     b.ToTable("Produtos");
-
-                    b.HasData(
-                        new
-                        {
-                            ProdutoId = 1,
-                            CategoriaID = 1,
-                            Descricao = "Cadeira de rodas Breezy 90: a solução econômica perfeita. Com detalhes surpreendentes, como cruzeta tubular e tecido de nylon com tela dupla no assento para maior suporte. Possui bolsa nas costas e inclui kit de ferramentas e bomba. Disponível em versões Trânsito ou Autopropulsável, com rodas traseiras grandes ou pequenas.",
-                            Imagem = "/img/cadeira-de-rodas-breezy-90.webp",
-                            NomeProduto = "Cadeira de Rodas Breezy 90",
-                            Preco = 150m
-                        },
-                        new
-                        {
-                            ProdutoId = 2,
-                            CategoriaID = 2,
-                            Descricao = "Andarilho fixo em alumínio. Um auxiliar óptimo para o treino da marcha com maior segurança. A possibilidade de regulação em altura permite a correcta adaptação ao usuário",
-                            Imagem = "/img/andarilho-fixo-de-aluminio-orthos-xxi",
-                            NomeProduto = "Andarilho fixo em Alumínio A1 / A2",
-                            Preco = 150m
-                        },
-                        new
-                        {
-                            ProdutoId = 3,
-                            CategoriaID = 3,
-                            Descricao = "Cama articulada elétrica com sistema elevatório tipo “tesoura”. Estrado articulado elétrico e conjunto de guardas e cabeceiras.",
-                            Imagem = "/img/cama-articulada-eletrica-com-elevacao-tesoura",
-                            NomeProduto = "Cama Articulada Eléctrica com Elevação",
-                            Preco = 150m
-                        });
                 });
 
             modelBuilder.Entity("WebApiDB.Models.Servico", b =>
@@ -214,32 +149,6 @@ namespace WebApiDB.Migrations
                     b.HasKey("ServicoId");
 
                     b.ToTable("Servicos");
-
-                    b.HasData(
-                        new
-                        {
-                            ServicoId = 1,
-                            Descricao = "Aluguel de Equipamento",
-                            Imagem = "",
-                            Pago = true,
-                            Preco = 50m
-                        },
-                        new
-                        {
-                            ServicoId = 2,
-                            Descricao = "Assistente Social",
-                            Imagem = "",
-                            Pago = false,
-                            Preco = 0m
-                        },
-                        new
-                        {
-                            ServicoId = 3,
-                            Descricao = "Manutencao",
-                            Imagem = "",
-                            Pago = false,
-                            Preco = 0m
-                        });
                 });
 
             modelBuilder.Entity("WebApiDB.Models.Usuario", b =>
@@ -268,62 +177,6 @@ namespace WebApiDB.Migrations
                     b.HasKey("UsuarioId");
 
                     b.ToTable("Usuarios");
-
-                    b.HasData(
-                        new
-                        {
-                            UsuarioId = 1,
-                            Email = "janinhabbs@hotmail",
-                            Image = ".",
-                            Nome = "Janaina Leal",
-                            Password = "123456*",
-                            TipoUsuario = 0
-                        },
-                        new
-                        {
-                            UsuarioId = 2,
-                            Email = "iancorrea@hotmail",
-                            Image = ".",
-                            Nome = "Ian Merlo Corrêa",
-                            Password = "123456*",
-                            TipoUsuario = 0
-                        },
-                        new
-                        {
-                            UsuarioId = 3,
-                            Email = "leandroreis@hotmail",
-                            Image = ".",
-                            Nome = "Leandro Henrique de Oliveira Reis",
-                            Password = "123456*",
-                            TipoUsuario = 0
-                        },
-                        new
-                        {
-                            UsuarioId = 4,
-                            Email = "marcosmaciel@hotmail",
-                            Image = ".",
-                            Nome = "Marcos Paulo Assiz Maciel",
-                            Password = "123456*",
-                            TipoUsuario = 0
-                        },
-                        new
-                        {
-                            UsuarioId = 5,
-                            Email = "ricardojunior@hotmail",
-                            Image = ".",
-                            Nome = "Ricardo Moreira Siqueira Junior",
-                            Password = "123456*",
-                            TipoUsuario = 0
-                        },
-                        new
-                        {
-                            UsuarioId = 6,
-                            Email = "silbarbosa@hotmail",
-                            Image = ".",
-                            Nome = "Silmara Eugênia Barbosa",
-                            Password = "123456*",
-                            TipoUsuario = 0
-                        });
                 });
 
             modelBuilder.Entity("WebApiDB.Models.AgendamentoServico", b =>

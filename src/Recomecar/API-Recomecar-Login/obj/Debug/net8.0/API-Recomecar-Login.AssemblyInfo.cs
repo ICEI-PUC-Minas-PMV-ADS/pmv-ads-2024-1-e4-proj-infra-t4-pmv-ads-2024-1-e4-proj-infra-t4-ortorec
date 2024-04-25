@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("API-Recomecar-Login")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c153ee2844a8f07d1f7b3e2df831e169be8c12e6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e0de248becdf7694e34b154f02c0534902e6c2b")]
 [assembly: System.Reflection.AssemblyProductAttribute("API-Recomecar-Login")]
 [assembly: System.Reflection.AssemblyTitleAttribute("API-Recomecar-Login")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
