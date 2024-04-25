@@ -14,7 +14,6 @@ namespace WebApiDB.Models
 
         [ForeignKey("Categoria")]
         public int? CategoriaID { get; set; }
-        public Categoria Categorias { get; set; }
-        public IList<Pedido> Pedidos { get; set; }
+        public Categoria? Categorias { get; set; }
     }
 }
