@@ -1,0 +1,61 @@
+body {
+    background-color: rgb(215, 219, 250);
+}
+
+.logo {
+    margin-top: 10px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 40px;
+    background-color: rgb(255, 223, 251);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.registre-box form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.options {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.options a {
+    display: block;
+    margin-bottom: 80px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+button[type="submit"] {
+    color: white;
+    background-color: blue;
+    width: 400px;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}
