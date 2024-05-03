@@ -1,0 +1,42 @@
+﻿// <snippet_File>
+using RecomecarApi.Models;
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
+
+namespace RecomecarApi.Services;
+
+public class RecomecarService
+{
+    private readonly IMongoCollection<Pedido> _pedidoCollection;
+
+    // <snippet_ctor>
+    public RecomecarService(
+        IOptions<RecomecarDatabaseSettings> RecomecarDatabaseSettings)
+    {
+        var mongoClient = new MongoClient(
+            RecomecarDatabaseSettings.Value.ConnectionString);
+
+        var mongoDatabase = mongoClient.GetDatabase(
+            RecomecarDatabaseSettings.Value.DatabaseName);
+
+        _PedidoCollection = mongoDatabase.GetCollection<Pedido>(
+            RecomecarDatabaseSettings.Value.PedidoCollectionName);
+    }
+    // </snippet_ctor>
+
+    public async Task<List<Pedido>> GetAsync() =>
+        await _PedidoCollection.Find(_ => true).ToListAsync();
+
+    public async Task<Pedido?> GetAsync(string id) =>
+        await _PedidoCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+
+    public async Task CreateAsync(Pedido newPedido) =>
+        await _PedidoCollection.InsertOneAsync(newPedido);
+
+    public async Task UpdateAsync(string id, Pedido updatedPedido) =>
+        await _PedidoCollection.ReplaceOneAsync(x => x.Id == id, updatedPedido);
+
+    public async Task RemoveAsync(string id) =>
+        await _PedidoCollection.DeleteOneAsync(x => x.Id == id);
+}
+// </snippet_File>
