@@ -88,17 +88,29 @@ Realizar pagamentos.
 Acompanhar o status do pedido.
 
 
-### Processo 1 – NOME DO PROCESSO
+### Processo 1 – CRIAÇÃO DE USUÁRIO 
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
+O objetivo principal do fluxograma é fornecer uma visão clara e abrangente do processo de criação de usuário, facilitando a compreensão e o aprimoramento do sistema.
 
-![Processo 1](img/02-bpmn-proc1.png)
+![Processo 1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/c11a2652e4aec55acf6f4ba2b78cdd5e14dcdce2/docs/img/modelagem-processo-Cria%C3%A7%C3%A3o%20Usu%C3%A1rio.jpg)
 
-### Processo 2 – NOME DO PROCESSO
+### Processo 2 – EDIÇÃO DE USUÁRIO 
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
+Processo de edição de usuário fornece uma visão das funcionalidades e do fluxo de informações do sistema.
 
-![Processo 2](img/02-bpmn-proc2.png)
+![Processo 2](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/c11a2652e4aec55acf6f4ba2b78cdd5e14dcdce2/docs/img/modelagem-processo-Edi%C3%A7%C3%A3o%20Usu%C3%A1rio.jpg)
+
+### Processo 3 – LISTA DE USUÁRIOS
+
+Gerenciamento de lista de usuários fornece uma visão abrangente das funcionalidades e do fluxo de informações do sistema.
+
+![Processo 3](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/c11a2652e4aec55acf6f4ba2b78cdd5e14dcdce2/docs/img/modelagem-processo-Lista%20usu%C3%A1rio.jpg)
+
+### Processo 4 – COMPRA E PAGAMENTO
+
+O processo 4 representa um compromisso com a excelência na experiência do cliente. Ao otimizar cada etapa da jornada de compra, desde a navegação até a finalização da compra. 
+
+![Processo 4](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/blob/c11a2652e4aec55acf6f4ba2b78cdd5e14dcdce2/docs/img/modelagem-processo-Compra%20e%20Pagamento.jpg)
 
 ## Indicadores de Desempenho
 
