@@ -43,10 +43,10 @@ body {
     text-decoration: underline;
 }
 
-button[type="button"] {
+button[type="button"], button[type="submit"] {
     color: white;
     background-color: blue;
-    width: 400px;
+    width: 100%;
 }
 
 .loading-overlay {
@@ -76,14 +76,13 @@ button[type="button"] {
     display: none;
 }
 
-
 @media only screen and (max-width: 600px) {
     .container {
         max-width: 90%;
         padding: 20px;
     }
 
-    button[type="submit"] {
+    button[type="button"], button[type="submit"] {
         width: 100%;
     }
 }
