@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+header {
+    background-color: #DCB5F6;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    color: #ffffff;
+}
+
+header .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color:#DCB5F6;
+    color: #fff;
+    text-decoration:solid;
+    border-radius: 5px;
+}
+
+header .back-button:hover {
+    background-color: #9e00b3;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.category {
+    border: 2px solid #DCB5F6;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    text-align: justify;
+    word-spacing: -1px;
+    position: relative;
+}
+
+.category h2 {
+    color: #333333;
+    text-align: center;
+}
+
+.category p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.products {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #DCB5F6;
+    padding: 20px;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.actions {
+    margin-top: 15px;
+}
+
+.actions button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #DCB5F6;
+    color: #ffffff;
+}
+
+.actions button i {
+    margin-right: 5px;
+}
+
+footer {
+    background-color: #DCB5F6;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    color: #ffffff;
+}
+
+
+@media screen and (max-width: 600px) {
+    main {
+        padding: 10px;
+    }
+
+    .category {
+        max-width: 100%;
+        padding: 10px;
+        border-width: 1px;
+    }
+
+    .category h2 {
+        font-size: 18px;
+    }
+
+    .product {
+        width: calc(50% - 10px);
+    }
+}
