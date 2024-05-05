@@ -1,19 +1,19 @@
 body {
-    background-color: rgb(215, 219, 250);
+    background-color: white,
 }
 
 .logo {
-    margin-top: 10px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    margin-top: 30px;
+    margin-bottom: 0px;
 }
 
 .container {
     max-width: 400px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 30px;
     padding: 40px;
     background-color: rgb(255, 223, 251);
     border-radius: 8px;
