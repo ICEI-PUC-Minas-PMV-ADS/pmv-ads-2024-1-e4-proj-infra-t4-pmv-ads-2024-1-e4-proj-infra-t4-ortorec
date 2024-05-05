@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+header {
+  background-color: #DCB5F6;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #ffffff;
+}
+
+main {
+  padding: 20px;
+}
+
+.account-info, .order-history {
+  border: 2px solid #DCB5F6;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.account-info h2, .order-history h2 {
+  margin-top: 0;
+  color: #333333;
+}
+
+.account-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.account-form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.account-form input,
+.account-form textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.account-form input[type="submit"] {
+  background-color: #DCB5F6;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: #DCB5F6;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  color: #ffffff;
+}
+
+
+@media only screen and (max-width: 600px) {
+  main {
+    padding: 10px;
+  }
+
+  .account-info, .order-history {
+    padding: 10px;
+  }
+
+  .account-form {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .account-form input[type="submit"] {
+    width: 100%;
+  }
+}

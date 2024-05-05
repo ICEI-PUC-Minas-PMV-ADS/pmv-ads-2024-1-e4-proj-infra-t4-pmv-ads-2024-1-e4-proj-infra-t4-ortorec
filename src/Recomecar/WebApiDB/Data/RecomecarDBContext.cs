@@ -12,18 +12,21 @@ namespace WebApiDB.Data
         public  DbSet<Pedido> Pedidos { get; set; }
         public  DbSet<AgendamentoServico> AgendamentoServicos { get; set; }
 
+        /*
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Usuario>().HasData(
-              new Usuario() {UsuarioId = 1, Nome = "Janaina Leal",Email = "janinhabbs@hotmail", Password = "123456*", Image = "."},
+              new Usuario() {UsuarioId = 1, Nome = "Janaina Leal",Email = "janinhabbs@hotmail", Password = "123456*", Image = "."}
+              );
+              
               new Usuario() {UsuarioId = 2, Nome = "Ian Merlo Corrêa", Email = "iancorrea@hotmail", Password = "123456*", Image = "."},
               new Usuario() {UsuarioId = 3, Nome = "Leandro Henrique de Oliveira Reis", Email = "leandroreis@hotmail", Password = "123456*", Image = "."},
               new Usuario() {UsuarioId = 4, Nome = "Marcos Paulo Assiz Maciel", Email = "marcosmaciel@hotmail", Password = "123456*", Image = "."},
               new Usuario() {UsuarioId = 5, Nome = "Ricardo Moreira Siqueira Junior", Email = "ricardojunior@hotmail", Password = "123456*", Image = "."},
               new Usuario() {UsuarioId = 6, Nome = "Silmara Eugênia Barbosa", Email = "silbarbosa@hotmail", Password = "123456*", Image = "."}
-                );
+                
 
             modelBuilder.Entity<Produto>().HasData(
               new Produto() {ProdutoId = 1, NomeProduto = "Cadeira de Rodas Breezy 90", Preco = 150, Descricao = "Cadeira de rodas Breezy 90: a solução econômica perfeita. Com detalhes surpreendentes, como cruzeta tubular e tecido de nylon com tela dupla no assento para maior suporte. Possui bolsa nas costas e inclui kit de ferramentas e bomba. Disponível em versões Trânsito ou Autopropulsável, com rodas traseiras grandes ou pequenas.", CategoriaID = 1, Imagem = "/img/cadeira-de-rodas-breezy-90.webp" },
@@ -51,6 +54,7 @@ namespace WebApiDB.Data
             modelBuilder.Entity<AgendamentoServico>().HasData( 
                 new AgendamentoServico() { AgendamentoServicoId = 1, DataAgendamento = "01/01/2030" }
                 );
-        }
+              */
     }
 }
+

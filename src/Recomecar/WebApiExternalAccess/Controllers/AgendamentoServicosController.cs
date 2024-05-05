@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,8 @@ using WebApiDB.Models;
 
 namespace WebApiExternalAccess.Controllers
 {
-    [Route("api/[controller]")]
+    [Authorize(Roles = "Admin")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class AgendamentoServicosController : ControllerBase
     {
@@ -75,6 +77,7 @@ namespace WebApiExternalAccess.Controllers
 
         // POST: api/AgendamentoServicos
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize(Roles = "Admin, User")]
         [HttpPost]
         public async Task<ActionResult<AgendamentoServico>> PostAgendamentoServico(AgendamentoServico agendamentoServico)
         {
@@ -85,6 +88,7 @@ namespace WebApiExternalAccess.Controllers
         }
 
         // DELETE: api/AgendamentoServicos/5
+        [Authorize(Roles = "Admin, User")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAgendamentoServico(int id)
         {

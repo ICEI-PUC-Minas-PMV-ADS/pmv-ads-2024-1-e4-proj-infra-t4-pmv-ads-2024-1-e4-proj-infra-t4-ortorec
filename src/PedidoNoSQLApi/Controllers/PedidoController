@@ -1,0 +1,72 @@
+﻿using PedidoApi.Models;
+using RecomecarApi.Services;
+using Microsoft.AspNetCore.Mvc;
+
+namespace RecomecarApi.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class PedidoApiController : ControllerBase
+{
+    private readonly PedidosService _booksService;
+
+    public PedidoController(PedidosService pedidosService) =>
+        _pedidosService = pedidosService;
+
+    [HttpGet]
+    public async Task<List<Book>> Get() =>
+        await _booksService.GetAsync();
+
+    [HttpGet("{id:length(24)}")]
+    public async Task<ActionResult<Book>> Get(string id)
+    {
+        var pedido = await _perdidosService.GetAsync(id);
+
+        if (pedido is null)
+        {
+            return NotFound();
+        }
+
+        return pedido;
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Post(Pedido newPedido)
+    {
+        await _PedidosService.CreateAsync(newPedido);
+
+        return CreatedAtAction(nameof(Get), new { id = newPedido.Id }, newPedido);
+    }
+
+    [HttpPut("{id:length(24)}")]
+    public async Task<IActionResult> Update(string id, Pedido updatedPedido)
+    {
+        var pedido = await _PedidosService.GetAsync(id);
+
+        if (pedido is null)
+        {
+            return NotFound();
+        }
+
+        updatedPedidos.Id = pedido.Id;
+
+        await _PedidosService.UpdateAsync(id, updatedPedidos);
+
+        return NoContent();
+    }
+
+    [HttpDelete("{id:length(24)}")]
+    public async Task<IActionResult> Delete(string id)
+    {
+        var pedido = await _PedidosService.GetAsync(id);
+
+        if (pedido is null)
+        {
+            return NotFound();
+        }
+
+        await _PedidosService.RemoveAsync(id);
+
+        return NoContent();
+    }
+}

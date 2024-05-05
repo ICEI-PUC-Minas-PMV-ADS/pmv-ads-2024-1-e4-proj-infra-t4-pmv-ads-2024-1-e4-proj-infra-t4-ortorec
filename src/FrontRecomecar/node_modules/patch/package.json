@@ -1,0 +1,19 @@
+{
+  "name": "patch",
+  "version": "0.0.1",
+  "description": "an object patching tool",
+  "main": "patch.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "specify": "~1.1.2"
+  },
+  "scripts": {
+    "test": "node tests/*.js"
+  },
+  "repository": "",
+  "author": "john chesley <john@chesl.es>",
+  "license": "MIT"
+}

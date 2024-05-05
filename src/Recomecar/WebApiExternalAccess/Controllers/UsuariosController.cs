@@ -1,15 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
+using BCrypt.Net;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Scripting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using WebApiDB.Data;
 using WebApiDB.Models;
 
 namespace WebApiExternalAccess.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class UsuariosController : ControllerBase
@@ -48,6 +56,7 @@ namespace WebApiExternalAccess.Controllers
 
         // PUT: api/Usuarios/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize(Roles = "Admin, User")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
         {
@@ -79,16 +88,64 @@ namespace WebApiExternalAccess.Controllers
 
         // POST: api/Usuarios
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [AllowAnonymous]
         [HttpPost]
-        public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
+        public async Task<ActionResult<Usuario>> PostUsuario(UsuarioDto model)
         {
-            _context.Usuarios.Add(usuario);
+            Usuario novo = new Usuario
+            {
+                Nome = model.Nome,
+                Password = BCrypt.Net.BCrypt.HashPassword(model.Password),
+                Email = model.Email,
+                TipoUsuario = model.TipoUsuario
+            };
+
+            model.Password = BCrypt.Net.BCrypt.HashPassword(model.Password);
+
+            _context.Usuarios.Add(novo);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUsuario", new { id = usuario.UsuarioId }, usuario);
+            return CreatedAtAction("GetUsuario", new { id = model.UsuarioId }, model);
+        }
+
+        // POST: api/Usuarios/Authenticate/authenticate
+        [AllowAnonymous]
+        [HttpPost("authenticate")]
+        public async Task<ActionResult> Authenticate(AuthenticateDto model)
+        {
+            var usuarioDb = await _context.Usuarios.FindAsync(model.UsuarioId);
+
+            if (usuarioDb == null || !BCrypt.Net.BCrypt.Verify(model.Password, usuarioDb.Password) || model.Email != usuarioDb.Email)
+            {
+                return Unauthorized();
+            }
+
+            var jwt = GenerateJwtToken(usuarioDb);
+
+            return Ok(new { jwtToken = jwt });
+        }
+        private string GenerateJwtToken(Usuario model)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes("xFL8RV7DlkpGvdTnH17T3UPigxicR9kJ");
+            var clains = new ClaimsIdentity(new Claim[]
+            {
+                new Claim(ClaimTypes.NameIdentifier, model.UsuarioId.ToString()),
+                new Claim(ClaimTypes.Role, model.TipoUsuario.ToString())
+            });
+            
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = clains,
+                Expires = DateTime.UtcNow.AddHours(8),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
 
         // DELETE: api/Usuarios/5
+        [Authorize(Roles = "Admin, User")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUsuario(int id)
         {
