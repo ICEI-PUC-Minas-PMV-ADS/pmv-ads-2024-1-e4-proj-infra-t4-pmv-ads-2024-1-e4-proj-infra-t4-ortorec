@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.Numerics;
 namespace APIPedidosRecomecar.Models
 {
     public class Pedido
@@ -8,35 +9,48 @@ namespace APIPedidosRecomecar.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
 
+        [BsonElement("NumeroPedido")]
         public ulong NumeroPedido { get; set; }
-        [BsonElement("Name")]
 
+        [BsonElement("DataHoraPedido")]
         public DateTime DataHoraPedido { get; set; } = DateTime.Now;
-       
 
-        public decimal ValorTotalPedido { get; } = 0;
-    
+        [BsonElement("ValorTotal")]
+        public double ValorTotal { get; } = 0;
 
+        [BsonElement("TotalItens")]
         public int TotalItens { get; set; } = 0;
- 
 
-        public Array ListaProdutosId = new Array[0];
-        
+        [BsonElement("ProdutosIds")]
+        public ulong[] ProdutosIds { get; set; } = new ulong[0];
+
+        [BsonElement("Cliente")]
+        public Cliente? Cliente { get; set; }
+
+        [BsonElement("Pagamento")]
+        public Pagamento? Pagamento { get; set; }
+
+
     }
 
     public class Cliente {
+        [BsonElement("NomeCliente")]
         public string NomeCliente { get; set; } = null!;
 
+        [BsonElement("Endereco")]
         public string Endereco { get; set; } = null!;
 
+        [BsonElement("CPF")]
         public string CPF { get; set; } = null!;
 
     }
 
-    public class MetodoPagamento
+    public class Pagamento
     {
-        public int TipoPagamento { get; set; } = 0;
+        [BsonElement("FormaPagamento")]
+        public int FormaPagamento { get; set; } = 0;
 
+        [BsonElement("Descricao")]
         public string Descricao { get; set; } = null!;
 
     }
