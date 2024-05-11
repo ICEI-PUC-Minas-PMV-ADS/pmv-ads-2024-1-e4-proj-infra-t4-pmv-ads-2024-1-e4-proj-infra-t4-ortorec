@@ -1,3 +1,4 @@
+/*
 window.addEventListener('load', function() {
     var loadingOverlay = document.querySelector('.loading-overlay');
     
@@ -6,3 +7,4 @@ window.addEventListener('load', function() {
         loadingOverlay.classList.add('hidden');
     }, 2000);
 });
+*/ 
