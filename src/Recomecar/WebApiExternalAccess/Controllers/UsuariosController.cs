@@ -30,6 +30,7 @@ namespace WebApiExternalAccess.Controllers
         }
 
         // GET: api/Usuarios
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
         {
@@ -41,6 +42,7 @@ namespace WebApiExternalAccess.Controllers
         }
 
         // GET: api/Usuarios/5
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
@@ -54,8 +56,10 @@ namespace WebApiExternalAccess.Controllers
             return usuario;
         }
 
+
         // PUT: api/Usuarios/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [AllowAnonymous]
         [Authorize(Roles = "Admin, User")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuario(int id, Usuario usuario)

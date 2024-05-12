@@ -123,20 +123,16 @@
 
                 if (response.ok) {
                     const usuario = await response.json(); 
-                    const { usuarioId, nome, email, password, image, tipoUsuario } = usuario; 
-                    prompt('Usuário encontrado com sucesso:', usuario);
+                    const { usuarioId, nome, email, password, image, tipoUsuario } = usuario;
+                    document.getElementById('usuarioId').value = usuarioId;
+                    document.getElementById('nome').value = nome;
+                    document.getElementById('email').value = email;
+                    document.getElementById('password').value = password;
+                    prompt('Usuário encontrado com sucesso:', usuario.nome);
                 } else {
                     prompt('Usuário não encontrado. Código de status:', response.status); 
                 }
-            
-                // usuarioId = response.usuarioId
-                // nome = response.nome
-                // email= response.email
-                // password= response.password
-                // image = response.image
-                // tipoUsuario = response.tipoUsuario
 
-                prompt('Usuário encontrado com sucesso:', response);
             } catch (error) {
                 prompt('Erro ao editar usuário:', error);
             }
