@@ -4,6 +4,14 @@
     ViewData["Title"] = "Index";
 }
 
+<head>
+    
+    <link rel="stylesheet" href="~/css/equipamentos.css">
+   
+</head>
+
+</head>
+
 <h1>Index</h1>
 
 <p>
@@ -44,6 +52,18 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Imagem)
+                <td>
+                    
+                        @if (!string.IsNullOrEmpty(item.Imagem))
+                        {
+                        <img src="@item.Imagem" alt="Imagem do Produto">
+                        }
+                        else
+                        {
+                        <span>Sem imagem disponível</span>
+                        }
+                </td>
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Categorias.CategoriaID)
@@ -57,3 +77,5 @@
 }
     </tbody>
 </table>
+
+
