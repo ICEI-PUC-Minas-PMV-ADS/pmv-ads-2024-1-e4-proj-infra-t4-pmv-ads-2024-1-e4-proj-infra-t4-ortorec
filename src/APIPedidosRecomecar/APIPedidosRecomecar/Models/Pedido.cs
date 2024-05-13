@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System.Numerics;
+using ThirdParty.Json.LitJson;
 namespace APIPedidosRecomecar.Models
 {
     public class Pedido
@@ -16,7 +17,7 @@ namespace APIPedidosRecomecar.Models
         public DateTime DataHoraPedido { get; set; } = DateTime.Now;
 
         [BsonElement("ValorTotal")]
-        public double ValorTotal { get; } = 0;
+        public double ValorTotal { get; set; }
 
         [BsonElement("TotalItens")]
         public int TotalItens { get; set; } = 0;

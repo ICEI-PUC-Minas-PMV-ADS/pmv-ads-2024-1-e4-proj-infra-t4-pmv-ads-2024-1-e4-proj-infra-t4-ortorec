@@ -22,6 +22,7 @@ namespace APIPedidosRecomecar.Services
             await _pedidoCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
 
         public async Task CreateAsync(Pedido newPedido) => 
+
             await _pedidoCollection.InsertOneAsync(newPedido);
 
         public async Task UpdateAsync(string id, Pedido updatedPedido) =>
