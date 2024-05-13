@@ -1,6 +1,7 @@
 ﻿using APIPedidosRecomecar.Models;
 using APIPedidosRecomecar.Services;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 
 namespace APIPedidosRecomecar.Controllers
 {
@@ -31,7 +32,7 @@ namespace APIPedidosRecomecar.Controllers
         public async Task<IActionResult> Post(Pedido newPedido)
         {
             await _pedidoService.CreateAsync(newPedido);
-
+            newPedido.Id = ObjectId.GenerateNewId().ToString();
             return CreatedAtAction(nameof(Get), new { id = newPedido.Id, newPedido });
         }
         [HttpPut("{id:length(24)}")]
