@@ -3,93 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipamentos Ortopédicos</title>
+    <title>Lista de Produtos - Loja Ortopédica</title>
     <link rel="stylesheet" href="/styles/equipamentos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Adicionando estilo para os botões */
+        .action-buttons button {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Equipamentos Ortopédicos</h1>
+        <h1>Lista de Produtos</h1>
     </header>
     <main>
-        <section class="category">
-            <h2>Cadeiras de Rodas</h2>
-            <div class="products">
-                <div class="product">
-                    <img src="cadeira1.jpg" alt="Cadeira de Rodas 1">
-                    <p>Cadeira de Rodas Conforto</p>
-                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="cadeira2.jpg" alt="Cadeira de Rodas 2">
-                    <p>Cadeira de Rodas Esportiva</p>
-                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="cadeira3.jpg" alt="Cadeira de Rodas 3">
-                    <p>Cadeira de Rodas Motorizada</p>
-                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="cadeira4.jpg" alt="Cadeira de Rodas 4">
-                    <p>Cadeira de Rodas Infantil</p>
-                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
-                </div>
-            </div>
-        </section>
-        <section class="category">
-            <h2>Bengalas</h2>
-            <div class="products">
-                <div class="product">
-                    <img src="bengala1.jpg" alt="Bengala 1">
-                    <p>Bengala de Alumínio</p>
-                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="bengala2.jpg" alt="Bengala 2">
-                    <p>Bengala Dobrável</p>
-                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="bengala3.jpg" alt="Bengala 3">
-                    <p>Bengala Anatômica</p>
-                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="bengala4.jpg" alt="Bengala 4">
-                    <p>Bengala de Madeira</p>
-                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
-                </div>
-            </div>
-        </section>
-        <section class="category">
-            <h2>Órteses e Próteses</h2>
-            <div class="products">
-                <div class="product">
-                    <img src="ortese1.jpg" alt="Órtese 1">
-                    <p>Órtese para Joelho</p>
-                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="ortese2.jpg" alt="Órtese 2">
-                    <p>Órtese para Punho</p>
-                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="protese.jpg" alt="Prótese">
-                    <p>Prótese de Membro Inferior</p>
-                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="protese2.jpg" alt="Prótese 2">
-                    <p>Prótese de Mão</p>
-                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
-                </div>
-            </div>
+        <section id="productList">
+            <h2>Produtos Disponíveis</h2>
+            <ul id="products">
+                <!-- Lista de produtos será preenchida dinamicamente -->
+            </ul>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        // Função para fazer uma requisição genérica usando fetch
+        async function makeRequest(url) {
+            try {
+                const response = await fetch(url);
+                return await response.json();
+            } catch (error) {
+                console.error('Erro ao fazer requisição:', error);
+                throw error;
+            }
+        }
+
+        // Função para preencher a lista de produtos na página
+        async function fillProductList() {
+            const productListElement = document.getElementById('products');
+
+            try {
+                // Fazendo a solicitação GET para obter os produtos da API
+                const products = await makeRequest('https://localhost:7109/api/Produtos/GetProdutos');
+
+                // Limpa a lista de produtos antes de adicionar os novos
+                productListElement.innerHTML = '';
+
+
+                // Adiciona cada produto à lista
+                products.forEach(product => {
+                     // Criar elementos HTML
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+                    document.getElementById('productContainer').appendChild(card);
+
+
+                    const img = document.createElement('img');
+                    img.src = product.image; // Supondo que 'imagem' seja o campo no objeto product que contém o URL da imagem
+                    img.alt = product.nomeProduto; // Defina o atributo 'alt' para acessibilidade
+
+                    const cardBody = document.createElement('div');
+                    cardBody.classList.add('card-body');
+
+                    const title = document.createElement('h5');
+                    title.classList.add('card-title');
+                    title.textContent = product.nomeProduto;
+
+                    const price = document.createElement('p');
+                    price.classList.add('card-text');
+                    price.textContent = `Preço: ${product.preco}`;
+
+                    const description = document.createElement('p');
+                    description.classList.add('card-text');
+                    description.textContent = product.descricao;
+
+                    // Adicionar elementos ao card
+                    card.appendChild(img);
+                    card.appendChild(cardBody);
+                    cardBody.appendChild(title);
+                    cardBody.appendChild(price);
+                    cardBody.appendChild(description);
+
+    // Adicionar o card à lista de produtos
+    productListElement.appendChild(card);
+});
+
+            } catch (error) {
+                console.error('Erro ao preencher lista de produtos:', error);
+            }
+        }
+
+        // Chama a função para preencher a lista de produtos quando a página carrega
+        window.addEventListener('load', fillProductList);
+    </script>
 </body>
 </html>
