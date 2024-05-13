@@ -4,9 +4,12 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
   }
   
   header {
+    height: 10%;
     background-color: white;
     color: #fff;
     padding: 10px;
@@ -17,14 +20,19 @@ body {
     background-color: #DCB5F6;
     color: #DCB5F6;
     padding: 10px;
-    text-align: center;
+    justify-content: space-around;
+    display: flex;
   }
   
   nav a {
-    color: #333;
-    text-decoration: none;
-    margin: 0 10px;
+    display: flex;
+    width: 30%;
     padding: 5px;
+    margin: 0 5px;
+    color: #333;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
     border-radius: 5px;
   }
   
@@ -32,6 +40,11 @@ body {
     background-color: #ce91f7;
   }
   
+  nav a:active {
+    background-color: #77558e;
+    color: white;
+  }
+
   main {
     padding: 20px;
   }

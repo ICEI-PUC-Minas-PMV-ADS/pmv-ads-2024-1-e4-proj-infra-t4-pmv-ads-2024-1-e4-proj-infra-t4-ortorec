@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Conta - Loja Ortopédica</title>
     <link rel="stylesheet" href="/styles/minhaconta.css">
+    <style>
+        /* Adicionando estilo para os botões */
+        .action-buttons button {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,23 +20,32 @@
     <main>
         <section class="account-info">
             <h2>Informações da Conta</h2>
-            <form class="account-form">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" value="João da Silva">
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="joao.silva@example.com">
-
-                <label for="phone">Telefone:</label>
-                <input type="tel" id="phone" name="phone" value="(31) 98765-4321">
-
-                <label for="dob">Data de Nascimento:</label>
-                <input type="date" id="dob" name="dob" value="1985-01-01">
-
-                <label for="address">Endereço:</label>
-                <textarea id="address" name="address">Rua das Flores, 123</textarea>
-
-                <input type="submit" value="Salvar Alterações">
+            <form class="account-form" id="accountForm">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div>
+                    <label for="usuarioId">Identificador do Usuário:</label>
+                    <input type="text" id="usuarioId" name="usuarioId">
+                </div>
+                <!-- <div>
+                    <label for="tipo de Usuario">Tipo de Usuário: User ou Admin</label>
+                    <input type="text" id="tipoUsuario" name="tipoUsuario">
+                </div>                 -->
+                <div class="action-buttons">
+                    <button id="createUserBtn" type="button" onclick="createUser()">Criar Usuário</button>
+                    <button id="editUserBtn" type="button" onclick="editUser()">Editar Usuário</button>
+                    <button id="deleteUserBtn" type="button" onclick="deleteUser()">Remover Usuário</button>
+                    <button id="getUserBtn" type="button" onclick="getUser()">Buscar Usuário</button>
+                    <button type="button" onclick="login()">Login</button>
+                </div>
             </form>
         </section>
         <section class="order-history">
@@ -44,6 +60,95 @@
     <footer>
         <p>&copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        // Função para fazer uma requisição genérica usando fetch
+        async function makeRequest(url, method, data = null) {
+            try {
+                const response = await fetch(url, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                return await response.json();
+            } catch (error) {
+                console.error('Erro ao fazer requisição:', error);
+                throw error;
+            }
+        }
+
+        // Função para criar um novo usuário
+        async function createUser() {
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const usuarioId = document.getElementById('usuarioId').value;
+            // const tipoUsuario = document.getElementById('tipoUsuario').value
+
+            const userData = {
+                usuarioId: usuarioId,
+                nome: nome,
+                email: email,
+                password: password, 
+                image: ".",
+                tipoUsuario: 0
+            };
+
+            try {
+                const response = await makeRequest('https://localhost:7109/api/Usuarios/PostUsuario', 'POST', userData);
+                prompt('Novo usuário criado com sucesso:', response);
+            } catch (error) {
+                prompt('Erro ao criar novo usuário:', error);
+            }
+        }
+
+
+
+        async function getUser() {
+            const userId = prompt('Digite o ID do usuário que deseja buscar:');
+            if (!userId) return; 
+
+            try {
+                //const response = await makeRequest(`https://localhost:7109/api/Usuarios/GetUsuario/${userId}`, 'GET');
+
+                const response = await fetch(`https://localhost:7109/api/Usuarios/GetUsuario/${userId}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                });
+
+                if (response.ok) {
+                    const usuario = await response.json(); 
+                    const { usuarioId, nome, email, password, image, tipoUsuario } = usuario; 
+                    prompt('Usuário encontrado com sucesso:', usuario);
+                } else {
+                    prompt('Usuário não encontrado. Código de status:', response.status); 
+                }
+            
+                // usuarioId = response.usuarioId
+                // nome = response.nome
+                // email= response.email
+                // password= response.password
+                // image = response.image
+                // tipoUsuario = response.tipoUsuario
+
+                prompt('Usuário encontrado com sucesso:', response);
+            } catch (error) {
+                prompt('Erro ao editar usuário:', error);
+            }
+        }
+
+        const form = document.getElementById('accountForm');
+        form.addEventListener('submit', updateUserData);
+
+        document.getElementById('createUserBtn').addEventListener('click', createUser);
+        document.getElementById('editUserBtn').addEventListener('click', editUser);
+        document.getElementById('deleteUserBtn').addEventListener('click', deleteUser);
+        document.getElementById('getUserBtn').addEventListener('click', getUser);
+    </script>
 </body>
 </html>
-

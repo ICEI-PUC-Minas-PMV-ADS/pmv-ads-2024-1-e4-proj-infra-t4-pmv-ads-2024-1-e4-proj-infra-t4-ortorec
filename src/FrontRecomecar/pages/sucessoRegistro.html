@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registrou-se com sucesso</title>
+        <link rel="stylesheet" href="/styles/sucessoRegistro.css">
+        <script src="/scripts/register.js"></script>
+        <script src="/scripts/scriptStyle.js"></script>
+    
+        <!-- Script de estilização -->
+        <script src="/scripts/scriptStyle.js"></script>
+    
+        <!-- Icones -->
+        <script src="https://kit.fontawesome.com/75ea6c2770.js" crossorigin="anonymous"></script>
+    
+        <!-- Fonte Letra -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <img src="/assets/logoinicial.PNG" alt="Logo" class="logo">
+    <header></header>
+
+    <main>
+        <div class="container">
+            <h1 class="registre-text">REGISTRO REALIZADO COM SUCESSO</h1>
+
+                <div class="registre-box">
+                    <p id="registroSucesso" class="regSuccess">O email: <span id="emailSpan"></span> foi registrado com sucesso!</p>
+                    <button type="button" onclick="paraLogin()">Login</button>
+                    <script type="text/javascript">
+
+                    const emailSpan = document.getElementById('emailSpan');
+
+                    var emailRecuperado = JSON.parse(window.localStorage.getItem('email'));
+                    emailSpan.innerHTML = emailRecuperado;
+                    emailSpan.style.fontWeight = 'bold';
+                    emailSpan.style.color = 'blue';
+
+                    </script>
+                </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
