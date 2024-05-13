@@ -24,6 +24,7 @@ namespace WebApiExternalAccess.Controllers
         }
 
         // GET: api/Produtoes
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Produto>>> GetProdutos()
         {
@@ -31,6 +32,7 @@ namespace WebApiExternalAccess.Controllers
         }
 
         // GET: api/Produtoes/5
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<ActionResult<Produto>> GetProduto(int id)
         {
@@ -46,6 +48,7 @@ namespace WebApiExternalAccess.Controllers
 
         // PUT: api/Produtoes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [AllowAnonymous]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProduto(int id, Produto produto)
         {
@@ -77,6 +80,7 @@ namespace WebApiExternalAccess.Controllers
 
         // POST: api/Produtoes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult<Produto>> PostProduto(Produto produto)
         {
@@ -87,6 +91,7 @@ namespace WebApiExternalAccess.Controllers
         }
 
         // DELETE: api/Produtoes/5
+        [AllowAnonymous]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduto(int id)
         {
