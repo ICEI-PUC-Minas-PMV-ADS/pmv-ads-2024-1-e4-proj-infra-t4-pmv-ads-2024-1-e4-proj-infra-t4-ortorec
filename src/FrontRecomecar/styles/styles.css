@@ -12,6 +12,14 @@ body {
     padding: 10px;
     text-align: center;
   }
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
   
   nav {
     background-color: #DCB5F6;

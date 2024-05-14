@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Produtos - Loja Ortopédica</title>
-    <link rel="stylesheet" href="/styles/equipamentos.css">
-    <style>
-        /* Adicionando estilo para os botões */
-        .action-buttons button {
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles/equipamentos.css">
 </head>
+
 <body>
     <header>
-        <h1>Lista de Produtos</h1>
+        <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
+        <nav>
+            <a href="./pages/servicos.html">Serviços</a>
+            <a href="../pages/equipamentos.html">Produtos Ortopédicos</a>
+            <a href="#">Atendimento</a>
+            <a href="../styles/minhaconta.css">Quem somos</a>
+            <a href="../pages/login.html">Entrar</a>
+        </nav>
     </header>
+
     <main>
         <section id="productList">
             <h2>Produtos Disponíveis</h2>
-            <ul id="products">
+            <div id="products" class="row-container">
                 <!-- Lista de produtos será preenchida dinamicamente -->
-            </ul>
+            </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.</p>
     </footer>
@@ -52,18 +56,17 @@
                 // Limpa a lista de produtos antes de adicionar os novos
                 productListElement.innerHTML = '';
 
-
                 // Adiciona cada produto à lista
                 products.forEach(product => {
-                     // Criar elementos HTML
+                    // Criar elementos HTML para o card
                     const card = document.createElement('div');
                     card.classList.add('card');
-                    document.getElementById('productContainer').appendChild(card);
-
 
                     const img = document.createElement('img');
-                    img.src = product.image; // Supondo que 'imagem' seja o campo no objeto product que contém o URL da imagem
-                    img.alt = product.nomeProduto; // Defina o atributo 'alt' para acessibilidade
+                    img.src = 'https://localhost:7101/Produtoes' + product.image;
+                    img.alt = product.nomeProduto;
+                    img.style.width = '200px'; // Defina a largura da imagem
+                    img.style.height = '200px'; // Defina a altura da imagem
 
                     const cardBody = document.createElement('div');
                     cardBody.classList.add('card-body');
@@ -80,16 +83,21 @@
                     description.classList.add('card-text');
                     description.textContent = product.descricao;
 
+                    const buyButton = document.createElement('button');
+                    buyButton.textContent = 'Comprar';
+                    buyButton.classList.add('buy-button');
+
                     // Adicionar elementos ao card
                     card.appendChild(img);
                     card.appendChild(cardBody);
                     cardBody.appendChild(title);
                     cardBody.appendChild(price);
                     cardBody.appendChild(description);
+                    cardBody.appendChild(buyButton);
 
-    // Adicionar o card à lista de produtos
-    productListElement.appendChild(card);
-});
+                    // Adicionar o card à lista de produtos
+                    productListElement.appendChild(card);
+                });
 
             } catch (error) {
                 console.error('Erro ao preencher lista de produtos:', error);
@@ -100,4 +108,5 @@
         window.addEventListener('load', fillProductList);
     </script>
 </body>
+
 </html>

@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Conta - Loja Ortopédica</title>
-    <link rel="stylesheet" href="/styles/minhaconta.css">
-    <style>
-        /* Adicionando estilo para os botões */
-        .action-buttons button {
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles/minhaconta.css">
 </head>
+
 <body>
     <header>
-        <h1>Minha Conta</h1>
+        <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
     </header>
     <main>
         <section class="account-info">
-            <h2>Informações da Conta</h2>
+            <h1>Informações Conta de Usuário</h1>
             <form class="account-form" id="accountForm">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome">
@@ -31,10 +26,10 @@
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password">
                 </div>
-                <div>
+                <!-- <div>
                     <label for="usuarioId">Identificador do Usuário:</label>
                     <input type="text" id="usuarioId" name="usuarioId">
-                </div>
+                </div> -->
                 <!-- <div>
                     <label for="tipo de Usuario">Tipo de Usuário: User ou Admin</label>
                     <input type="text" id="tipoUsuario" name="tipoUsuario">
@@ -48,14 +43,14 @@
                 </div>
             </form>
         </section>
-        <section class="order-history">
+        <!-- <section class="order-history">
             <h2>Histórico de Pedidos</h2>
             <ul>
                 <li>Pedido #001 - Status: Entregue</li>
                 <li>Pedido #002 - Status: Em Processamento</li>
                 <li>Pedido #003 - Status: Cancelado</li>
             </ul>
-        </section>
+        </section> -->
     </main>
     <footer>
         <p>&copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.</p>
@@ -92,7 +87,7 @@
                 usuarioId: usuarioId,
                 nome: nome,
                 email: email,
-                password: password, 
+                password: password,
                 image: ".",
                 tipoUsuario: 0
             };
@@ -105,11 +100,9 @@
             }
         }
 
-
-
         async function getUser() {
             const userId = prompt('Digite o ID do usuário que deseja buscar:');
-            if (!userId) return; 
+            if (!userId) return;
 
             try {
                 //const response = await makeRequest(`https://localhost:7109/api/Usuarios/GetUsuario/${userId}`, 'GET');
@@ -122,7 +115,7 @@
                 });
 
                 if (response.ok) {
-                    const usuario = await response.json(); 
+                    const usuario = await response.json();
                     const { usuarioId, nome, email, password, image, tipoUsuario } = usuario;
                     document.getElementById('usuarioId').value = usuarioId;
                     document.getElementById('nome').value = nome;
@@ -130,7 +123,7 @@
                     document.getElementById('password').value = password;
                     prompt('Usuário encontrado com sucesso:', usuario.nome);
                 } else {
-                    prompt('Usuário não encontrado. Código de status:', response.status); 
+                    prompt('Usuário não encontrado. Código de status:', response.status);
                 }
 
             } catch (error) {
@@ -147,4 +140,5 @@
         document.getElementById('getUserBtn').addEventListener('click', getUser);
     </script>
 </body>
+
 </html>

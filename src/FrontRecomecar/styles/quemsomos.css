@@ -16,6 +16,14 @@ header h1 {
     color: #ffffff;
 }
 
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
 main {
     padding: 20px;
     display: flex;

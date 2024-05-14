@@ -19,6 +19,14 @@ body {
     padding: 10px;
     text-align: center;
   }
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
   
   nav a {
     color: #333;
@@ -35,6 +43,51 @@ body {
   main {
     padding: 20px;
   }
+
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: calc(25% - 20px); /* Calcula a largura para 4 cards por linha */
+    box-sizing: border-box; /* Garante que a largura inclua padding e bordas */
+    float: left; /* Para garantir que os cards fiquem lado a lado */
+    background-color: #fff; /* Cor de fundo do card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para efeito de elevação */
+    transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+}
+
+.card img {
+    max-width: 100%; /* Ajusta a largura da imagem para se ajustar ao tamanho do card */
+    height: auto; /* Permite que a altura da imagem seja ajustada automaticamente */
+    border-radius: 5px; /* Adiciona borda arredondada à imagem */
+}
+
+.card-body {
+    padding-top: 10px; /* Espaçamento interno adicional no topo do corpo do card */
+}
+
+.card-title {
+    font-size: 18px; /* Tamanho da fonte do título */
+    margin-bottom: 5px; /* Margem inferior para separar o título do conteúdo abaixo */
+}
+
+.card-text {
+    color: #666; /* Cor do texto */
+    font-size: 14px; /* Tamanho da fonte do texto */
+    margin-bottom: 8px; /* Margem inferior para separar os parágrafos */
+}
+
+.row-container {
+    clear: both; /* Limpa as flutuações anteriores para iniciar uma nova linha */
+    overflow: hidden; /* Para conter as flutuações dos cards */
+    margin-bottom: 20px; /* Espaço entre as linhas */
+}
+
   
   h1 {
     color: #333;

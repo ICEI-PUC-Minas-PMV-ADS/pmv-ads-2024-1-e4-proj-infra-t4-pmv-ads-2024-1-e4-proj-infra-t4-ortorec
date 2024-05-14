@@ -1,8 +1,16 @@
 body {
+  background-color: white;
+  font-family: Roboto;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  margin-top: 30px;
+  margin-bottom: 0px;
 }
 
 header {
@@ -20,14 +28,16 @@ main {
   padding: 20px;
 }
 
-.account-info, .order-history {
+.account-info,
+.order-history {
   border: 2px solid #DCB5F6;
   padding: 20px;
   margin-bottom: 20px;
   text-align: center;
 }
 
-.account-info h2, .order-history h2 {
+.account-info h2,
+.order-history h2 {
   margin-top: 0;
   color: #333333;
 }
@@ -35,7 +45,20 @@ main {
 .account-form {
   max-width: 600px;
   margin: 0 auto;
+  /* Centraliza o formulário */
   text-align: left;
+  display: flex;
+  /* Adicionado */
+  flex-direction: column;
+  /* Adicionado */
+  padding: 40px;
+  /* Adicionado */
+  background-color: rgb(255, 223, 251);
+  /* Adicionado */
+  border-radius: 8px;
+  /* Adicionado */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  /* Adicionado */
 }
 
 .account-form label {
@@ -49,17 +72,62 @@ main {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  /* Alterado */
+  height: 20px;
+  /* Removido */
 }
 
-.account-form input[type="submit"] {
-  background-color: #DCB5F6;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
+.account-form .senha {
+  display: flex;
+}
+
+.account-form #olhoSenha {
+  border: 0;
+  border-radius: 0px 5px 5px 0px;
+  background-color: blue;
+  color: white;
+  height: 25px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.account-form #olhoSenha:active {
+  background-color: rgb(0, 0, 42);
+}
+
+.account-form .options {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.account-form .options a {
+  display: block;
+  margin-bottom: 80px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.account-form .options a:hover {
+  text-decoration: underline;
+}
+
+.account-form #submit,
+.account-form button[type="submit"] {
+  color: white;
+  background-color: blue;
+  width: 30%;
+  height: 30px;
+  border: 0;
+  border-radius: 10px;
   cursor: pointer;
   display: block;
   margin: 0 auto;
+  /* Centraliza o botão */
+}
+
+.account-form #submit:active {
+  background-color: rgb(0, 0, 42);
 }
 
 footer {
@@ -76,13 +144,13 @@ footer p {
   color: #ffffff;
 }
 
-
 @media only screen and (max-width: 600px) {
   main {
     padding: 10px;
   }
 
-  .account-info, .order-history {
+  .account-info,
+  .order-history {
     padding: 10px;
   }
 
@@ -93,5 +161,10 @@ footer p {
 
   .account-form input[type="submit"] {
     width: 100%;
+  }
+
+  .action-buttons button {
+    margin-right: 20px;
+    margin-bottom: 20px;
   }
 }
