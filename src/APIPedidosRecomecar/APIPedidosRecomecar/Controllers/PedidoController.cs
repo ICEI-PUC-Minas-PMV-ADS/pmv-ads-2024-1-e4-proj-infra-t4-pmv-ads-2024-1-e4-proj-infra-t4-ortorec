@@ -31,8 +31,9 @@ namespace APIPedidosRecomecar.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(Pedido newPedido)
         {
+            Func<string> V = BsonObjectId.GenerateNewId().Value.ToString;
+            newPedido.Id = V();
             await _pedidoService.CreateAsync(newPedido);
-            newPedido.Id = ObjectId.GenerateNewId().ToString();
             return CreatedAtAction(nameof(Get), new { id = newPedido.Id, newPedido });
         }
         [HttpPut("{id:length(24)}")]

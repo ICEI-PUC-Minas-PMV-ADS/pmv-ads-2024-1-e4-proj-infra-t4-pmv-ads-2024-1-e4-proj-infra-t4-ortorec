@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V3jiCLBmL+DTrswx2gpUMdkenXovWcY6iFq2ZmeoLXCPPqL6vvMCn5LwWNHzRz/W6l1JpSzc7idORFdGLbfZvQ==",
+  "dgSpecHash": "+QbanhF626fYbvxf4wqvPweXpwfK4EXBGCBcjZCPvwetWsA7/HyLAmNaLQPy2XA0yOGQLyaOIAwJGJAGxShiGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ianme\\OneDrive\\Documentos\\GitHub\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\Recomecar\\MongoDB\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj",
+  "projectFilePath": "C:\\Users\\ianme\\OneDrive\\Documentos\\GitHub\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ianme\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\ianme\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
