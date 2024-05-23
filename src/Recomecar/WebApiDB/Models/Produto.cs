@@ -12,8 +12,8 @@ namespace WebApiDB.Models
         public string? Descricao { get; set; }
         public string? Imagem { get; set; }
 
-        [ForeignKey("Categoria")]
+        [ForeignKey("Categorias")]
         public int? CategoriaID { get; set; }
-        public Categoria? Categorias { get; set; }
+        public Categorias? Categorias { get; set; }
     }
 }

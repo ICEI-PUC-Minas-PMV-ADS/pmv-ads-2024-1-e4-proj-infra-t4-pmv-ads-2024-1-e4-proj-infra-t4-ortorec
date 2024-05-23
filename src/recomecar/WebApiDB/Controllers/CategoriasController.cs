@@ -54,7 +54,7 @@ namespace WebApiDB.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CategoriaID,CategoriaNome")] Categoria categoria)
+        public async Task<IActionResult> Create([Bind("CategoriaID,CategoriaNome")] Categorias categoria)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace WebApiDB.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CategoriaID,CategoriaNome")] Categoria categoria)
+        public async Task<IActionResult> Edit(int id, [Bind("CategoriaID,CategoriaNome")] Categorias categoria)
         {
             if (id != categoria.CategoriaID)
             {
