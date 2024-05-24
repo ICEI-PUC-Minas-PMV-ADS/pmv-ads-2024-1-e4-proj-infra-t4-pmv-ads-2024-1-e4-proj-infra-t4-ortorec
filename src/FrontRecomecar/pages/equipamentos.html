@@ -4,19 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Produtos - Loja Ortopédica</title>
     <link rel="stylesheet" href="../styles/equipamentos.css">
 </head>
 
 <body>
     <header>
+        <div class="top-right">
+            <a href="minhaconta.html" class="button">Minha Conta</a>
+        </div>
         <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
         <nav>
-            <a href="./pages/servicos.html">Serviços</a>
-            <a href="../pages/equipamentos.html">Produtos Ortopédicos</a>
-            <a href="#">Atendimento</a>
-            <a href="../styles/minhaconta.css">Quem somos</a>
-            <a href="../pages/login.html">Entrar</a>
+            <a href="quemsomos.html">Quem somos</a>
+            <a href="equipamentos.html">Produtos</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="atendimento.html">Atendimento</a>
+            <a href="login.html">Sair</a>
         </nav>
     </header>
 
@@ -34,7 +36,7 @@
     </footer>
 
     <script>
-        // Função para fazer uma requisição genérica usando fetch
+        //requisição genérica C/ fetch
         async function makeRequest(url) {
             try {
                 const response = await fetch(url);
@@ -45,20 +47,20 @@
             }
         }
 
-        // Função para preencher a lista de produtos na página
+        // preencher os produtos na página
         async function fillProductList() {
             const productListElement = document.getElementById('products');
 
             try {
-                // Fazendo a solicitação GET para obter os produtos da API
+                // solicitação GET
                 const products = await makeRequest('https://localhost:7109/api/Produtos/GetProdutos');
 
-                // Limpa a lista de produtos antes de adicionar os novos
+                // Limpa a lista de produtos antes de add novos
                 productListElement.innerHTML = '';
 
-                // Adiciona cada produto à lista
+                // Add cd produto à lista
                 products.forEach(product => {
-                    // Criar elementos HTML para o card
+                    // Cria elementos HTML para o card
                     const card = document.createElement('div');
                     card.classList.add('card');
 
@@ -104,7 +106,7 @@
             }
         }
 
-        // Chama a função para preencher a lista de produtos quando a página carrega
+        // Qdo a pág carrega, os produtos são chammados
         window.addEventListener('load', fillProductList);
     </script>
 </body>

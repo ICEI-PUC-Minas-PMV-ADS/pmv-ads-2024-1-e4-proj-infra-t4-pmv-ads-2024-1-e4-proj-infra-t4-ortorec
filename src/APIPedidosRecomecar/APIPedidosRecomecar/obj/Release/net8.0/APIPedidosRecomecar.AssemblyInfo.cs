@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("APIPedidosRecomecar")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4382aa1b2e35dc80106922d86fbb98ed7cd585f2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2136cd403db2353f6da4e4c083ba285c3f11e23")]
 [assembly: System.Reflection.AssemblyProductAttribute("APIPedidosRecomecar")]
 [assembly: System.Reflection.AssemblyTitleAttribute("APIPedidosRecomecar")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

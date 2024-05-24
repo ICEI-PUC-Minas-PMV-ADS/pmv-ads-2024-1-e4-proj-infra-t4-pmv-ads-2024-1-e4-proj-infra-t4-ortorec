@@ -1,133 +1,189 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: white;
-    color: #333;
+    font-family: Roboto, Arial, sans-serif;
     margin: 0;
     padding: 0;
-  }
-  
-  header {
-    background-color: white;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  nav {
-    background-color: #DCB5F6;
-    color: #DCB5F6;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .logo {
-    display: block;
-    margin: 0 auto;
-    width: 300px;
-    margin-top: 30px;
-    margin-bottom: 0px;
-}
-  
-  nav a {
     color: #333;
-    text-decoration: none;
-    margin: 0 10px;
-    padding: 5px;
-    border-radius: 5px;
-  }
-  
-  nav a:hover {
-    background-color: #ce91f7;
-  }
-  
-  main {
-    padding: 20px;
-  }
+}
 
-  .card {
+header {
+    background-color: #DCB5F6;
+    padding: 2px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: block;
+    margin: 0;
+    width: 250px; 
+    margin-bottom: -27px;
+        
+}
+
+nav {
+    background-color: #DCB5F6;
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 205px;
+}
+
+    nav a {
+        color: #333;
+        text-decoration: none;
+        margin: 17px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+        nav a:hover {
+            background-color: #ce91f7;
+        }
+
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+    .top-right .button {
+        color: black;
+        background-color: white;
+        padding: 5px 10px;
+        margin-left: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 12px;
+        border: 1px solid #333;
+        transition: background-color 0.3s ease;
+    }
+
+        .top-right .button:hover {
+            background-color: #f0f0f0;
+        }
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: blue;
+    text-align: center;
+}
+.card {
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 10px;
     margin: 10px;
-    width: calc(25% - 20px); /* Calcula a largura para 4 cards por linha */
-    box-sizing: border-box; /* Garante que a largura inclua padding e bordas */
-    float: left; /* Para garantir que os cards fiquem lado a lado */
-    background-color: #fff; /* Cor de fundo do card */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para efeito de elevação */
-    transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+    float: left;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
-}
+    .card:hover {
+        transform: translateY(-5px);
+    }
 
-.card img {
-    max-width: 100%; /* Ajusta a largura da imagem para se ajustar ao tamanho do card */
-    height: auto; /* Permite que a altura da imagem seja ajustada automaticamente */
-    border-radius: 5px; /* Adiciona borda arredondada à imagem */
-}
+    .card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
 
 .card-body {
-    padding-top: 10px; /* Espaçamento interno adicional no topo do corpo do card */
+    padding-top: 10px;
 }
 
 .card-title {
-    font-size: 18px; /* Tamanho da fonte do título */
-    margin-bottom: 5px; /* Margem inferior para separar o título do conteúdo abaixo */
+    font-size: 18px;
+    margin-bottom: 5px;
 }
 
 .card-text {
-    color: #666; /* Cor do texto */
-    font-size: 14px; /* Tamanho da fonte do texto */
-    margin-bottom: 8px; /* Margem inferior para separar os parágrafos */
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 8px;
 }
+
+.buy-button {
+    color: black;
+    background-color: white;
+    width: 100%;
+    height: 25px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 25px;
+    transition: background-color 0.3s ease;
+}
+
+    .buy-button:hover {
+        background-color: #f0f0f0;
+    }
+
+    .buy-button:active {
+        background-color: #e0e0e0;
+    }
 
 .row-container {
-    clear: both; /* Limpa as flutuações anteriores para iniciar uma nova linha */
-    overflow: hidden; /* Para conter as flutuações dos cards */
-    margin-bottom: 20px; /* Espaço entre as linhas */
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
-  
-  h1 {
-    color: #333;
-    text-align: center;
-  }
-
-  header img {
-    width: 500px;
-    height: auto;
-  }
-  
-  .product {
-    background-color:#DCB5F6;
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 20px 0;
-    display: flex;
-    align-items: center;
-  }
-  
-  .product img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin-right: 20px;
-  }
-  
-  .product h2 {
-    color: #333;
-    margin: 0 0 10px;
-  }
-  
-  .product p {
-    color: #666;
-    margin: 0;
-  }
-  
-  footer {
+footer {
     background-color: #DCB5F6;
-    color: #DCB5F6;
     padding: 10px;
     text-align: center;
-  }
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+    footer p {
+        margin: 0;
+    }
+
+.product {
+    background-color: #FEFEFE;
+    border: 10px;
+    border-color: black;
+    padding: 20px;
+    margin: 20px 0;
+    display: inline-grid;
+    align-items: stretch;
+    align-content: center;
+    justify-content: space-evenly;
+    justify-items: center;
+}
+
+    .product img {
+        width: 158px;
+        height: 223px;
+        top: 370px;
+        left: 116px;
+    }
+
+    .product h3 {
+        font-family: Inter;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+    }
+
+    .product p {
+        color: #666;
+        margin: 0;
+    }

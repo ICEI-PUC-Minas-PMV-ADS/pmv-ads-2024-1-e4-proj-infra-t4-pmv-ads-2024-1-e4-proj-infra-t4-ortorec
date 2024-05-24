@@ -1,170 +1,122 @@
 body {
-  background-color: white;
-  font-family: Roboto;
-  margin: 0;
-  padding: 0;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto;
-  width: 300px;
-  margin-top: 30px;
-  margin-bottom: 0px;
+    background-color: white;
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    
 }
 
 header {
-  background-color: #DCB5F6;
-  padding: 20px;
-  text-align: center;
+    background-color: #DCB5F6;
+    position: relative;
+    display: flex;
+    align-items:center;
 }
 
-header h1 {
-  margin: 0;
-  color: #ffffff;
+.logo {
+    width: 250px;
+    margin-bottom:-15px;
+    margin-right: 210px;      //assim eu afasto o menu da logo
 }
+
+nav {
+    background-color: #DCB5F6;
+    padding: 10px;
+    text-align: center;
+    }
+
+    nav a {
+        color: #333;
+        text-decoration: none;
+        margin: 0 10px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+        nav a:hover {
+            background-color: #ce91f7;
+        }
 
 main {
-  padding: 20px;
+    padding: 50px;
+    
 }
 
-.account-info,
-.order-history {
-  border: 2px solid #DCB5F6;
-  padding: 20px;
-  margin-bottom: 20px;
-  text-align: center;
+.account-info {
+    border: 2px solid #DCB5F6;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.account-info h2,
-.order-history h2 {
-  margin-top: 0;
-  color: #333333;
-}
+    .account-info h1 {
+        margin-top: 0;
+        color: #333333;
+    }
 
 .account-form {
-  max-width: 600px;
-  margin: 0 auto;
-  /* Centraliza o formulário */
-  text-align: left;
-  display: flex;
-  /* Adicionado */
-  flex-direction: column;
-  /* Adicionado */
-  padding: 40px;
-  /* Adicionado */
-  background-color: rgb(255, 223, 251);
-  /* Adicionado */
-  border-radius: 8px;
-  /* Adicionado */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  /* Adicionado */
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: rgb(255, 223, 251);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.account-form label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
-}
+    .account-form label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
 
-.account-form input,
-.account-form textarea {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  /* Alterado */
-  height: 20px;
-  /* Removido */
-}
+    .account-form input,
+    .account-form textarea {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
 
-.account-form .senha {
-  display: flex;
-}
-
-.account-form #olhoSenha {
-  border: 0;
-  border-radius: 0px 5px 5px 0px;
-  background-color: blue;
-  color: white;
-  height: 25px;
-  width: 40px;
-  cursor: pointer;
-}
-
-.account-form #olhoSenha:active {
-  background-color: rgb(0, 0, 42);
-}
-
-.account-form .options {
-  margin-top: 50px;
-  text-align: center;
-}
-
-.account-form .options a {
-  display: block;
-  margin-bottom: 80px;
-  color: #007bff;
-  text-decoration: none;
-}
-
-.account-form .options a:hover {
-  text-decoration: underline;
-}
-
-.account-form #submit,
-.account-form button[type="submit"] {
-  color: white;
-  background-color: blue;
-  width: 30%;
-  height: 30px;
-  border: 0;
-  border-radius: 10px;
-  cursor: pointer;
-  display: block;
-  margin: 0 auto;
-  /* Centraliza o botão */
-}
-
-.account-form #submit:active {
-  background-color: rgb(0, 0, 42);
-}
+    .account-form .action-buttons button {
+        margin-right: 10px;
+    }
 
 footer {
-  background-color: #DCB5F6;
-  padding: 10px;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-footer p {
-  margin: 0;
-  color: #ffffff;
-}
-
-@media only screen and (max-width: 600px) {
-  main {
+    background-color: #DCB5F6;
     padding: 10px;
-  }
-
-  .account-info,
-  .order-history {
-    padding: 10px;
-  }
-
-  .account-form {
-    max-width: 100%;
-    padding: 10px;
-  }
-
-  .account-form input[type="submit"] {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
     width: 100%;
-  }
+    color: white;
+}
 
-  .action-buttons button {
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
+    footer p {
+        margin: 0;
+    }
+
+/* Responsividade */
+@media only screen and (max-width: 600px) {
+    main {
+        padding: 10px;
+    }
+
+    .account-info {
+        padding: 10px;
+    }
+
+    .account-form {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+        .account-form input[type="submit"] {
+            width: 100%;
+        }
 }
