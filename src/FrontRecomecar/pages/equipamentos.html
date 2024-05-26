@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/equipamentos.css">
+    <title>Equipamentos</title>
 </head>
-
 <body>
     <header>
         <div class="top-right">
@@ -15,13 +14,23 @@
         <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
         <nav>
             <a href="quemsomos.html">Quem somos</a>
-            <a href="equipamentos.html">Produtos</a>
+            <div class="dropdown">
+                <a href="equipamentos.html" class="dropbtn">Produtos</a>
+                <div class="dropdown-content">
+                    <a href="#">Cadeiras de rodas</a>
+                    <a href="#">Andarilhos</a>
+                    <a href="#">Bengalas</a>
+                    <a href="#">Acessórios auxiliares</a>
+                    <a href="#">Camas hospitalares</a>
+                    <a href="#">Poltronas hospitalares</a>
+                    <a href="#">Almofadas ortopédicas</a>
+                </div>
+            </div>
             <a href="servicos.html">Serviços</a>
             <a href="atendimento.html">Atendimento</a>
             <a href="login.html">Sair</a>
         </nav>
     </header>
-
     <main>
         <section id="productList">
             <h2>Produtos Disponíveis</h2>
@@ -30,13 +39,26 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.</p>
+    <footer id="footer" class="footer-container">
+        <div class="container">
+            <div class="footer-column">
+                <div class="footer-info">
+                    <h4>APOIO AO CLIENTE</h4>
+                    <p>+351 217 151 606 / +351 219 890 697</p>
+                    <p>Chamada para a rede fixa nacional</p>
+                </div>
+                <div class="footer-links">
+                    <p><a href="#">POLÍTICA DE PRIVACIDADE</a></p>
+                    <p><a href="#">TERMOS E CONDIÇÕES</a></p> 
+                    <p><a href="#">LIVRO DE RECLAMAÇÕES</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.
+            </div>
+        </div>
     </footer>
-
     <script>
-        //requisição genérica C/ fetch
         async function makeRequest(url) {
             try {
                 const response = await fetch(url);
@@ -47,47 +69,46 @@
             }
         }
 
-        // preencher os produtos na página
         async function fillProductList() {
             const productListElement = document.getElementById('products');
-
             try {
-                // solicitação GET
                 const products = await makeRequest('https://localhost:7109/api/Produtos/GetProdutos');
-
-                // Limpa a lista de produtos antes de add novos
                 productListElement.innerHTML = '';
 
-                // Add cd produto à lista
                 products.forEach(product => {
-                    // Cria elementos HTML para o card
-                    const card = document.createElement('div');
-                    card.classList.add('card');
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.setAttribute('data-id', product.id);
 
-                    const img = document.createElement('img');
-                    img.src = 'https://localhost:7101/Produtoes' + product.image;
-                    img.alt = product.nomeProduto;
-                    img.style.width = '200px'; // Defina a largura da imagem
-                    img.style.height = '200px'; // Defina a altura da imagem
+                const img = document.createElement('img');
+                img.src = 'https://localhost:7101/Produtoes' + product.image;
+                img.alt = product.nomeProduto;
+                img.style.width = '200px';
+                img.style.height = '200px';
 
-                    const cardBody = document.createElement('div');
-                    cardBody.classList.add('card-body');
+                const cardBody = document.createElement('div');
+                cardBody.classList.add('card-body');
 
-                    const title = document.createElement('h5');
-                    title.classList.add('card-title');
-                    title.textContent = product.nomeProduto;
+                const title = document.createElement('h5');
+                title.classList.add('card-title');
+                title.textContent = product.nomeProduto;
 
-                    const price = document.createElement('p');
-                    price.classList.add('card-text');
-                    price.textContent = `Preço: ${product.preco}`;
+                const price = document.createElement('p');
+                price.classList.add('card-text');
+                price.textContent = `Preço: ${product.preco}`;
 
-                    const description = document.createElement('p');
-                    description.classList.add('card-text');
-                    description.textContent = product.descricao;
+                const description = document.createElement('p');
+                description.classList.add('card-text');
+                description.textContent = product.descricao;
 
-                    const buyButton = document.createElement('button');
-                    buyButton.textContent = 'Comprar';
-                    buyButton.classList.add('buy-button');
+                const buyButton = document.createElement('button');
+                buyButton.textContent = 'Comprar';
+                buyButton.classList.add('buy-button');
+
+                // Adicionando evento de clique ao card
+                card.addEventListener('click', function() {
+                    window.location.href = `details.html?id=${product.produtoId}`;
+                });
 
                     // Adicionar elementos ao card
                     card.appendChild(img);
@@ -106,9 +127,7 @@
             }
         }
 
-        // Qdo a pág carrega, os produtos são chammados
         window.addEventListener('load', fillProductList);
     </script>
 </body>
-
 </html>

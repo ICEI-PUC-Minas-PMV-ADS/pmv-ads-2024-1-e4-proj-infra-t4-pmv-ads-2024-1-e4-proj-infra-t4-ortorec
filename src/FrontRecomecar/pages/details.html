@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/details.css">
+    <title>Detalhes do Produto</title>
+</head>
+<body>
+    <header>
+        <div class="top-right">
+            <a href="minhaconta.html" class="button">Minha Conta</a>
+        </div>
+        <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
+        <nav>
+            <a href="quemsomos.html">Quem somos</a>
+            <a href="equipamentos.html">Produtos</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="atendimento.html">Atendimento</a>
+            <a href="login.html">Sair</a>
+        </nav>
+    </header>
+    <main>
+        <section id="productDetails">
+            <h2>Detalhes do Produto</h2>
+            <div id="product" class="product-container">
+                <!-- Detalhes do produto serão preenchidos dinamicamente -->
+            </div>
+        </section>
+    </main>
+    <footer id="footer" class="footer-container">
+        <div class="container">
+            <div class="footer-column">
+                <div class="footer-info">
+                    <h4>APOIO AO CLIENTE</h4>
+                    <p>+351 217 151 606 / +351 219 890 697</p>
+                    <p>Chamada para a rede fixa nacional</p>
+                </div>
+                <div class="footer-links">
+                    <p><a href="#">POLÍTICA DE PRIVACIDADE</a></p>
+                    <p><a href="#">TERMOS E CONDIÇÕES</a></p> 
+                    <p><a href="#">LIVRO DE RECLAMAÇÕES</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    <script>
+        async function makeRequest(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok)
+                {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('Erro ao fazer requisição:', error);
+                throw error;
+            }
+        }
+
+        async function getProductDetails(productId) {
+            try {
+                const product = await makeRequest(`https://localhost:7109/api/Produtos/GetProduto/${encodeURIComponent(productId)}`);
+                return product;
+            } catch (error) {
+                console.error('Erro ao buscar detalhes do produto:', error);
+            }
+        }
+
+        async function fillProductDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            if (!productId) {
+                console.error('ID do produto não encontrado na URL');
+                return;
+            }
+
+            const productDetailsElement = document.getElementById('product');
+            try {
+                const product = await getProductDetails(productId);
+                
+                // Limpa o conteúdo existente
+                productDetailsElement.innerHTML = '';
+
+                // Cria elementos HTML para os detalhes do produto
+                const img = document.createElement('img');
+                img.src = 'https://localhost:7101/Produtoes' + product.image;
+                img.alt = product.nomeProduto;
+                img.style.width = '300px';
+                img.style.height = '300px';
+
+                const title = document.createElement('h3');
+                title.textContent = product.nomeProduto;
+
+                const price = document.createElement('p');
+                price.textContent = `Preço: ${product.preco}`;
+
+                const description = document.createElement('p');
+                description.textContent = product.descricao;
+
+                const addToCartButton = document.createElement('button');
+                addToCartButton.textContent = 'Adicionar ao Carrinho';
+                addToCartButton.classList.add('add-to-cart-button');
+
+                // Adicionar elementos ao container de detalhes do produto
+                productDetailsElement.appendChild(img);
+                productDetailsElement.appendChild(title);
+                productDetailsElement.appendChild(price);
+                productDetailsElement.appendChild(description);
+                productDetailsElement.appendChild(addToCartButton);
+
+            } catch (error) {
+                console.error('Erro ao preencher detalhes do produto:', error);
+            }
+        }
+
+        window.addEventListener('load', fillProductDetails);
+    </script>
+</body>
+</html>

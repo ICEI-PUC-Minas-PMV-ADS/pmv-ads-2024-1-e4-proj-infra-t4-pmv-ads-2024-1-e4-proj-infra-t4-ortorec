@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/home.css">
+    <title>Equipamentos</title>
+</head>
+<body id="category" class="lang-pt country-pt currency-eur layout-left-column page-category tax-display-enabled category-id-201 category-mobilidade category-id-parent-2 category-depth-level-2 fullwidth">
+    <header>
+        <div class="top-right">
+            <a href="minhaconta.html" class="button">Minha Conta</a>
+        </div>
+        <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
+        <nav>
+            <a href="quemsomos.html">Quem somos</a>
+            <a href="equipamentos.html">Produtos</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="atendimento.html">Atendimento</a>
+            <a href="login.html">Sair</a>
+        </nav>
+    </header>
+    <main>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="slide active">
+                    <img src="../assets/banner1.png" alt="Banner 1">
+                </div>
+                <div class="slide">
+                    <img src="../assets/banner2.png" alt="Banner 2">
+                </div>
+                <div class="slide">
+                    <img src="../assets/banner3.png" alt="Banner 3">
+                </div>
+                <!-- Adicione mais slides conforme necessário -->
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
+        <div class="container">
+            <section id="productList">
+                <h2>Produtos Disponíveis</h2>
+                <div id="products" class="row-container">
+                    <!-- Lista de produtos será preenchida dinamicamente -->
+                </div>
+            </section>
+        </div>
+
+        <section id="imageSection" class="image-container">
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <img src="../assets/banner4.png" alt="banner4">
+                    </div>
+                    <div class="column">
+                        <img src="../assets/banner5.png" alt="banner5">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <img src="../assets/banner6.png" alt="banner6">
+                    </div>
+                    <div class="column">
+                        <img src="../assets/banner7.png" alt="banner7">
+                    </div>
+                </div>
+            </div>
+
+        <div class="service-container">
+            <section class="service">
+                <img class="ilustration" src="../assets/calibracao.jpeg" alt="Manutenção em Equipamentos">
+                <div class="service-content">
+                    <h2>MANUTENÇÃO EM EQUIPAMENTOS</h2>
+                    <p>Para garantir eficiência operacional e prolongar a vida útil de seu aparelho, oferecemos serviço de manutenção por uma equipe altamente qualificada e comprometida.</p>
+                    <h2>Manutenção Preventiva:</h2>
+                    <p>Realizamos inspeções, substituição de peças e ajustes necessários para garantir o desempenho ideal do seu equipamento.</p>
+                    <h2>Manutenção Corretiva:</h2>
+                    <p>Em caso de falhas ou avarias, nossa equipe de técnicos está pronta para intervir realizando diagnóstico, reparos e substituição de componentes defeituosos. Entre em contato conosco e agende um horário! Atendemos a domicílio (RMBH) ou você pode trazer seu equipamento.</p>
+                </div>
+            </section>
+
+            <section class="service reverse">
+                <img class="ilustration" src="../assets/assistência.jpg" alt="Recomeçar Social">
+                <div>
+                    <h2>RECOMEÇAR SOCIAL</h2>
+                    <p>Nosso programa Recomeçar Social oferece suporte e assistência para pessoas necessitando de equipamentos ortopédicos, proporcionando inclusão e melhoria na qualidade de vida.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer id="footer" class="footer-container">
+        <div class="container">
+            <div class="footer-column">
+                <div class="footer-info">
+                    <h4>APOIO AO CLIENTE</h4>
+                    <p>+351 217 151 606 / +351 219 890 697</p>
+                    <p>Chamada para a rede fixa nacional</p>
+                </div>
+                <div class="footer-links">
+                    <p><a href="#">POLÍTICA DE PRIVACIDADE</a></p>
+                    <p><a href="#">TERMOS E CONDIÇÕES</a></p> 
+                    <p><a href="#">LIVRO DE RECLAMAÇÕES</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    
+    
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlides() {
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            slides[slideIndex].style.display = 'block';
+        }
+
+        function prevSlide() {
+            if (slideIndex === 0) {
+                slideIndex = slides.length - 1;
+            } else {
+                slideIndex--;
+            }
+            showSlides();
+        }
+
+        function nextSlide() {
+            if (slideIndex === slides.length - 1) {
+                slideIndex = 0;
+            } else {
+                slideIndex++;
+            }
+            showSlides();
+        }
+
+        showSlides();
+
+        async function makeRequest(url) {
+            try {
+                const response = await fetch(url);
+                return await response.json();
+            } catch (error) {
+                console.error('Erro ao fazer requisição:', error);
+                throw error;
+            }
+        }
+
+        async function fillProductList() {
+            const productListElement = document.getElementById('products');
+            try {
+                const products = await makeRequest('https://localhost:7109/api/Produtos/GetProdutos');
+                productListElement.innerHTML = '';
+
+                products.forEach(product => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.setAttribute('data-id', product.id);
+
+                const img = document.createElement('img');
+                img.src = 'https://localhost:7101/Produtoes' + product.image;
+                img.alt = product.nomeProduto;
+                img.style.width = '200px';
+                img.style.height = '200px';
+
+                const cardBody = document.createElement('div');
+                cardBody.classList.add('card-body');
+
+                const title = document.createElement('h5');
+                title.classList.add('card-title');
+                title.textContent = product.nomeProduto;
+
+                const price = document.createElement('p');
+                price.classList.add('card-text');
+                price.textContent = `Preço: ${product.preco}`;
+
+                const description = document.createElement('p');
+                description.classList.add('card-text');
+                description.textContent = product.descricao;
+
+                const buyButton = document.createElement('button');
+                buyButton.textContent = 'Comprar';
+                buyButton.classList.add('buy-button');
+
+                // Adicionando evento de clique ao card
+                card.addEventListener('click', function() {
+                    window.location.href = `details.html?id=${product.produtoId}`;
+                });
+
+                    // Adicionar elementos ao card
+                    card.appendChild(img);
+                    card.appendChild(cardBody);
+                    cardBody.appendChild(title);
+                    cardBody.appendChild(price);
+                    cardBody.appendChild(description);
+                    cardBody.appendChild(buyButton);
+
+                    // Adicionar o card à lista de produtos
+                    productListElement.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error('Erro ao preencher lista de produtos:', error);
+            }
+        }
+
+        window.addEventListener('load', fillProductList);
+    </script>

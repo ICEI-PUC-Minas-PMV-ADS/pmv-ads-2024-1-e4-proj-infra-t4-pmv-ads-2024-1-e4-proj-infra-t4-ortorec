@@ -4,119 +4,188 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    
 }
 
 header {
     background-color: #DCB5F6;
+    padding: 2px;
+    text-align: center;
     position: relative;
     display: flex;
-    align-items:center;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
+    display: block;
+    margin: 0;
     width: 250px;
-    margin-bottom:-15px;
-    margin-right: 210px;      //assim eu afasto o menu da logo
+    margin-bottom: -27px;
 }
 
 nav {
     background-color: #DCB5F6;
     padding: 10px;
     text-align: center;
-    }
+    flex-grow: 1;
+    margin-right: 205px;
+}
 
-    nav a {
-        color: #333;
-        text-decoration: none;
-        margin: 0 10px;
-        padding: 5px;
-        border-radius: 5px;
-    }
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 17px;
+    padding: 5px;
+    border-radius: 5px;
+}
 
-        nav a:hover {
-            background-color: #ce91f7;
-        }
+nav a:hover {
+    background-color: #ce91f7;
+}
+
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.top-right .button {
+    color: black;
+    background-color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+    border: 1px solid #333;
+    transition: background-color 0.3s ease;
+}
+
+.top-right .button:hover {
+    background-color: #f0f0f0;
+}
 
 main {
-    padding: 50px;
-    
+    padding: 20px;
 }
 
-.account-info {
-    border: 2px solid #DCB5F6;
+.company-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.company-text {
+    max-width: 50%;
+    text-align: left;
+}
+
+.company-header .company-image {
+    max-width: 45%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.company-header h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.company-header p {
+    font-size: 18px;
+    color: #666;
+}
+
+.company-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.info-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
     padding: 20px;
-    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-    .account-info h1 {
-        margin-top: 0;
-        color: #333333;
-    }
+.info-section h2 {
+    font-size: 24px;
+    color: #00968a;
+    margin-bottom: 10px;
+}
 
-.account-form {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
+.info-section p {
+    font-size: 16px;
+    color: #666;
+}
+
+.footer-container {
+    background-color: #DCB5F6;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-container .container {
     display: flex;
     flex-direction: column;
-    padding: 40px;
-    background-color: rgb(255, 223, 251);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    align-items: center;
 }
 
-    .account-form label {
-        font-weight: bold;
-        display: block;
-        margin-bottom: 5px;
-    }
+.footer-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Ensures vertical alignment */
+    width: 80%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
 
-    .account-form input,
-    .account-form textarea {
-        width: 100%;
-        padding: 8px;
-        box-sizing: border-box;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
+.footer-info {
+    flex: 1;
+    text-align: left;
+}
 
-    .account-form .action-buttons button {
-        margin-right: 10px;
-    }
+.footer-links {
+    flex: 1;
+    text-align: right;
+}
 
-footer {
-    background-color: #DCB5F6;
-    padding: 10px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.footer-links p {
+    margin: 5px 0;
+}
+
+.footer-links a {
     color: white;
+    text-decoration: none;
 }
 
-    footer p {
-        margin: 0;
-    }
+.footer-links a:hover {
+    text-decoration: underline;
+}
 
-/* Responsividade */
-@media only screen and (max-width: 600px) {
-    main {
-        padding: 10px;
-    }
+.footer-info h4 {
+    margin: 0;
+    font-size: 16px;
+}
 
-    .account-info {
-        padding: 10px;
-    }
+.footer-info p {
+    margin: 5px 0;
+}
 
-    .account-form {
-        max-width: 100%;
-        padding: 10px;
-    }
+.footer-bottom {
+    margin-top: 20px;
+}
 
-        .account-form input[type="submit"] {
-            width: 100%;
-        }
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
 }
