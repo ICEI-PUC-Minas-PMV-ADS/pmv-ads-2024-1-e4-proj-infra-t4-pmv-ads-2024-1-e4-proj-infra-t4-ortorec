@@ -12,8 +12,8 @@ using WebApiDB.Data;
 namespace WebApiDB.Migrations
 {
     [DbContext(typeof(RecomecarDBContext))]
-    [Migration("20240522120103_AddColumn01")]
-    partial class AddColumn01
+    [Migration("20240527183450_M00")]
+    partial class M00
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
