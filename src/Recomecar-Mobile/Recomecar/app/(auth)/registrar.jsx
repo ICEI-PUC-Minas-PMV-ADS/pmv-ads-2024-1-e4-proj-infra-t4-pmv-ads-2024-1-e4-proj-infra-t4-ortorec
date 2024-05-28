@@ -1,42 +1,79 @@
-import { View, Text, StyleSheet, Pressable } from 'react-native'
-import { router } from "expo-router";
-import React from 'react'
+import { View, Text, StyleSheet, Pressable, ScrollView, Image, } from 'react-native'
+import { Link, router } from "expo-router";
+import { useState } from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context';
+import {  handlePress } from 'react';
 
-const registrar = () => {
+import { images } from '../../constants'
+import FormField from '../../components/FormField';
+import CustomButton from '../../components/CustomButton';
+
+import createUser from '../../lib/appwrite'
+
+const Registrar = () => {
+  const [form, setForm] = useState({
+    nomeUsuario: '',
+    email: '',
+    senha: ''
+  })
+
+const [IsSubmitting, setIsSubmitting] = useState(false)
+
+const submit = () => {
+    createUser();
+}
+
   return (
-    
-    <View style={styles.container}>
-      <Pressable
-          style={({ pressed }) => [
-            styles.button,
-            pressed && { backgroundColor: '#A168ED'},
-          ]}
-          onPress={() => router.push('/home')}
+    <SafeAreaView>
+      <ScrollView>
+        <View className='w-full justify-center min-h-[90vh] px-4 my-6'>
+          <Image source={images.recomecarLogo}
+          resizeMode='contain' className='w-[150px] h-[150px]'
           >
-            <Text style={{ color: 'white', fontWeight: 'bold'}}> Ir para Homepage</Text>
-      </Pressable>
-    </View>
+          </Image>
+
+          <Text className='text-xl font-semibold mt-5 font-psemibold'>Registre sua conta Recomeçar</Text>
+        
+          <FormField
+            title='Nome de Usuário'
+            value={form.nomeUsuario}
+            handleChangeText={(e) => setForm({ ...form, nomeUsuario: e })}
+            otherStyles='mt-7'
+          />
+          <FormField
+            title='Email'
+            value={form.email}
+            handleChangeText={(e) => setForm({ ...form, email: e })}
+            otherStyles='mt-7'
+            keyboardType='email-address'
+          />
+          <FormField
+            title='Senha'
+            value={form.senha}
+            handleChangeText={(e) => setForm({ ...form, senha: e })}
+            otherStyles='mt-7'
+          />
+
+          <CustomButton
+            title="Registrar-se"
+            handlePress={submit}
+            containerStyles='mt-9'
+            isLoading={IsSubmitting}
+          />
+
+          <View className='justify-center pt-8 flex-row gap-2'>
+            <Text className='text-base font-pmedium'>
+              Tem uma conta?
+            </Text>
+
+            <Link href="/login" className='text-lg font-psemibold text-secondary'>Entrar</Link>
+          </View>
+          
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+    
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 26,
-    paddingHorizontal: 48,
-    borderRadius: 10,
-    elevation: 3,
-    backgroundColor: '#fb00ff',
-    borderColor: '#fb00ff',
-    padding: 20,
-    margin: 10,
-  },
-})
-
-export default registrar
+export default Registrar

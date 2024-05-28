@@ -1,43 +1,70 @@
-import { View, Text, StyleSheet, Pressable } from 'react-native'
-import { router } from "expo-router";
-import { CustomButton } from '../../components/CustomButton'
-import React from 'react'
+import { View, Text, StyleSheet, Pressable, ScrollView, Image, } from 'react-native'
+import { Link, router } from "expo-router";
+import { useState } from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context';
+import {  handlePress } from 'react';
 
-{/* Coloquei apenas um botão para que possam mudar para a página que estão desenvolvendo */}
+import { images } from '../../constants'
+import FormField from '../../components/FormField';
+import CustomButton from '../../components/CustomButton';
+
 const Login = () => {
+  const [form, setForm] = useState({
+    email: '',
+    senha: ''
+  })
+
+const [IsSubmitting, setIsSubmitting] = useState(false)
+
+const submit = () => {
+
+}
+
   return (
-    
-    <View style={styles.container}>
-      <Pressable
-          style={({ pressed }) => [
-            styles.button,
-            pressed && { backgroundColor: '#A168ED'},
-          ]}
-          onPress={() => router.push('/registrar')}
+    <SafeAreaView>
+      <ScrollView>
+        <View className='w-full justify-center min-h-[90vh] px-4 my-6'>
+          <Image source={images.recomecarLogo}
+          resizeMode='contain' className='w-[150px] h-[150px]'
           >
-            <Text style={{ color: 'white', fontWeight: 'bold'}}> Ir para Tela de Registro</Text>
-      </Pressable>
-    </View>
+          </Image>
+
+          <Text className='text-xl font-semibold mt-5 font-psemibold'>Entre na sua conta Recomeçar</Text>
+        
+          <FormField
+            title='Email'
+            value={form.email}
+            handleChangeText={(e) => setForm({ ...form, email: e })}
+            otherStyles='mt-7'
+            keyboardType='email-address'
+          />
+          <FormField
+            title='Senha'
+            value={form.senha}
+            handleChangeText={(e) => setForm({ ...form, senha: e })}
+            otherStyles='mt-7'
+          />
+
+          <CustomButton
+            title="Entrar"
+            handlePress={submit}
+            containerStyles='mt-9'
+            isLoading={IsSubmitting}
+          />
+
+          <View className='justify-center pt-8 flex-row gap-2'>
+            <Text className='text-base font-pmedium'>
+              Não tem uma conta?
+            </Text>
+
+            <Link href="/registrar" className='text-lg font-psemibold text-secondary'>Registrar-se</Link>
+          </View>
+          
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+    
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 26,
-    paddingHorizontal: 48,
-    borderRadius: 10,
-    elevation: 3,
-    backgroundColor: '#fb00ff',
-    borderColor: '#fb00ff',
-    padding: 20,
-    margin: 10,
-  },
-})
 export default Login

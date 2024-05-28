@@ -4,14 +4,13 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { images } from '../constants';
-import { fontScale } from 'nativewind';
 
 
-import CustomPress from '../components/CustomPress';
+import CustomButton from "../components/CustomButton";
 
 export default function App(this: any) {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView className='bg-white h-full'>
       <ScrollView contentContainerStyle={{ height: '100%'}}>
 
         <View className='w-full justify-center items-center h-[85vh] px-4'>
@@ -24,47 +23,23 @@ export default function App(this: any) {
           <Text style={{ color: "black", fontSize: 22, textAlign: 'center', fontWeight: 'bold'}}> Sua loja de produtos ortopédicos de <Text style={{ color: '#fb00ff', fontWeight: 'bold'}}>confiança</Text> 
           </Text>
 
-          <Pressable
-          style={({ pressed }) => [
-            styles.button,
-            pressed && { backgroundColor: '#A168ED'},
-          ]}
-          onPress={() => router.push('/login')}
-          >
-            <Text style={{ color: 'white', fontWeight: 'bold'}}>Entrar</Text>
-          </Pressable>
+          {/* Aqui diz que tem um erro, mas parece estar funcionando normalmente no emulador */}
+          <CustomButton
+            title='Continuar com o Email'
+            handlePress={() => router.push('/login')}
+            containerStyles="w-full mt-10"
+          />
+
+          <StatusBar backgroundColor='#861BE0' style='light' />
 
         </View>
       </ScrollView>
-      <StatusBar backgroundColor='#A168ED' />
     </SafeAreaView>
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-    padding: 20,
-    alignItems: 'center',
 
-  },
 
-  button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 26,
-    paddingHorizontal: 48,
-    borderRadius: 10,
-    elevation: 3,
-    backgroundColor: '#fb00ff',
-    borderColor: '#fb00ff',
-    padding: 20,
-    margin: 10,
-    marginTop: 80,
-  },
-
-})
 
 
 
