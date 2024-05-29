@@ -8,19 +8,19 @@ import { images } from '../../constants'
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
 
-import createUser from '../../lib/appwrite'
+import { createUser } from '../../lib/appwrite'
 
 const Registrar = () => {
   const [form, setForm] = useState({
-    nomeUsuario: '',
+    userName: '',
     email: '',
-    senha: ''
+    password: ''
   })
 
 const [IsSubmitting, setIsSubmitting] = useState(false)
 
 const submit = () => {
-    createUser();
+  createUser();
 }
 
   return (

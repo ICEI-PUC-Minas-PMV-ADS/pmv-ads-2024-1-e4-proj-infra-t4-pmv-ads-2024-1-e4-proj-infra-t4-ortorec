@@ -17,7 +17,6 @@ const Login = () => {
 const [IsSubmitting, setIsSubmitting] = useState(false)
 
 const submit = () => {
-
 }
 
   return (
@@ -45,9 +44,11 @@ const submit = () => {
             otherStyles='mt-7'
           />
 
+          {/* Alterar para a função submit quando o backend estiver pronto */}
           <CustomButton
             title="Entrar"
-            handlePress={submit}
+            handlePress={() => router.push('/home')}
+            //handlePress={submit}
             containerStyles='mt-9'
             isLoading={IsSubmitting}
           />
