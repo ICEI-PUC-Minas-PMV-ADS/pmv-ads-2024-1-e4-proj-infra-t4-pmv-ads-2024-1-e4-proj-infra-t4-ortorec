@@ -1198,19 +1198,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ianme\\.nuget\\packages\\": {}
+    "C:\\Users\\janai\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ianme\\OneDrive\\Documentos\\GitHub\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj",
+      "projectUniqueName": "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj",
       "projectName": "APIPedidosRecomecar",
-      "projectPath": "C:\\Users\\ianme\\OneDrive\\Documentos\\GitHub\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj",
-      "packagesPath": "C:\\Users\\ianme\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ianme\\OneDrive\\Documentos\\GitHub\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\obj\\",
+      "projectPath": "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj",
+      "packagesPath": "C:\\Users\\janai\\.nuget\\packages\\",
+      "outputPath": "C:\\ArquivosJana\\Repositorios\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ianme\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\janai\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1269,7 +1269,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
