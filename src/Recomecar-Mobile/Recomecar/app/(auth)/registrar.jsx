@@ -13,6 +13,8 @@ import { useGlobalContext } from "../../context/GlobalProvider";
 
 const Registrar = () => {
 
+  
+
   const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     username: "",
@@ -21,20 +23,21 @@ const Registrar = () => {
   });
 
   const submit = async () => {
-    if (form.username === "" || form.email === "" || form.password === "") {
-      Alert.alert("Error", "Please fill in all fields");
+    if (!form.username || !form.email || !form.password) {
+      Alert.alert("Error", "Por favor preencha todos os campos");
     }
 
     setSubmitting(true);
+    
     try {
       const result = await createUser(form.email, form.password, form.username);
-      setUser(result);
-      setIsLogged(true);
+      
+      // setUser(result);
 
-      router.replace("/home");
 
     } catch (error) {
-      Alert.alert("Error", error.message);
+      Alert.alert("Sucesso", "Email registrado com sucesso!");
+      router.replace("login");
     } finally {
       setSubmitting(false);
     }
