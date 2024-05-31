@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Pressable, ScrollView, Image, } from 'react-native'
+import { View, Text, StyleSheet, Pressable, ScrollView, Image, Alert, } from 'react-native'
 import { Link, router } from "expo-router";
 import { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -9,19 +9,36 @@ import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
 
 import { createUser } from '../../lib/appwrite'
+import { useGlobalContext } from "../../context/GlobalProvider";
 
 const Registrar = () => {
+
+  const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
-    userName: '',
-    email: '',
-    password: ''
-  })
+    username: "",
+    email: "",
+    password: "",
+  });
 
-const [IsSubmitting, setIsSubmitting] = useState(false)
+  const submit = async () => {
+    if (form.username === "" || form.email === "" || form.password === "") {
+      Alert.alert("Error", "Please fill in all fields");
+    }
 
-const submit = () => {
-  createUser();
-}
+    setSubmitting(true);
+    try {
+      const result = await createUser(form.email, form.password, form.username);
+      setUser(result);
+      setIsLogged(true);
+
+      router.replace("/home");
+
+    } catch (error) {
+      Alert.alert("Error", error.message);
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <SafeAreaView>
@@ -36,8 +53,8 @@ const submit = () => {
         
           <FormField
             title='Nome de Usuário'
-            value={form.nomeUsuario}
-            handleChangeText={(e) => setForm({ ...form, nomeUsuario: e })}
+            value={form.username}
+            handleChangeText={(e) => setForm({ ...form, username: e })}
             otherStyles='mt-7'
           />
           <FormField
@@ -49,8 +66,8 @@ const submit = () => {
           />
           <FormField
             title='Senha'
-            value={form.senha}
-            handleChangeText={(e) => setForm({ ...form, senha: e })}
+            value={form.password}
+            handleChangeText={(e) => setForm({ ...form, password: e })}
             otherStyles='mt-7'
           />
 
@@ -58,7 +75,7 @@ const submit = () => {
             title="Registrar-se"
             handlePress={submit}
             containerStyles='mt-9'
-            isLoading={IsSubmitting}
+            isLoading={isSubmitting}
           />
 
           <View className='justify-center pt-8 flex-row gap-2'>

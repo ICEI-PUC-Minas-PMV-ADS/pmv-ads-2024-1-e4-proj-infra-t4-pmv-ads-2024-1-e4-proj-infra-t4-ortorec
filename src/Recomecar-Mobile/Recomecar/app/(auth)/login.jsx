@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Pressable, ScrollView, Image, } from 'react-native'
+import { View, Text, StyleSheet, Pressable, ScrollView, Image, Alert } from 'react-native'
 import { Link, router } from "expo-router";
 import { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -8,16 +8,33 @@ import { images } from '../../constants'
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
 
+import { signIn } from '../../lib/appwrite'
+
+
 const Login = () => {
+  const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
-    email: '',
-    senha: ''
-  })
+    username: "",
+    email: "",
+    password: "",
+  });
 
-const [IsSubmitting, setIsSubmitting] = useState(false)
+  const submit = async () => {
+    if (form.email === "" || form.password === "") {
+      Alert.alert("Error", "Por favor, preencha todos os campos");
+    }
 
-const submit = () => {
-}
+    setSubmitting(true);
+
+    try {
+      await signIn(form.email, form.password);
+
+    } catch (error) {
+      Alert.alert("Erro", error.message);
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <SafeAreaView>
@@ -39,18 +56,17 @@ const submit = () => {
           />
           <FormField
             title='Senha'
-            value={form.senha}
-            handleChangeText={(e) => setForm({ ...form, senha: e })}
+            value={form.password}
+            handleChangeText={(e) => setForm({ ...form, password: e })}
             otherStyles='mt-7'
           />
 
           {/* Alterar para a função submit quando o backend estiver pronto */}
           <CustomButton
             title="Entrar"
-            handlePress={() => router.push('/home')}
-            //handlePress={submit}
+            handlePress={submit}
             containerStyles='mt-9'
-            isLoading={IsSubmitting}
+            isLoading={isSubmitting}
           />
 
           <View className='justify-center pt-8 flex-row gap-2'>
