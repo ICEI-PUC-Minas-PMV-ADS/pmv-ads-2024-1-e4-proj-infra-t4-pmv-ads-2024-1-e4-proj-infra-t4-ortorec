@@ -27,18 +27,25 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 ### Página Principal
 
-![Pág  Principal](https://github.com/sil-barbosa/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/097e7213-c560-467c-8761-df4356e01b4e)
+  ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/c04d23f4-7e9d-4cf8-812f-ed0e4ace180d)
+
 
 ### Quem somos
 
-![Quem Somos](https://github.com/sil-barbosa/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/a77c3539-7d5c-4f90-a130-b44f1fd90355)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/e7cf00b4-b976-4b6e-a7dd-f7ad09a7a2d8)
 
 ### Serviços
 
-![serviços manutenção e social](https://github.com/sil-barbosa/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/5c26bf25-1378-4f60-b084-0547585e7a44)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/4c469234-a43c-4524-9850-3dc816ee9b78)
 
+### Produtos
 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/36175215-315b-4000-aba7-90606526a4fc)
 
+### Detalhess do Produto
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/83675b70-b921-469c-b5b4-22b2ce4210a9)
 
+### Atendimento
 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/e053586f-a24f-4f76-8487-4e6e19f7d5ca)
 
