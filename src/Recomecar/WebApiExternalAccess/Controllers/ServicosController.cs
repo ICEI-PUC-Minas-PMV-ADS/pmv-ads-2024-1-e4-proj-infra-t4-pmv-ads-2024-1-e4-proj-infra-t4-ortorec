@@ -12,6 +12,7 @@ using WebApiDB.Models;
 namespace WebApiExternalAccess.Controllers
 {
     [Authorize(Roles = "Admin")]
+    [AllowAnonymous]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class ServicosController : ControllerBase
@@ -25,6 +26,7 @@ namespace WebApiExternalAccess.Controllers
 
         // GET: api/Servicos
         [Authorize(Roles = "Admin, User")]
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Servico>>> GetServicos()
         {
@@ -33,6 +35,7 @@ namespace WebApiExternalAccess.Controllers
 
         // GET: api/Servicos/5
         [Authorize(Roles = "Admin, User")]
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<ActionResult<Servico>> GetServico(int id)
         {
@@ -48,6 +51,7 @@ namespace WebApiExternalAccess.Controllers
 
         // PUT: api/Servicos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [AllowAnonymous]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutServico(int id, Servico servico)
         {
@@ -80,6 +84,7 @@ namespace WebApiExternalAccess.Controllers
         // POST: api/Servicos
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [Authorize(Roles = "Admin, User")]
+        [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult<Servico>> PostServico(Servico servico)
         {
@@ -90,6 +95,7 @@ namespace WebApiExternalAccess.Controllers
         }
 
         // DELETE: api/Servicos/5
+        [AllowAnonymous]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteServico(int id)
         {
