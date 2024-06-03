@@ -15,8 +15,10 @@ namespace APIPedidosRecomecar.Services
             _pedidoCollection = mongoDatabase.GetCollection<Pedido>(
                 recomecarDatabaseSettings.Value.PedidoCollectionName);
         }
+        
         public async Task<List<Pedido>> GetPedidosAsync()=>
             await _pedidoCollection.Find(_=>true).ToListAsync();
+
 
         public async Task<Pedido?> GetPedidosAsync(string id) =>
             await _pedidoCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
@@ -31,4 +33,5 @@ namespace APIPedidosRecomecar.Services
         public async Task RemoveAsync(string id) =>
             await _pedidoCollection.DeleteOneAsync(x => x.Id == id);
     }
+
 }

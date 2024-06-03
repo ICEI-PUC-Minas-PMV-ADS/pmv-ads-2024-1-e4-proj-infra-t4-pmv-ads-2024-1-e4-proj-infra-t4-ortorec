@@ -55,4 +55,5 @@ namespace APIPedidosRecomecar.Models
         public string Descricao { get; set; } = null!;
 
     }
+
 }

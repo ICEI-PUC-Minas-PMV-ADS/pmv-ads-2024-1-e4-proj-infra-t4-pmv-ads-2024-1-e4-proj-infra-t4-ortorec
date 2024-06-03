@@ -6,38 +6,37 @@
     <link rel="stylesheet" href="../styles/details.css">
     <title>Detalhes do Produto</title>
     <style>
-        /* Adicione algumas estilizações básicas para o ícone do carrinho e o badge */
-        .cart-container {
-            position: relative;
-            display: inline-block;
-            margin-left: 20px;
-        }
         
-        .cart-icon {
-            font-size: 24px;
-            cursor: pointer;
-        }
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
 
-        .badge {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            padding: 5px 10px;
-            border-radius: 50%;
-            background-color: red;
-            color: white;
-            font-size: 12px;
-        }
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #04AA6D;
+}
+
+.button1:hover {
+  background-color: #04AA6D;
+  color: white;
+}
     </style>
 </head>
 <body>
     <header>
         <div class="top-right">
             <a href="minhaconta.html" class="button">Minha Conta</a>
-            <div class="cart-container">
-                <span class="cart-icon">🛒</span>
-                <span id="cart-badge" class="badge" style="display:none;">0</span>
-            </div>
         </div>
         <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
         <nav>
@@ -50,9 +49,24 @@
     </header>
     <main>
         <section id="productDetails">
-            <h2>Detalhes do Produto</h2>
+            <h2>Finalizar Pedido</h2>
             <div id="product" class="product-container">
                 <!-- Detalhes do produto serão preenchidos dinamicamente -->
+            <div>
+                <center>
+                    <div style="width: 50vh; height: 25px; padding: 20px;">
+                        <div>
+                            <label for="html">CPF</label><br>
+                            <input type="text" style="width: 50vh; height: 15px; margin-bottom: 20px;"><br>
+                            <label for="html">Endereço</label><br>
+                            <input type="text" style="width: 50vh; height: 15px; margin-bottom: 20px;"><br>
+                            <label for="html">Metodo Pagamento</label><br>
+                            <input type="text" style="width: 50vh; height: 15px; margin-bottom: 20px;"><br>
+                        </div>
+                        <button class="button button1">Finalizar Pedido</button>
+                    </div>
+                </center>
+            </div>
             </div>
         </section>
     </main>
@@ -86,15 +100,6 @@
             } catch (error) {
                 console.error('Erro ao fazer requisição:', error);
                 throw error;
-            }
-        }
-
-        async function getProductDetails(productId) {
-            try {
-                const product = await makeRequest(`https://localhost:7109/api/Produtos/GetProduto/${encodeURIComponent(productId)}`);
-                return product;
-            } catch (error) {
-                console.error('Erro ao buscar detalhes do produto:', error);
             }
         }
 
@@ -147,16 +152,31 @@
             }
         }
 
-        async function addToCart_Click(product, userId) {
+        async function FinalizarPedido(){
+            
+        }
+
+        async function addToCart_Click(product) {
             const cartItem = {
-                nomeProduto: product.nomeProduto,
-                preco: product.preco,
-                userId: userId,
+                id: "string",
+                numeroPedido: 0, 
+                dataHoraPedido: new Date().toISOString(),
+                valorTotal: product.preco,
+                totalItens: 1,
+                produtosIds: [product.produtoId],
+                cliente: {
+                    nomeCliente: "Cliente Exemplo",
+                    endereco: "Endereço Exemplo",
+                    cpf: "123.456.789-00"
+                },
+                pagamento: {
+                    formaPagamento: 0,
+                    descricao: "Cartão de Crédito"
                 }
             };
 
             try {
-                const response = await fetch('https://localhost:7272/api/CarrinhoCompra', {
+                const response = await fetch('https://localhost:7272/api/CarrinhoCompra?UserId=1', {
                     method: 'POST',
                     headers: {
                         'accept': '*/*',
@@ -174,27 +194,9 @@
             } catch (error) {
                 console.error('Erro ao adicionar produto ao carrinho:', error);
             }
-        
-
-        async function updateCartBadge() {
-            try {
-                const cartResponse = await makeRequest('https://localhost:7272/api/Pedido');
-                const cartItemCount = cartResponse.length;
-
-                 const badgeElement = document.getElementById('cart-badge');
-                if (cartItemCount > 0) {
-                    badgeElement.textContent = cartItemCount;
-                     badgeElement.style.display = 'inline-block';
-                } else {
-                    badgeElement.style.display = 'none';
-                }
-            } catch (error) {
-                console.error('Erro ao atualizar badge do carrinho:', error);
-            }
         }
 
         window.addEventListener('load', fillProductDetails);
-        window.addEventListener('load', updateCartBadge);
     </script>
 </body>
 </html>
