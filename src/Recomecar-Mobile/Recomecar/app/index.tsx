@@ -30,12 +30,10 @@ export default function App(this: any) {
           <Text style={{ color: "black", fontSize: 22, textAlign: 'center', fontWeight: 'bold'}}> Sua loja de produtos ortopédicos de <Text style={{ color: '#fb00ff', fontWeight: 'bold'}}>confiança</Text> 
           </Text>
 
-          {/* Aqui diz que tem um erro, mas parece estar funcionando normalmente no emulador */}
           <CustomButton
             title='Continuar com o Email'
             handlePress={() => router.push('/login')}
-            containerStyles="w-full mt-10"
-          />
+            containerStyles="w-full mt-10" textStyles={undefined} isLoading={undefined}          />
 
           <StatusBar backgroundColor='#861BE0' style='light' />
 

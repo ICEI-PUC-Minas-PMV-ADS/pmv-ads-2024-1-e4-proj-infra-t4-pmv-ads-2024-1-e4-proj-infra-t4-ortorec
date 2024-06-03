@@ -25,7 +25,7 @@ const Registrar = () => {
   const submit = async () => {
     if (!form.username || !form.email || !form.password) {
       Alert.alert("Error", "Por favor preencha todos os campos");
-    }
+    } else {
 
     setSubmitting(true);
     
@@ -42,7 +42,7 @@ const Registrar = () => {
       setSubmitting(false);
     }
   };
-
+  }
   return (
     <SafeAreaView>
       <ScrollView>

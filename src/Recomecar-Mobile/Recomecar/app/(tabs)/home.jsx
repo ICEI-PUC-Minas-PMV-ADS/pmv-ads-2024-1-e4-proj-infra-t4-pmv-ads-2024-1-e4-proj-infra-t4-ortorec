@@ -1,5 +1,5 @@
-import { View, Text, FlatList, Image, RefreshControl} from 'react-native'
-import { useState } from 'react'
+import { View, Text, FlatList, Image, RefreshControl, Alert} from 'react-native'
+import { useEffect, useState } from 'react'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
@@ -7,25 +7,31 @@ import { images } from "../../constants"
 import SearchImput from "../../components/SearchImput"
 import Destaques from "../../components/Destaques"
 import EstadoVazio from '@/components/EstadoVazio'
-import { carregarProdutos } from '../../scripts/carregarProdutos'
+import { getAllPosts } from '../../lib/appwrite'
+import useAppwrite from '../../lib/useAppwrite'
+import ProductCard from '../../components/ProductCard'
 
 const Home = () => {
+
+  const { data: posts, refetch } = useAppwrite(getAllPosts);
+
   const [refreshing, setRefreshing] = useState(false)
 
   const onRefresh = async () => {
-    setRefreshing(true)
-    carregarProdutos()
-    // chamar os produtos -> se algum produto aparecer
-    setRefreshing(false)
+    setRefreshing(true);
+    await refetch();
+    setRefreshing(false);
   }
+
+  console.log(posts)
 
   return (
     <SafeAreaView className='h-full'>
       <FlatList
-        data={[{ id: 1 }, { id: 2 }, { id: 3 }]}
+        data={posts}
         keyExtractor={(item) => item.$id}
         renderItem={({ item }) => (
-          <Text className=' text-3xl '>{item.id}</Text>
+          <ProductCard product={item}/>
         )}
         ListHeaderComponent={( ) => (
           <View className="my-6 px-4 space-y-6">

@@ -77,8 +77,7 @@ const Carrinho = () => {
 
           <CustomButton
             title='Finalizar compra'
-            containerStyles='mt-7'
-          />
+            containerStyles='mt-7' handlePress={undefined} textStyles={undefined} isLoading={undefined}          />
 
         </View>
 

@@ -24,6 +24,17 @@ export const config = {
     // storageId: "66588eb700074496f596",
 }
 
+const {
+  endpoint,
+  platform,
+  projectId,
+  databaseId,
+  userCollectionId,
+  produtoCollectionId,
+  comprasCollectionId,
+  storageId
+} = config;
+
 // Init your React Native SDK
  const client = new Client();
 
@@ -110,3 +121,20 @@ client
         console.log(error);
     }
  }
+
+ export const getAllPosts = async () => {
+ 
+  try {
+
+    const posts = await databases.listDocuments(
+      databaseId,
+      produtoCollectionId
+    );
+
+
+    return posts.documents;
+
+  } catch (error) {
+    throw new Error(error)
+  }
+}

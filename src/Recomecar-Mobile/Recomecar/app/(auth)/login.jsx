@@ -28,9 +28,9 @@ const Login = () => {
   });
 
   const submit = async () => {
-    if (form.email === "" || form.password === "") {
+    if (!form.email || !form.password ) {
       Alert.alert("Error", "Por favor, preencha todos os campos");
-    }
+    } else {
 
     setSubmitting(true);
 
@@ -50,7 +50,7 @@ const Login = () => {
       setSubmitting(false);
     }
   };
-
+  }
   return (
     <GlobalProvider>
       <SafeAreaView>
