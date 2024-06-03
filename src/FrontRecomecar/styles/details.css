@@ -1,0 +1,185 @@
+body {
+    background-color: white;
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #DCB5F6;
+    padding: 2px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: block;
+    margin: 0;
+    width: 250px; 
+    margin-bottom: -27px;
+}
+
+nav {
+    background-color: #DCB5F6;
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 205px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 17px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #ce91f7;
+}
+
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.top-right .button {
+    color: black;
+    background-color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+    border: 1px solid #333;
+    transition: background-color 0.3s ease;
+}
+
+.top-right .button:hover {
+    background-color: #f0f0f0;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: blue;
+    text-align: center;
+}
+
+.product-container {
+    text-align: center;
+}
+
+.product-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-container h3 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.product-container p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.add-to-cart-button {
+    color: black;
+    background-color: white;
+    width: 200px;
+    height: 40px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    line-height: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: #f0f0f0;
+}
+
+.add-to-cart-button:active {
+    background-color: #e0e0e0;
+}
+
+.footer-container {
+    background-color: #DCB5F6;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0vh;
+}
+
+.footer-container .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Ensures vertical alignment */
+    width: 80%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.footer-info {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-links {
+    flex: 1;
+    text-align: right;
+}
+
+.footer-links p {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-info h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}
+
+.footer-bottom {
+    margin-top: 0px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}

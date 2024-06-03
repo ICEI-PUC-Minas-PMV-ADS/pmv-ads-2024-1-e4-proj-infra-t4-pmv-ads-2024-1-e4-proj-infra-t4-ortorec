@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/atendimento.css">
+    <title>Atendimento</title>
+    <style>
+        /* Adicione algumas estilizações básicas para o ícone do carrinho e o badge */
+        .cart-container {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        
+        .cart-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-right">
+            <a href="minhaconta.html" class="button">Minha Conta</a>
+            <div class="cart-container">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-badge" class="badge" style="display:none;">0</span>
+            </div>
+        </div>
+        <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="quemsomos.html">Quem somos</a>
+            <a href="equipamentos.html">Produtos</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="atendimento.html">Atendimento</a>
+            <a href="login.html">Sair</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Contato</h2>
+        <div class="contact-container">
+            <div class="form-content">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="subject">Assunto *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Selecione um assunto</option>
+                            <option value="assistente_social">Assistente Social</option>
+                            <option value="manutencao">Manutenção</option>
+                            <option value="duvidas">Dúvidas</option>
+                            <option value="reclamacao">Reclamação</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="schedule-group" style="display: none;">
+                        <label for="schedule">Escolha a data e horário *</label>
+                        <input type="datetime-local" id="schedule" name="schedule">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            document.getElementById('subject').addEventListener('change', function() {
+                const scheduleGroup = document.getElementById('schedule-group');
+                if (this.value === 'assistente_social' || this.value === 'manutencao') {
+                    scheduleGroup.style.display = 'block';
+                    document.getElementById('schedule').setAttribute('required', 'required');
+                } else {
+                    scheduleGroup.style.display = 'none';
+                    document.getElementById('schedule').removeAttribute('required');
+                }
+            });
+        </script>
+    </main>
+    <footer id="footer" class="footer-container">
+        <div class="container">
+            <div class="footer-column">
+                <div class="footer-info">
+                    <h4>APOIO AO CLIENTE</h4>
+                    <p>+351 217 151 606 / +351 219 890 697</p>
+                    <p>Chamada para a rede fixa nacional</p>
+                </div>
+                <div class="footer-links">
+                    <p><a href="#">POLÍTICA DE PRIVACIDADE</a></p>
+                    <p><a href="#">TERMOS E CONDIÇÕES</a></p> 
+                    <p><a href="#">LIVRO DE RECLAMAÇÕES</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    <script src="../scripts/atendimento.js"></script>
+</body>
+</html>

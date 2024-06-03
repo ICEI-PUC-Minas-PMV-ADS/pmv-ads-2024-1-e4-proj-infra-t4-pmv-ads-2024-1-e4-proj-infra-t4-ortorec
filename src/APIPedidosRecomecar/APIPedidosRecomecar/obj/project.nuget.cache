@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+QbanhF626fYbvxf4wqvPweXpwfK4EXBGCBcjZCPvwetWsA7/HyLAmNaLQPy2XA0yOGQLyaOIAwJGJAGxShiGg==",
+  "dgSpecHash": "Z0hIXbBONhFaFWLYKa15TeSEpWjIAKVzK/DZwOKgG4wXgQ+p+7AMyAuhPqmKZyWMheLbcIuWhVMpS6+sRvOfBg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ianme\\OneDrive\\Documentos\\GitHub\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj",
+  "projectFilePath": "C:\\Users\\ianme\\OneDrive\\Documentos\\PUC\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ianme\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\ianme\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
@@ -29,5 +29,12 @@
     "C:\\Users\\ianme\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\ianme\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\ianme\\OneDrive\\Documentos\\PUC\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

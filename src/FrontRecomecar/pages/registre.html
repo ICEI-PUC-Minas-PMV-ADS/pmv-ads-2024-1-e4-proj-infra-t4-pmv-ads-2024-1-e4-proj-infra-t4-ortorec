@@ -4,51 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registre-se</title>
-    <link rel="stylesheet" href="/styles/registre.css">
-    <script src="/scripts/register.js"></script>
-
-    <!-- Script de estilização -->
-    <script src="/scripts/scriptStyle.js"></script>
-
-    <!-- Icones -->
+    <link rel="stylesheet" href="../styles/registre.css">
     <script src="https://kit.fontawesome.com/75ea6c2770.js" crossorigin="anonymous"></script>
+    <script src="../scripts/register.js"></script>
 
-    <!-- Fonte Letra -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <img src="/assets/logoinicial.PNG" alt="Logo" class="logo">
+    <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
     <div class="container">
         <h1 class="registre-text">REGISTRE-SE</h1>
         <div class="registre-box">
-            <form id="registre-box">
+            <form id="registre-box" onsubmit="handleSubmit(Event)">
                 <input id="nome" type="text" name="nome" placeholder="Nome de Usuário" required>
-                <input id="email" type="text" name="email" placeholder="Email" required>
-                
+                <input id="email" type="email" name="email" placeholder="Email" required>
                 <div class="senhaForm">
                     <div class="senha">
                         <input type="password" id="password" placeholder="Senha" required>
                         <button id="olhoSenha" type="button" class="fa-regular fa-eye" onclick="mostrarSenha()"></button>
                     </div>
-
                     <div class="senha">
                         <input type="password" id="passwordConfirm" placeholder="Confirmar Senha" required>
                         <button id="olhoSenhaConfirmar" type="button" class="fa-regular fa-eye" onclick="mostrarSenhaConfirmar()"></button>
                     </div>
                 </div>
-
-                <div class="senhaFormArea">
-                    <p id="senhaDisplay" class="senhaDisplay">As senhas estão diferentes!</p>
-                </div>
-                
-                <button type="submit" id="submit" onclick="register()">Registrar</button>
+                <button type="submit">Registrar</button>
             </form>
             <div class="options">
                 <a href="login.html">Já tem cadastro? Realize o Login</a>
             </div>
         </div>
     </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert("Registro realizado com sucesso!");
+            // Aqui você pode adicionar lógica adicional, como enviar os dados para o servidor
+        }
+
+        function mostrarSenha() {
+            const senha = document.getElementById('password');
+            const tipo = senha.type === 'password' ? 'text' : 'password';
+            senha.type = tipo;
+        }
+
+        function mostrarSenhaConfirmar() {
+            const senha = document.getElementById('passwordConfirm');
+            const tipo = senha.type === 'password' ? 'text' : 'password';
+            senha.type = tipo;
+        }
+    </script>
+    <footer>
+        <p>&copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

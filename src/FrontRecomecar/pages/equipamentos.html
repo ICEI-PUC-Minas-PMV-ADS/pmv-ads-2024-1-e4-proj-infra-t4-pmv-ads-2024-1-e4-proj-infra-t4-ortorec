@@ -1,25 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Produtos - Loja Ortopédica</title>
     <link rel="stylesheet" href="../styles/equipamentos.css">
-</head>
+    <title>Equipamentos</title>
+    <style>
+        /* Adicione algumas estilizações básicas para o ícone do carrinho e o badge */
+        .cart-container {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        
+        .cart-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
 
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            font-size: 12px;
+        }
+    </style>
+</head>
 <body>
     <header>
+        <div class="top-right">
+            <a href="minhaconta.html" class="button">Minha Conta</a>
+            <div class="cart-container">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-badge" class="badge" style="display:none;">0</span>
+            </div>
+        </div>
         <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
         <nav>
-            <a href="./servicos.html">Serviços</a>
-            <a href="../pages/equipamentos.html">Produtos Ortopédicos</a>
-            <a href="#">Atendimento</a>
-            <a href="./quemsomos.html">Quem somos</a>
-            <a href="../pages/login.html">Entrar</a>
+            <a href="home.html">Home</a>
+            <a href="quemsomos.html">Quem somos</a>
+            <div class="dropdown">
+                <a href="equipamentos.html" class="dropbtn">Produtos</a>
+                <div class="dropdown-content">
+                    <a href="#">Cadeiras de rodas</a>
+                    <a href="#">Andarilhos</a>
+                    <a href="#">Bengalas</a>
+                    <a href="#">Acessórios auxiliares</a>
+                    <a href="#">Camas hospitalares</a>
+                    <a href="#">Poltronas hospitalares</a>
+                    <a href="#">Almofadas ortopédicas</a>
+                </div>
+            </div>
+            <a href="servicos.html">Serviços</a>
+            <a href="atendimento.html">Atendimento</a>
+            <a href="login.html">Sair</a>
         </nav>
     </header>
-
     <main>
         <section id="productList">
             <h2>Produtos Disponíveis</h2>
@@ -28,13 +68,26 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.</p>
+    <footer id="footer" class="footer-container">
+        <div class="container">
+            <div class="footer-column">
+                <div class="footer-info">
+                    <h4>APOIO AO CLIENTE</h4>
+                    <p>+351 217 151 606 / +351 219 890 697</p>
+                    <p>Chamada para a rede fixa nacional</p>
+                </div>
+                <div class="footer-links">
+                    <p><a href="#">POLÍTICA DE PRIVACIDADE</a></p>
+                    <p><a href="#">TERMOS E CONDIÇÕES</a></p> 
+                    <p><a href="#">LIVRO DE RECLAMAÇÕES</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.
+            </div>
+        </div>
     </footer>
-
     <script>
-        // Função para fazer uma requisição genérica usando fetch
         async function makeRequest(url) {
             try {
                 const response = await fetch(url);
@@ -45,47 +98,46 @@
             }
         }
 
-        // Função para preencher a lista de produtos na página
         async function fillProductList() {
             const productListElement = document.getElementById('products');
-
             try {
-                // Fazendo a solicitação GET para obter os produtos da API
                 const products = await makeRequest('https://localhost:7109/api/Produtos/GetProdutos');
-
-                // Limpa a lista de produtos antes de adicionar os novos
                 productListElement.innerHTML = '';
 
-                // Adiciona cada produto à lista
                 products.forEach(product => {
-                    // Criar elementos HTML para o card
-                    const card = document.createElement('div');
-                    card.classList.add('card');
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.setAttribute('data-id', product.id);
 
-                    const img = document.createElement('img');
-                    img.src = 'https://localhost:7101/Produtoes' + product.image;
-                    img.alt = product.nomeProduto;
-                    img.style.width = '200px'; // Defina a largura da imagem
-                    img.style.height = '200px'; // Defina a altura da imagem
+                const img = document.createElement('img');
+                img.src = product.imagem;
+                img.alt = product.nomeProduto;
+                img.style.width = '200px';
+                img.style.height = '200px';
 
-                    const cardBody = document.createElement('div');
-                    cardBody.classList.add('card-body');
+                const cardBody = document.createElement('div');
+                cardBody.classList.add('card-body');
 
-                    const title = document.createElement('h5');
-                    title.classList.add('card-title');
-                    title.textContent = product.nomeProduto;
+                const title = document.createElement('h5');
+                title.classList.add('card-title');
+                title.textContent = product.nomeProduto;
 
-                    const price = document.createElement('p');
-                    price.classList.add('card-text');
-                    price.textContent = `Preço: ${product.preco}`;
+                const price = document.createElement('p');
+                price.classList.add('card-text');
+                price.textContent = `Preço: ${product.preco}`;
 
-                    const description = document.createElement('p');
-                    description.classList.add('card-text');
-                    description.textContent = product.descricao;
+                const description = document.createElement('p');
+                description.classList.add('card-text');
+                description.textContent = product.descricao;
 
-                    const buyButton = document.createElement('button');
-                    buyButton.textContent = 'Comprar';
-                    buyButton.classList.add('buy-button');
+                const buyButton = document.createElement('button');
+                buyButton.textContent = 'Detalhe do Produto';
+                buyButton.classList.add('buy-button');
+
+                // Adicionando evento de clique ao card
+                card.addEventListener('click', function() {
+                    window.location.href = `equipamentodetails.html?id=${product.produtoId}`;
+                });
 
                     // Adicionar elementos ao card
                     card.appendChild(img);
@@ -104,9 +156,7 @@
             }
         }
 
-        // Chama a função para preencher a lista de produtos quando a página carrega
         window.addEventListener('load', fillProductList);
     </script>
 </body>
-
 </html>

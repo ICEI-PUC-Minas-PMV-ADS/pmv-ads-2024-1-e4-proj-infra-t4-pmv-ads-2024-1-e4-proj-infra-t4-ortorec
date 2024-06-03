@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ianme\\OneDrive\\Documentos\\GitHub\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj": {}
+    "C:\\Users\\ianme\\OneDrive\\Documentos\\PUC\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ianme\\OneDrive\\Documentos\\GitHub\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj": {
+    "C:\\Users\\ianme\\OneDrive\\Documentos\\PUC\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ianme\\OneDrive\\Documentos\\GitHub\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj",
+        "projectUniqueName": "C:\\Users\\ianme\\OneDrive\\Documentos\\PUC\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj",
         "projectName": "APIPedidosRecomecar",
-        "projectPath": "C:\\Users\\ianme\\OneDrive\\Documentos\\GitHub\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj",
+        "projectPath": "C:\\Users\\ianme\\OneDrive\\Documentos\\PUC\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\APIPedidosRecomecar.csproj",
         "packagesPath": "C:\\Users\\ianme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ianme\\OneDrive\\Documentos\\GitHub\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\obj\\",
+        "outputPath": "C:\\Users\\ianme\\OneDrive\\Documentos\\PUC\\pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec\\src\\APIPedidosRecomecar\\APIPedidosRecomecar\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ianme\\AppData\\Roaming\\NuGet\\NuGet.Config",

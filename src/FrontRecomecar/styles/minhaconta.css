@@ -1,170 +1,205 @@
 body {
-  background-color: white;
-  font-family: Roboto;
-  margin: 0;
-  padding: 0;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto;
-  width: 300px;
-  margin-top: 30px;
-  margin-bottom: 0px;
+    background-color: white;
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
 header {
-  background-color: #DCB5F6;
-  padding: 20px;
-  text-align: center;
+    background-color: #DCB5F6;
+    padding: 2px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-header h1 {
-  margin: 0;
-  color: #ffffff;
+.logo {
+    display: block;
+    margin: 0;
+    width: 250px;
+    margin-bottom: -27px;
+}
+
+nav {
+    background-color: #DCB5F6;
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 205px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 17px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #ce91f7;
+}
+
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.top-right .button {
+    color: black;
+    background-color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+    border: 1px solid #333;
+    transition: background-color 0.3s ease;
+}
+
+.top-right .button:hover {
+    background-color: #f0f0f0;
 }
 
 main {
-  padding: 20px;
+    padding: 20px;
 }
 
-.account-info,
-.order-history {
-  border: 2px solid #DCB5F6;
-  padding: 20px;
-  margin-bottom: 20px;
-  text-align: center;
+.company-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
 }
 
-.account-info h2,
-.order-history h2 {
-  margin-top: 0;
-  color: #333333;
+.company-text {
+    max-width: 50%;
+    text-align: left;
 }
 
-.account-form {
-  max-width: 600px;
-  margin: 0 auto;
-  /* Centraliza o formulário */
-  text-align: left;
-  display: flex;
-  /* Adicionado */
-  flex-direction: column;
-  /* Adicionado */
-  padding: 40px;
-  /* Adicionado */
-  background-color: rgb(255, 223, 251);
-  /* Adicionado */
-  border-radius: 8px;
-  /* Adicionado */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  /* Adicionado */
+.company-header .company-image {
+    max-width: 45%;
+    height: auto;
+    border-radius: 10px;
 }
 
-.account-form label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
+.company-header h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-.account-form input,
-.account-form textarea {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  /* Alterado */
-  height: 20px;
-  /* Removido */
+.company-header p {
+    font-size: 18px;
+    color: #666;
 }
 
-.account-form .senha {
-  display: flex;
+.company-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.account-form #olhoSenha {
-  border: 0;
-  border-radius: 0px 5px 5px 0px;
-  background-color: blue;
-  color: white;
-  height: 25px;
-  width: 40px;
-  cursor: pointer;
+.info-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.account-form #olhoSenha:active {
-  background-color: rgb(0, 0, 42);
+.info-section h2 {
+    font-size: 24px;
+    color: #00968a;
+    margin-bottom: 10px;
 }
 
-.account-form .options {
-  margin-top: 50px;
-  text-align: center;
+.info-section p {
+    font-size: 16px;
+    color: #666;
+}
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
-.account-form .options a {
-  display: block;
-  margin-bottom: 80px;
-  color: #007bff;
-  text-decoration: none;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.account-form .options a:hover {
-  text-decoration: underline;
+.content {
+    flex: 1; /* Expande para preencher o espaço disponível */
 }
 
-.account-form #submit,
-.account-form button[type="submit"] {
-  color: white;
-  background-color: blue;
-  width: 30%;
-  height: 30px;
-  border: 0;
-  border-radius: 10px;
-  cursor: pointer;
-  display: block;
-  margin: 0 auto;
-  /* Centraliza o botão */
-}
-
-.account-form #submit:active {
-  background-color: rgb(0, 0, 42);
-}
-
-footer {
-  background-color: #DCB5F6;
-  padding: 10px;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-footer p {
-  margin: 0;
-  color: #ffffff;
-}
-
-@media only screen and (max-width: 600px) {
-  main {
-    padding: 10px;
-  }
-
-  .account-info,
-  .order-history {
-    padding: 10px;
-  }
-
-  .account-form {
-    max-width: 100%;
-    padding: 10px;
-  }
-
-  .account-form input[type="submit"] {
+.footer-container {
+    background-color: #DCB5F6;
+    color: white;
+    padding: 20px 0;
     width: 100%;
-  }
+    text-align: center;
+}
 
-  .action-buttons button {
-    margin-right: 20px;
+.footer-container .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinha verticalmente */
+    width: 80%;
+    max-width: 800px;
     margin-bottom: 20px;
-  }
+}
+
+.footer-info {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-links {
+    flex: 1;
+    text-align: right;
+}
+
+.footer-links p {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-info h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
 }

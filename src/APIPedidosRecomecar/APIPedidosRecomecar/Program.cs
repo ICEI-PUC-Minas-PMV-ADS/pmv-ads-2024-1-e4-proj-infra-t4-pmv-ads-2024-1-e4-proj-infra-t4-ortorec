@@ -10,10 +10,39 @@ namespace APIPedidosRecomecar
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // Configuração do CORS
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
+
+            // Configuração do CORS
+            //builder.Services.AddCors(options =>
+            //{
+            //    options.AddPolicy("AllowSpecificOrigin",
+            //        builder =>
+            //        {
+            //            builder.WithOrigins("http://seufrontend.com:porta")
+            //                   .AllowAnyMethod()
+            //                   .AllowAnyHeader();
+            //        });
+            //});
+
+
             // Add services to the container.
             builder.Services.Configure<RecomecarDatabaseSettings>(
                 builder.Configuration.GetSection("RecomecarDatabase"));
             builder.Services.AddSingleton<PedidoService>();
+
+            builder.Services.Configure<RecomecarDatabaseSettings>(
+                builder.Configuration.GetSection("RecomecarDatabase"));
+            builder.Services.AddSingleton<CarrinhoCompraService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -32,6 +61,9 @@ namespace APIPedidosRecomecar
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+
+            // Configure o middleware CORS
+            app.UseCors("AllowAll");
 
 
             app.MapControllers();

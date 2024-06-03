@@ -3,29 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quem somos</title>
     <link rel="stylesheet" href="../styles/quemsomos.css">
+    <title>Nossa Empresa</title>
+    <style>
+        /* Adicione algumas estilizações básicas para o ícone do carrinho e o badge */
+        .cart-container {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        
+        .cart-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <img src="../assets/logoinicial.PNG" alt="Logo" class="logo">
-        <h1>Quem somos</h1>
+        <div class="top-right">
+            <a href="minhaconta.html" class="button">Minha Conta</a>
+            <div class="cart-container">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-badge" class="badge" style="display:none;">0</span>
+            </div>
+        </div>
+        <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="quemsomos.html">Quem somos</a>
+            <a href="equipamentos.html">Produtos</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="atendimento.html">Atendimento</a>
+            <a href="login.html">Sair</a>
+        </nav>
     </header>
     <main>
-        <section class="service">
-             <br>
-            <p>Na REMOCEÇAR, somos uma equipe comprometida em oferecer soluções ortopédicas de qualidade, combinando expertise técnica com um profundo compromisso social. Nosso foco vai além de simplesmente fornecer produtos ortopédicos; buscamos promover o bem-estar e a igualdade em nossa comunidade. <br><br>
-
-                Com serviços de manutenção preventiva e corretiva, garantimos a eficiência operacional e a durabilidade dos seus equipamentos, assegurando seu conforto e segurança. Nossa equipe altamente qualificada está pronta para intervir, diagnosticar e resolver quaisquer problemas que possam surgir. <br><br>
-                
-                Além disso, através do programa "RECOMEÇAR SOCIAL", dedicamos 10% dos nossos produtos para empréstimo a pessoas carentes da Região Metropolitana de Belo Horizonte (RMBH). Nosso objetivo é tornar os equipamentos ortopédicos essenciais mais acessíveis para aqueles que enfrentam desafios em seus recomeços. <br><br>
-                
-                Na REMOCEÇAR, não estamos apenas comprometidos com o negócio; estamos comprometidos em fazer a diferença na vida das pessoas. Junte-se a nós em nossa missão de construir uma comunidade mais inclusiva e acolhedora para todos.</section>
-       
+        <div class="company-header">
+            <div class="service-content">
+                <h2>Nossa Empresa</h2>
+                <p>Bem-vindo à Recomeçar Equipamentos Ortopédicos. Somos uma equipe comprometida em oferecer soluções ortopédicas de qualidade, combinando expertise técnica com um profundo compromisso social. Nosso foco vai além de simplesmente fornecer produtos ortopédicos; buscamos promover o bem-estar e a igualdade em nossa comunidade.</p>
+                <p>Com serviços de manutenção preventiva e corretiva, garantimos a eficiência operacional e a durabilidade dos seus equipamentos, assegurando seu conforto e segurança. Nossa equipe altamente qualificada está pronta para intervir, diagnosticar e resolver quaisquer problemas que possam surgir.</p>
+                <p>Nas nossas Lojas encontrará toda a variedade de ortóteses e equipamentos ortopédicos que promovem conforto, autonomia e qualidade de vida. Os nossos artigos direcionam-se a todas as faixas etárias e servem diferentes necessidades, sejam elas temporárias ou apenas de prevenção.</p>
+                <p>Para além dos produtos de apoio e correção que visam contribuir para ultrapassar limitações, preocupamo-nos também em disponibilizar artigos direcionados ao conforto e bem-estar, que proporcionam um aumento da qualidade de vida de quem deles usufrui.</p>
+                <p>Além disso, através do programa "RECOMEÇAR SOCIAL", dedicamos 10% dos nossos produtos para empréstimo a pessoas carentes da Região Metropolitana de Belo Horizonte (RMBH). Nosso objetivo é tornar os equipamentos ortopédicos essenciais mais acessíveis para aqueles que enfrentam desafios em seus recomeços.</p>
+            </div>
+            <img src="../assets/lojarecomecar.jpg" alt="Loja Recomeçar" class="company-image">
+        </div>
+        <div class="company-info">
+            <div class="info-section">
+                <h2>Visão</h2>
+                <p>Ser a empresa de referência no setor de equipamentos ortopédicos, oferecendo soluções inovadoras e de alta qualidade que melhorem a qualidade de vida dos nossos clientes.</p>
+            </div>
+            <div class="info-section">
+                <h2>Missão</h2>
+                <p>Proporcionar aos nossos clientes os melhores produtos e serviços ortopédicos, com foco na inovação, qualidade e satisfação do cliente, contribuindo para a saúde e bem-estar da comunidade.</p>
+            </div>
+            <div class="info-section">
+                <h2>Valores</h2>
+                <p>Nossos valores incluem a excelência no atendimento ao cliente, a inovação constante, a integridade em todas as ações, e o compromisso com a qualidade e a responsabilidade social.</p>
+            </div>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.</p>
+    <footer id="footer" class="footer-container">
+        <div class="container">
+            <div class="footer-column">
+                <div class="footer-info">
+                    <h4>APOIO AO CLIENTE</h4>
+                    <p>+351 217 151 606 / +351 219 890 697</p>
+                    <p>Chamada para a rede fixa nacional</p>
+                </div>
+                <div class="footer-links">
+                    <p><a href="#">POLÍTICA DE PRIVACIDADE</a></p>
+                    <p><a href="#">TERMOS E CONDIÇÕES</a></p> 
+                    <p><a href="#">LIVRO DE RECLAMAÇÕES</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
-

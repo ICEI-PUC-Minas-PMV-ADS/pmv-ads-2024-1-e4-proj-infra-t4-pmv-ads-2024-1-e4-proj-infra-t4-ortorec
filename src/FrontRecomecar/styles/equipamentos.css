@@ -1,133 +1,293 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: white;
-    color: #333;
+    font-family: Roboto, Arial, sans-serif;
     margin: 0;
     padding: 0;
-  }
-  
-  header {
-    background-color: white;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  nav {
-    background-color: #DCB5F6;
-    color: #DCB5F6;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .logo {
-    display: block;
-    margin: 0 auto;
-    width: 300px;
-    margin-top: 30px;
-    margin-bottom: 0px;
+    color: #333;
 }
-  
-  nav a {
+
+header {
+    background-color: #DCB5F6;
+    padding: 2px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 50px;
+    color: blue;
+}
+
+.logo {
+    display: block;
+    margin: 0;
+    width: 250px;
+    margin-bottom: -27px;
+}
+
+nav {
+    background-color: #DCB5F6;
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 205px;
+}
+
+nav a {
     color: #333;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 17px;
     padding: 5px;
     border-radius: 5px;
-  }
-  
-  nav a:hover {
-    background-color: #ce91f7;
-  }
-  
-  main {
-    padding: 20px;
-  }
-
-  .card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    width: calc(25% - 20px); /* Calcula a largura para 4 cards por linha */
-    box-sizing: border-box; /* Garante que a largura inclua padding e bordas */
-    float: left; /* Para garantir que os cards fiquem lado a lado */
-    background-color: #fff; /* Cor de fundo do card */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para efeito de elevação */
-    transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
 }
 
-.card:hover {
-    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+nav a:hover {
+    background-color: #ce91f7;
+}
+
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.top-right .button {
+    color: black;
+    background-color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+    border: 1px solid #333;
+    transition: background-color 0.3s ease;
+}
+
+.top-right .button:hover {
+    background-color: #f0f0f0;
+}
+
+.main {
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+    height: auto;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: blue;
+}
+
+.form-content {
+    background-color: #f9f9f9;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 50%;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-button {
+    background-color: #DCB5F6;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #ce91f7;
+}
+
+@media only screen and (max-width: 600px) {
+    .main {
+        padding: 10px;
+    }
+
+    .form-content {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+.footer-container {
+    background-color: #DCB5F6;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-container .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Ensures vertical alignment */
+    width: 80%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.footer-info {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-links {
+    flex: 1;
+    text-align: right;
+}
+
+.footer-links p {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-info h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}
+
+.footer-bottom {
+    margin-top: 0px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 80px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 2px 2px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #f1f1f1;
+}
+
+/* Adicione esta regra para garantir que haja 4 cards em cada linha */
+.row-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Adicione esta regra para garantir que os cards tenham o mesmo tamanho */
+.card {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    flex: 1;
+    margin: 30px;
 }
 
 .card img {
-    max-width: 100%; /* Ajusta a largura da imagem para se ajustar ao tamanho do card */
-    height: auto; /* Permite que a altura da imagem seja ajustada automaticamente */
-    border-radius: 5px; /* Adiciona borda arredondada à imagem */
-}
-
-.card-body {
-    padding-top: 10px; /* Espaçamento interno adicional no topo do corpo do card */
-}
-
-.card-title {
-    font-size: 18px; /* Tamanho da fonte do título */
-    margin-bottom: 5px; /* Margem inferior para separar o título do conteúdo abaixo */
-}
-
-.card-text {
-    color: #666; /* Cor do texto */
-    font-size: 14px; /* Tamanho da fonte do texto */
-    margin-bottom: 8px; /* Margem inferior para separar os parágrafos */
-}
-
-.row-container {
-    clear: both; /* Limpa as flutuações anteriores para iniciar uma nova linha */
-    overflow: hidden; /* Para conter as flutuações dos cards */
-    margin-bottom: 20px; /* Espaço entre as linhas */
-}
-
-  
-  h1 {
-    color: #333;
-    text-align: center;
-  }
-
-  header img {
-    width: 500px;
+    width: 100%;
     height: auto;
-  }
-  
-  .product {
-    background-color:#DCB5F6;
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 20px 0;
-    display: flex;
-    align-items: center;
-  }
-  
-  .product img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin-right: 20px;
-  }
-  
-  .product h2 {
+    border-radius: 8px;
+}
+
+.card h5 {
+    margin-top: 0;
     color: #333;
-    margin: 0 0 10px;
-  }
-  
-  .product p {
+}
+
+.card p {
     color: #666;
-    margin: 0;
-  }
-  
-  footer {
+}
+
+.buy-button {
     background-color: #DCB5F6;
-    color: #DCB5F6;
-    padding: 10px;
-    text-align: center;
-  }
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #ce91f7;
+}
