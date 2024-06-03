@@ -125,6 +125,20 @@ main {
     font-size: 16px;
     color: #666;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1; /* Expande para preencher o espaço disponível */
+}
 
 .footer-container {
     background-color: #DCB5F6;
@@ -143,7 +157,7 @@ main {
 .footer-column {
     display: flex;
     justify-content: space-between;
-    align-items: center;  /* Ensures vertical alignment */
+    align-items: center; /* Alinha verticalmente */
     width: 80%;
     max-width: 800px;
     margin-bottom: 20px;

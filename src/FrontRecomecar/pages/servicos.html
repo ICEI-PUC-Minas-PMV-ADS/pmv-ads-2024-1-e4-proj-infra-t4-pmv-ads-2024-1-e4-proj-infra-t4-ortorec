@@ -6,15 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços da Loja Ortopédica</title>
     <link rel="stylesheet" href="../styles/servicos.css">
+    <style>
+        /* Adicione algumas estilizações básicas para o ícone do carrinho e o badge */
+        .cart-container {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        
+        .cart-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            font-size: 12px;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <div class="top-right">
             <a href="minhaconta.html" class="button">Minha Conta</a>
+            <div class="cart-container">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-badge" class="badge" style="display:none;">0</span>
+            </div>
         </div>
         <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
         <nav>
+            <a href="home.html">Home</a>
             <a href="quemsomos.html">Quem somos</a>
             <a href="equipamentos.html">Produtos</a>
             <a href="servicos.html">Serviços</a>
@@ -25,6 +54,13 @@
 
     <main>
         <div class="service-container">
+            <!-- Lista de serviços será preenchida dinamicamente -->
+            <!-- <section id="serviceList">
+                <h2>Serviços Disponíveis</h2>
+                <div id="services" class="row-container">
+                </div>
+            </section> -->
+
             <section class="service">
                 <div class="service-content">
                     <h2>MANUTENÇÃO EM EQUIPAMENTOS</h2>
@@ -65,6 +101,73 @@
             </div>
         </div>
     </footer>
-</body>
 
+    <script>
+        async function makeRequest(url) {
+            try {
+                const response = await fetch(url);
+                return await response.json();
+            } catch (error) {
+                console.error('Erro ao fazer requisição:', error);
+                throw error;
+            }
+        }
+
+        async function fillServiceList() {
+            const serviceListElement = document.getElementById('services');
+            try {
+                const services = await makeRequest('https://localhost:7109/api/Servicos/GetServicos');
+                serviceListElement.innerHTML = '';
+
+                services.forEach(service => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.setAttribute('data-id', service.servicoId);
+
+                const img = document.createElement('img');
+                img.src = service.imagem;
+                img.style.width = '200px';
+                img.style.height = '200px';
+
+                const cardBody = document.createElement('div');
+                cardBody.classList.add('card-body');
+
+                const description = document.createElement('p');
+                description.classList.add('card-text');
+                description.textContent = service.descricao;
+
+                const price = document.createElement('p');
+                price.classList.add('card-text');
+                price.textContent = `Preço: ${service.preco}`;
+
+                const buyButton = document.createElement('button');
+                buyButton.textContent = 'Detalhe do Produto';
+                buyButton.classList.add('buy-button');
+
+                // Adicionando evento de clique ao card
+                card.addEventListener('click', function() {
+                    window.location.href = `servicodetails.html?id=${service.servicoId}`;
+                });
+
+                    // Adicionar elementos ao card
+                    card.appendChild(img);
+                    card.appendChild(cardBody);
+                    cardBody.appendChild(description);
+                    cardBody.appendChild(price);
+                    cardBody.appendChild(buyButton);
+
+                    // Adicionar o card à lista de produtos
+                    serviceListElement.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error('Erro ao preencher lista de serviços:', error);
+            }
+        }
+
+        window.addEventListener('load', fillServiceList);
+    </script>
+
+
+</body>
 </html>

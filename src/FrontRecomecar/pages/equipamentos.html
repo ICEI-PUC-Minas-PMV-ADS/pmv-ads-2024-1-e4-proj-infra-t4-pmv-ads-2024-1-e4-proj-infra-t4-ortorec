@@ -5,14 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/equipamentos.css">
     <title>Equipamentos</title>
+    <style>
+        /* Adicione algumas estilizações básicas para o ícone do carrinho e o badge */
+        .cart-container {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        
+        .cart-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="top-right">
             <a href="minhaconta.html" class="button">Minha Conta</a>
+            <div class="cart-container">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-badge" class="badge" style="display:none;">0</span>
+            </div>
         </div>
         <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
         <nav>
+            <a href="home.html">Home</a>
             <a href="quemsomos.html">Quem somos</a>
             <div class="dropdown">
                 <a href="equipamentos.html" class="dropbtn">Produtos</a>
@@ -107,7 +136,7 @@
 
                 // Adicionando evento de clique ao card
                 card.addEventListener('click', function() {
-                    window.location.href = `details.html?id=${product.produtoId}`;
+                    window.location.href = `equipamentodetails.html?id=${product.produtoId}`;
                 });
 
                     // Adicionar elementos ao card

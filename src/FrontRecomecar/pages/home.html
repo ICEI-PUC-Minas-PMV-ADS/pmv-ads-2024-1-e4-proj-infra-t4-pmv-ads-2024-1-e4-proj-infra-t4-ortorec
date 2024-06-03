@@ -5,14 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/home.css">
     <title>Equipamentos</title>
+    <style>
+        /* Adicione algumas estilizações básicas para o ícone do carrinho e o badge */
+        .cart-container {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        
+        .cart-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body id="category" class="lang-pt country-pt currency-eur layout-left-column page-category tax-display-enabled category-id-201 category-mobilidade category-id-parent-2 category-depth-level-2 fullwidth">
     <header>
         <div class="top-right">
             <a href="minhaconta.html" class="button">Minha Conta</a>
+            <div class="cart-container">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-badge" class="badge" style="display:none;">0</span>
+            </div>
         </div>
         <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
         <nav>
+            <a href="home.html">Home</a>
             <a href="quemsomos.html">Quem somos</a>
             <a href="equipamentos.html">Produtos</a>
             <a href="servicos.html">Serviços</a>
@@ -39,7 +68,6 @@
         </div>
         <div class="container">
             <section id="productList">
-                <h2>Produtos Disponíveis</h2>
                 <div id="products" class="row-container">
                     <!-- Lista de produtos será preenchida dinamicamente -->
                 </div>
