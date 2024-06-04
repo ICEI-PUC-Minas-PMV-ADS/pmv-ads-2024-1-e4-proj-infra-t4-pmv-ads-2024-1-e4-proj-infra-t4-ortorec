@@ -114,12 +114,13 @@ O processo 4 representa um compromisso com a excelência na experiência do clie
 
 ## Indicadores de Desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
-
-Usar o seguinte modelo: 
-
-![Indicadores de Desempenho](img/02-indic-desemp.png)
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
+|Indicador    | Descrição  | Meta | Perspectiva |
+|--------|-----------------------------------------|----|----|
+|Cadastro de Usuários|Tempo médio para cadastro|Inferior a 3 minutos|Clientes|
+|Tempo Resposta a Consultas|Tempo médio de resposta|Inferior a 500 ms|Processo Interno|
+|Taxa Erros na Recuperação Senha|Percentual erros/falhas reportados|Menos de 2%| Clientes|
+|Taxa Sucesso na Primeira Utilização|Execução de tarefas| Acima de 94%| Clientes|
+|Compatibilidade Dispositivos|Web/Mobile|100% de compatibilidade|Processo Interno|
 
 ## Requisitos
 
@@ -163,26 +164,19 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
 
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
-
 ## Diagrama de Casos de Uso
 
 ![Recomece (6)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106103247/2fcd7c3b-57e7-49e5-a470-75fe1e8ab8a1)
 
 # Matriz de Rastreabilidade
+		
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/0939424d-5807-4af3-adb4-dcbfb7d99f45)
 
-A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
-
-A matriz deve contemplar todos os elementos relevantes que fazem parte do sistema, conforme a figura meramente ilustrativa apresentada a seguir.
-
-![Exemplo de matriz de rastreabilidade](img/02-matriz-rastreabilidade.png)
-
-> **Links Úteis**:
-> - [Artigo Engenharia de Software 13 - Rastreabilidade](https://www.devmedia.com.br/artigo-engenharia-de-software-13-rastreabilidade/12822/)
-> - [Verificação da rastreabilidade de requisitos usando a integração do IBM Rational RequisitePro e do IBM ClearQuest Test Manager](https://developer.ibm.com/br/tutorials/requirementstraceabilityverificationusingrrpandcctm/)
-> - [IBM Engineering Lifecycle Optimization – Publishing](https://www.ibm.com/br-pt/products/engineering-lifecycle-optimization/publishing/)
+Legenda:  
+CT-S => Caso de Teste de Software	<br>			
+CT-U => Caso de Teste de Usabilidade	<br>			
+RF => Requisito Funcional	<br>			
+RNF => Requisito Não Funcional				
 
 
 # Gerenciamento de Projeto
