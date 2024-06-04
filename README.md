@@ -43,6 +43,8 @@ Para rodar de fato a aplicação mobile, será necessário instalar algumas bibl
 
 ```npm install appwrite@14.0.1```
 
+```npm install react-native-animatable```
+
 Agora você vai precisar rodar o tailwind para que ele crie um arquivo chamado tailwind.config.js, coloque este código no terminal: 
 
 ```npx tailwindcss init```
