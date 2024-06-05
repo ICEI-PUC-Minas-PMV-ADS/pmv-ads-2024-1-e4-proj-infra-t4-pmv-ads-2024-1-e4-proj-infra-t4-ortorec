@@ -23,7 +23,84 @@ O Projeto “Recomeçar” é uma ideia criada para facilitar e incentivar o ace
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+### Aplicação Mobile
+
+O projeto mobile foi feito na versão 20.14 do node, para evitar erros é recomendado utilizar a mesma versão. Para verificar a versão instalada no seu computador abra o ``cmd`` ou o ``terminal`` de seu computador e digite: ``node -v``, este comando trará versão presente em sua máquina. Caso a versão do node seja anterior ou ele não tenha sido instalado, você pode baixar por este site: https://nodejs.org/en/download/prebuilt-installer.
+
+Primeiro é preciso clonar o repositório do projeto. 
+
+Para rodar de fato a aplicação mobile, será necessário instalar algumas bibliotecas, coloque os códigos no seu terminal do vscode no ambiente do projeto localizado em recomecar-mobile -> Recomecar:
+
+```npm install```
+
+```npm install expo-cli --global```
+
+```npm install nativewind```
+
+```npm install --save-dev tailwindcss@3.3.2```
+
+```npm install node-appwrite@11.1.1```
+
+```npm install appwrite@14.0.1```
+
+```npm install react-native-animatable```
+
+Agora você vai precisar rodar o tailwind para que ele crie um arquivo chamado tailwind.config.js, coloque este código no terminal: 
+
+```npx tailwindcss init```
+
+Depois de ser gerado, copie o código abaixo e substitua toda a página do arquivo criado: 
+````
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        primary: "#161622",
+        secondary: {
+          DEFAULT: "#fb00ff",
+          100: "#9C1BE0",
+          200: "#861BE0",
+        },
+        black: {
+          DEFAULT: "#000",
+          100: "#1E1E2D",
+          200: "#232533",
+        },
+        gray: {
+          100: "#CDCDE0",
+        },
+      },
+      fontFamily: {
+        pthin: ["Poppins-Thin", "sans-serif"],
+        pextralight: ["Poppins-ExtraLight", "sans-serif"],
+        plight: ["Poppins-Light", "sans-serif"],
+        pregular: ["Poppins-Regular", "sans-serif"],
+        pmedium: ["Poppins-Medium", "sans-serif"],
+        psemibold: ["Poppins-SemiBold", "sans-serif"],
+        pbold: ["Poppins-Bold", "sans-serif"],
+        pextrabold: ["Poppins-ExtraBold", "sans-serif"],
+        pblack: ["Poppins-Black", "sans-serif"],
+      },
+    },
+  },
+  plugins: [],
+};
+````
+Essas são algumas configurações que padronizam a estilização do app. Depois disso, vá no arquivo "babel.config.js" e coloque embaixo de presets:
+
+`plugins: ["nativewind/babel"]`
+
+Isso vair referenciar a biblioteca do nativewind para as edições. Mas para garantir o funcionamento dela crie um arquivo chamado "app.d.ts", ele deve permanecer fora das pastas, e dentro dele coloque:
+
+`/// <reference types="nativewind/types" />`
+
+Depois vá no seu terminal do visual studio code e coloque:
+
+`npm expo start -c`
+
+Com este comando ele vai limpar o cache antes de rodar o expo. Assim o app estará com todas suas depêndencias e estará pronto para ser executado.
 
 # Documentação
 
