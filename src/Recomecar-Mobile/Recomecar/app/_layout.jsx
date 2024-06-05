@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { SplashScreen, Stack } from "expo-router";
 
 import  GlobalProvider  from '../context/GlobalProvider'
+import { StatusBar } from 'expo-status-bar';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -43,7 +44,7 @@ const RootLayout = () => {
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        {/* <Stack.Screen name="/busca/[query]" options={{ headerShown: false }} /> */}
+        <Stack.Screen name="busca/[query]" options={{ headerShown: false }} /> 
       </Stack>
     </GlobalProvider>
   );

@@ -20,7 +20,7 @@ const zoomOut = {
   },
 }
 
-const DestaqueItem = ({ activeItem, item}) => {
+const NewProductItem = ({ activeItem, item}) => {
     
   return(
     <Animatable.View
@@ -39,7 +39,7 @@ const DestaqueItem = ({ activeItem, item}) => {
           resizeMode='cover'
         />
 
-      <Text className=' text-green-500 mb-2 px-2 bg-white rounded-lg'>R${item.preco}</Text>
+      <Text className=' mb-2 px-2 bg-white rounded-lg'>R${item.preco}</Text>
 
       </TouchableOpacity>
 
@@ -47,7 +47,7 @@ const DestaqueItem = ({ activeItem, item}) => {
   )
 }
 
-const Destaque = ({ posts }) => {
+const Novidades = ({ posts }) => {
   const [activeItem, setActiveItem] = useState(posts[0]);
 
   const viewableItemsChanged = ({ viewableItems }) => {
@@ -61,7 +61,7 @@ const Destaque = ({ posts }) => {
         data={posts}
         keyExtractor={(item) => item.$id}
         renderItem={({ item }) => (
-          <DestaqueItem
+          <NewProductItem
             activeItem={activeItem}
             item={item}
           />
@@ -76,4 +76,4 @@ const Destaque = ({ posts }) => {
   )
 }
 
-export default Destaque
+export default Novidades

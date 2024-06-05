@@ -26,7 +26,7 @@ useEffect(() => {
 
 const refetch = () => fetchData();
 
-return { data };
+return { data, isLoading, refetch };
 }
 
 export default useAppwrite;

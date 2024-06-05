@@ -100,7 +100,7 @@ client
          throw new Error(error)
      }
  }
-
+// Verificar se o usuário está logado
  export const getCurrentUser = async () => {
     try {
         const currentAccount = await account.get();
@@ -121,7 +121,7 @@ client
         console.log(error);
     }
  }
-
+// Puxa os produtos do banco de dados
  export const getAllPosts = async () => {
  
   try {
@@ -131,6 +131,61 @@ client
       produtoCollectionId
     );
 
+
+    return posts.documents;
+
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+// Puxa os produtos mais recentes do banco de dados
+export const getNewProductsPosts = async () => {
+ 
+  try {
+
+    const posts = await databases.listDocuments(
+      databaseId,
+      produtoCollectionId,
+      [Query.orderDesc('$createdAt', Query.limit(7))]
+    );
+
+
+    return posts.documents;
+
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+// Puxa os produtos em destaque do banco de dados
+export const getTrendingPosts = async () => {
+ 
+  try {
+
+    const posts = await databases.listDocuments(
+      databaseId,
+      produtoCollectionId,
+      [Query.equal('destaque', [true])]
+    );
+
+
+    return posts.documents;
+
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+// Permite o usuário buscar por Produtos
+export const searchPosts = async (query) => {
+ 
+  try {
+
+    const posts = await databases.listDocuments(
+      databaseId,
+      produtoCollectionId,
+      [Query.search('nome', query)]
+    );
+
+    if (!posts) throw new Error("Something went wrong");
 
     return posts.documents;
 

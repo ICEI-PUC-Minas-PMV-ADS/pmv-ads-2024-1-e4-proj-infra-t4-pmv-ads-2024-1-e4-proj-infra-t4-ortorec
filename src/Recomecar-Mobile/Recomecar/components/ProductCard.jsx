@@ -1,7 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const ProductCard = ({ product: { nome, foto, preco } }) => {
+const ProductCard = ({ nome, foto, preco }) => {
   return (
     <View className='flex-col p-6 py-10 mb-10 bg-secondary-200 rounded-xl mx-5'>
 

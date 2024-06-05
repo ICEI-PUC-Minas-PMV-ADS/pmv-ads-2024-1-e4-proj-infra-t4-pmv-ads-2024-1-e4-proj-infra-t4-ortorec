@@ -4,16 +4,19 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { images } from "../../constants"
-import SearchImput from "../../components/SearchImput"
-import Destaques from "../../components/Destaques"
+import SearchInput from "../../components/SearchInput"
+import Novidades from "../../components/Novidades"
 import EstadoVazio from '@/components/EstadoVazio'
-import { getAllPosts } from '../../lib/appwrite'
+import { getAllPosts, getNewProductsPosts, getTrendingPosts } from '../../lib/appwrite'
 import useAppwrite from '../../lib/useAppwrite'
 import ProductCard from '../../components/ProductCard'
+import Destaque from '../../components/Destaques'
 
 const Home = () => {
 
   const { data: posts, refetch } = useAppwrite(getAllPosts);
+  const { data: latestProducts } = useAppwrite(getNewProductsPosts);
+  const { data: trendingProducts } = useAppwrite(getTrendingPosts);
 
   const [refreshing, setRefreshing] = useState(false)
 
@@ -31,7 +34,11 @@ const Home = () => {
         data={posts}
         keyExtractor={(item) => item.$id}
         renderItem={({ item }) => (
-          <ProductCard product={item}/>
+          <ProductCard 
+            nome={item.nome}
+            foto={item.foto}
+            preco={item.preco}
+          />
         )}
         ListHeaderComponent={( ) => (
           <View className="my-6 px-4 space-y-6">
@@ -58,15 +65,27 @@ const Home = () => {
 
             </View>
 
-            <SearchImput/>
+            <SearchInput/>
 
             <View className='w-full flex-1 pt-5 pb-8'>
               <Text className='text-secondary text-lg font-pregular mb-3'>
-                Produtos em Destaque
+                Novidades!
               </Text>
 
-              <Destaques posts={[{ id: 1}, { id: 2 }, { id: 3}] ?? []} />
+              <Novidades posts={latestProducts ?? []} />
             </View>
+
+            <View className='w-full flex-1 pt-5 pb-8'>
+              <Text className='text-secondary text-lg font-pregular mb-3'>
+                Destaques...
+              </Text>
+
+              <Destaque posts={trendingProducts ?? []} />
+            </View>
+
+            <Text className='text-secondary text-lg font-pregular mb-3'>
+                Outros Produtos...
+              </Text>
 
           </View>
         )}
