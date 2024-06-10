@@ -131,17 +131,16 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |--------|-----------------------------------------|----|
 |RF001| O sistema deve permitir o cadastro, alteração e cancelamento de perfil do usuário | ALTA | 
 |RF002| O sistema deve permitir ao usuário criar, alterar e recuperar sua senha | ALTA |
-|RF003| O sistema deve permitir ao usuário criar, alterar e recuperar sua senha | ALTA |
-|RF004| Deve ser possível ao administrador cadastrar, alterar e excluir produtos no sistema | ALTA |
-|RF005| O sistema deve possibilitar a busca de um produto específico | BAIXA |
-|RF006| O sistema deve permitir o controle do estoque de produtos | MÉDIA |
-|RF007| O sistema deve emitir alertas automáticos para níveis baixos de estoque | BAIXO |
-|RF008| O sistema deve ter integração com meios de pagamento online e offline (cartões de crédito, débito, boleto bancário, pix) | ALTA |
-|RF009| O sistema deve ter integração com sistemas de teleatendimento e chat online para oferecer suporte ao cliente em tempo real | BAIXA |
-|RF010|O sistema deve permitir ao usuário visualizar os produtos oferecidos por categorias | MÉDIA |
-|RF011| O sistema deve oferecer ao usuário opções de agendamento (data) para execução de manutenção de equipamentos | MÉDIA |
-|RF012| O sistema deve fornecer um formulário para recebimento de doações de produtos | BAIXA |
-|RF013| O sistema deve oferecer ao usuário opções de agendamento (data/horário) para ser atendido na loja (página de ação social) | ALTA |
+|RF003| Deve ser possível ao administrador cadastrar, alterar e excluir produtos no sistema | ALTA |
+|RF004| O sistema deve possibilitar a busca de um produto específico | BAIXA |
+|RF005| O sistema deve permitir o controle do estoque de produtos | MÉDIA |
+|RF006| O sistema deve emitir alertas automáticos para níveis baixos de estoque | BAIXO |
+|RF007| O sistema deve ter integração com meios de pagamento online e offline (cartões de crédito, débito, boleto bancário, pix) | ALTA |
+|RF008| O sistema deve ter integração com sistemas de teleatendimento e chat online para oferecer suporte ao cliente em tempo real | BAIXA |
+|RF009|O sistema deve permitir ao usuário visualizar os produtos oferecidos por categorias | MÉDIA |
+|RF010| O sistema deve oferecer ao usuário opções de agendamento (data) para execução de manutenção de equipamentos | MÉDIA |
+|RF011| O sistema deve fornecer um formulário para recebimento de doações de produtos | BAIXA |
+|RF012| O sistema deve oferecer ao usuário opções de agendamento (data/horário) para ser atendido na loja (página de ação social) | ALTA |
 
 ### Requisitos não Funcionais
 

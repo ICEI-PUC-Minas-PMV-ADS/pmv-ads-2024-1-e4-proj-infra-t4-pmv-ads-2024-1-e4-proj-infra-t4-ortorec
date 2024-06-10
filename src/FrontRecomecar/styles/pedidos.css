@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    background-color: #DCB5F6;
+    color: #DCB5F6;
+    padding: 10px;
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+    nav a:hover {
+        background-color: #ce91f7;
+    }
+
+main {
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: calc(25% - 20px); /* Calcula a largura para 4 cards por linha */
+    box-sizing: border-box; /* Garante que a largura inclua padding e bordas */
+    float: left; /* Para garantir que os cards fiquem lado a lado */
+    background-color: #fff; /* Cor de fundo do card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para efeito de elevação */
+    transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+    .card:hover {
+        transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    }
+
+    .card img {
+        max-width: 100%; /* Ajusta a largura da imagem para se ajustar ao tamanho do card */
+        height: auto; /* Permite que a altura da imagem seja ajustada automaticamente */
+        border-radius: 5px; /* Adiciona borda arredondada à imagem */
+    }
+
+.card-body {
+    padding-top: 10px; /* Espaçamento interno adicional no topo do corpo do card */
+}
+
+.card-title {
+    font-size: 18px; /* Tamanho da fonte do título */
+    margin-bottom: 5px; /* Margem inferior para separar o título do conteúdo abaixo */
+}
+
+.card-text {
+    color: #666; /* Cor do texto */
+    font-size: 14px; /* Tamanho da fonte do texto */
+    margin-bottom: 8px; /* Margem inferior para separar os parágrafos */
+}
+
+.row-container {
+    clear: both; /* Limpa as flutuações anteriores para iniciar uma nova linha */
+    overflow: hidden; /* Para conter as flutuações dos cards */
+    margin-bottom: 20px; /* Espaço entre as linhas */
+}
+
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+header img {
+    width: 500px;
+    height: auto;
+}
+
+.product {
+    background-color: #DCB5F6;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+    .product img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        margin-right: 20px;
+    }
+
+    .product h2 {
+        color: #333;
+        margin: 0 0 10px;
+    }
+
+    .product p {
+        color: #666;
+        margin: 0;
+    }
+
+footer {
+    background-color: #DCB5F6;
+    color: #DCB5F6;
+    padding: 10px;
+    text-align: center;
+}
+
+hr {
+    border: none;
+    background-color: #00BBC7;
+    color: #00BBC7;
+    height: 1px;
+}
+
+h2 {
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px 0 20px 0;
+}
+
+.remove {
+    background-color: #F46560;
+    border: none;
+    box-shadow: none;
+    width: 60px;
+    height: 20px;
+    margin: 0 0 0 10px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.tasks {
+    width: 100%;
+}
+
+ul li {
+    list-style: none;
+    margin: 20px 200px 0px 50px;
+}

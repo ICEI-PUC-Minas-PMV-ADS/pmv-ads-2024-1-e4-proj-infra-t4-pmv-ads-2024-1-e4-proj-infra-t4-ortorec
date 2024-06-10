@@ -40,6 +40,10 @@ namespace APIPedidosRecomecar
                 builder.Configuration.GetSection("RecomecarDatabase"));
             builder.Services.AddSingleton<PedidoService>();
 
+            builder.Services.Configure<RecomecarDatabaseSettings>(
+                builder.Configuration.GetSection("RecomecarDatabase"));
+            builder.Services.AddSingleton<CarrinhoCompraService>();
+
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

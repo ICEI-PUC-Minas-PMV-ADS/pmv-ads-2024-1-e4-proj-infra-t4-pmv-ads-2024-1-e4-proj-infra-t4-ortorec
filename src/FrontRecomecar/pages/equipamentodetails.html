@@ -148,27 +148,16 @@
             }
         }
 
-        async function addToCart_Click(product) {
+        async function addToCart_Click(product, userId) {
             const cartItem = {
-                id: "string",
-                numeroPedido: 0, 
-                dataHoraPedido: new Date().toISOString(),
-                valorTotal: product.preco,
-                totalItens: 1,
-                produtosIds: [product.produtoId],
-                cliente: {
-                    nomeCliente: "Cliente Exemplo",
-                    endereco: "Endereço Exemplo",
-                    cpf: "123.456.789-00"
-                },
-                pagamento: {
-                    formaPagamento: 0,
-                    descricao: "Cartão de Crédito"
+                nomeProduto: product.nomeProduto,
+                preco: product.preco,
+                userId: userId,
                 }
             };
 
             try {
-                const response = await fetch('https://localhost:7272/api/Pedido', {
+                const response = await fetch('https://localhost:7272/api/CarrinhoCompra', {
                     method: 'POST',
                     headers: {
                         'accept': '*/*',
@@ -186,7 +175,7 @@
             } catch (error) {
                 console.error('Erro ao adicionar produto ao carrinho:', error);
             }
-        }
+        
 
         async function updateCartBadge() {
             try {
