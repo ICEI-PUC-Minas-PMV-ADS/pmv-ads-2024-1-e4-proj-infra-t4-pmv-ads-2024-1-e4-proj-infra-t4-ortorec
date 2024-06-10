@@ -1,4 +1,3 @@
-
 body {
     background-color: white;
     font-family: Roboto, Arial, sans-serif;
@@ -20,7 +19,7 @@ header {
 .logo {
     display: block;
     margin: 0;
-    width: 250px; 
+    width: 250px;
     margin-bottom: -27px;
 }
 
@@ -28,21 +27,21 @@ nav {
     background-color: #DCB5F6;
     padding: 10px;
     text-align: center;
-    flex-grow: 1; 
+    flex-grow: 1;
     margin-right: 205px;
-    }
+}
 
-    nav a {
-        color: #333;
-        text-decoration: none;
-        margin: 17px;
-        padding: 5px;
-        border-radius: 5px;
-    }
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 17px;
+    padding: 5px;
+    border-radius: 5px;
+}
 
-        nav a:hover {
-            background-color: #ce91f7;
-        }
+nav a:hover {
+    background-color: #ce91f7;
+}
 
 .top-right {
     position: absolute;
@@ -50,21 +49,21 @@ nav {
     right: 20px;
 }
 
-    .top-right .button {
-        color: black;
-        background-color: white;
-        padding: 5px 10px;
-        margin-left: 10px;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 12px;
-        border: 1px solid #333;
-        transition: background-color 0.3s ease;
-    }
+.top-right .button {
+    color: black;
+    background-color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+    border: 1px solid #333;
+    transition: background-color 0.3s ease;
+}
 
-        .top-right .button:hover {
-            background-color: #f0f0f0;
-        }
+.top-right .button:hover {
+    background-color: #f0f0f0;
+}
 
 main {
     padding: 20px;
@@ -78,7 +77,7 @@ main {
     justify-content: space-between;
     margin-bottom: 20px;
 }
-    
+
 .service {
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -94,20 +93,20 @@ main {
     align-items: center;
 }
 
-    .service.reverse {
-        flex-direction: row-reverse;
-    }
+.service.reverse {
+    flex-direction: row-reverse;
+}
 
-    .service:hover {
-        transform: translateY(-5px);
-    }
+.service:hover {
+    transform: translateY(-5px);
+}
 
-    .service img {
-        max-width: 40%;
-        height: auto;
-        border-radius: 5px;
-        margin: 0 20px;
-    }
+.service img {
+    max-width: 40%;
+    height: auto;
+    border-radius: 5px;
+    margin: 0 20px;
+}
 
 .service-content {
     flex: 1;
@@ -149,7 +148,7 @@ main {
 .footer-column {
     display: flex;
     justify-content: space-between;
-    align-items: center;  /* Ensures vertical alignment */
+    align-items: center;
     width: 80%;
     max-width: 800px;
     margin-bottom: 20px;
@@ -205,14 +204,64 @@ main {
         flex-direction: column;
     }
 
-        .service.reverse {
-            flex-direction: column;
-        }
+    .service.reverse {
+        flex-direction: column;
+    }
 
-        .service img {
-            max-width: 100%;
-            margin: 10px 0;
-        }
+    .service img {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+}
 
-    
+.row-container {
+    display: block;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card img {
+    max-width: 30%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card-body {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.card h5 {
+    margin-top: 0;
+    color: #333;
+}
+
+.card p {
+    color: #666;
+}
+
+.buy-button {
+    background-color: #DCB5F6;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #ce91f7;
 }

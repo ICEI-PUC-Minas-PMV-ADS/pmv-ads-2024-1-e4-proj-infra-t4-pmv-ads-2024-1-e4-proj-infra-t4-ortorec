@@ -5,30 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/atendimento.css">
     <title>Atendimento</title>
-    <style>
-        /* Adicione algumas estilizações básicas para o ícone do carrinho e o badge */
-        .cart-container {
-            position: relative;
-            display: inline-block;
-            margin-left: 20px;
-        }
-        
-        .cart-icon {
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .badge {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            padding: 5px 10px;
-            border-radius: 50%;
-            background-color: red;
-            color: white;
-            font-size: 12px;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -55,18 +31,25 @@
             <div class="form-content">
                 <form id="contactForm">
                     <div class="form-group">
+                        <label for="fullname">Nome Completo *</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Nome Completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="form-group">
                         <label for="subject">Assunto *</label>
                         <select id="subject" name="subject" required>
                             <option value="" disabled selected>Selecione um assunto</option>
-                            <option value="assistente_social">Assistente Social</option>
-                            <option value="manutencao">Manutenção</option>
                             <option value="duvidas">Dúvidas</option>
                             <option value="reclamacao">Reclamação</option>
+                            <option value="faleconosco">Fale Conosco</option>
                         </select>
-                    </div>
-                    <div class="form-group" id="schedule-group" style="display: none;">
-                        <label for="schedule">Escolha a data e horário *</label>
-                        <input type="datetime-local" id="schedule" name="schedule">
                     </div>
                     <div class="form-group">
                         <label for="message">Mensagem *</label>
@@ -78,18 +61,6 @@
                 </form>
             </div>
         </div>
-        <script>
-            document.getElementById('subject').addEventListener('change', function() {
-                const scheduleGroup = document.getElementById('schedule-group');
-                if (this.value === 'assistente_social' || this.value === 'manutencao') {
-                    scheduleGroup.style.display = 'block';
-                    document.getElementById('schedule').setAttribute('required', 'required');
-                } else {
-                    scheduleGroup.style.display = 'none';
-                    document.getElementById('schedule').removeAttribute('required');
-                }
-            });
-        </script>
     </main>
     <footer id="footer" class="footer-container">
         <div class="container">
@@ -106,10 +77,9 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.
+                &copy; 2024 Recomeçar todos os direitos reservados.
             </div>
         </div>
     </footer>
-    <script src="../scripts/atendimento.js"></script>
 </body>
 </html>

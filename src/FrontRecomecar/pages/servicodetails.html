@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/servicedetails.css">
+    <title>Detalhes do Serviço</title>
+</head>
+<body>
+    <header>
+        <div class="top-right">
+            <a href="minhaconta.html" class="button">Minha Conta</a>
+            <div class="cart-container">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-badge" class="badge" style="display:none;">0</span>
+            </div>
+        </div>
+        <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="quemsomos.html">Quem somos</a>
+            <a href="equipamentos.html">Produtos</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="atendimento.html">Atendimento</a>
+            <a href="login.html">Sair</a>
+        </nav>
+    </header>
+    <main>
+        <section id="serviceDetails">
+            <h2>Detalhes do Serviço</h2>
+            <div class="service-details-container">
+                <div id="service" class="service-card">
+                    <!-- Detalhes do serviço serão preenchidos dinamicamente -->
+                </div>
+                <div class="schedule-form">
+                    <h3>Agendar Atendimento</h3>
+                    <form id="scheduleForm">
+                        <input type="text" id="fullname" name="fullname" placeholder="Nome Completo" required>
+                        <input type="email" id="email" name="email" placeholder="E-mail" required>
+                        <input type="tel" id="phone" name="phone" placeholder="Telefone" required>
+                        <input type="date" id="date" name="date" required>
+                        <select id="time" name="time" required>
+                            <option value="" disabled selected>Selecione um horário</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                        </select>
+                        <textarea id="message" name="message" placeholder="Mensagem"></textarea>
+                        <button type="submit">Agendar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer" class="footer-container">
+        <div class="container">
+            <div class="footer-column">
+                <div class="footer-info">
+                    <h4>APOIO AO CLIENTE</h4>
+                    <p>+351 217 151 606 / +351 219 890 697</p>
+                    <p>Chamada para a rede fixa nacional</p>
+                </div>
+                <div class="footer-links">
+                    <p><a href="#">POLÍTICA DE PRIVACIDADE</a></p>
+                    <p><a href="#">TERMOS E CONDIÇÕES</a></p> 
+                    <p><a href="#">LIVRO DE RECLAMAÇÕES</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    <script>
+        async function makeRequest(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('Erro ao fazer requisição:', error);
+                throw error;
+            }
+        }
+
+        async function getServiceDetails(serviceId) {
+            try {
+                const service = await makeRequest(`https://localhost:7109/api/Servicos/GetServico/${encodeURIComponent(serviceId)}`);
+                return service;
+            } catch (error) {
+                console.error('Erro ao buscar detalhes do serviço:', error);
+            }
+        }
+
+        async function fillServiceDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceId = urlParams.get('id');
+
+            if (!serviceId) {
+                console.error('ID do serviço não encontrado na URL');
+                return;
+            }
+
+            const serviceDetailsElement = document.getElementById('service');
+            try {
+                const service = await getServiceDetails(serviceId);
+
+                serviceDetailsElement.innerHTML = '';
+
+                const card = document.createElement('div');
+                card.classList.add('service-card');
+
+                const img = document.createElement('img');
+                img.src = service.imagem;
+                img.alt = service.nomeServico;
+                card.appendChild(img);
+
+                const title = document.createElement('h3');
+                title.textContent = service.nomeServico;
+                card.appendChild(title);
+
+                const price = document.createElement('p');
+                price.textContent = `Preço: ${service.preco}`;
+                card.appendChild(price);
+
+                const description = document.createElement('p');
+                description.textContent = service.descricao;
+                card.appendChild(description);
+
+                serviceDetailsElement.appendChild(card);
+
+            } catch (error) {
+                console.error('Erro ao preencher detalhes do serviço:', error);
+            }
+        }
+
+        async function addToCart_Click(service) {
+            const cartItem = {
+                id: "string",
+                numeroPedido: 0, 
+                dataHoraPedido: new Date().toISOString(),
+                valorTotal: service.preco,
+                totalItens: 1,
+                servicosIds: [service.servicoId],
+                cliente: {
+                    nomeCliente: "Cliente Exemplo",
+                    endereco: "Endereço Exemplo",
+                    cpf: "123.456.789-00"
+                },
+                pagamento: {
+                    formaPagamento: 0,
+                    descricao: "Cartão de Crédito"
+                }
+            };
+
+            try {
+                const response = await fetch('https://localhost:7272/api/Pedido', {
+                    method: 'POST',
+                    headers: {
+                        'accept': '*/*',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(cartItem)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Erro ao adicionar ao carrinho: ${response.statusText}`);
+                }
+
+                console.log('Serviço adicionado ao carrinho com sucesso');
+                updateCartBadge();
+            } catch (error) {
+                console.error('Erro ao adicionar serviço ao carrinho:', error);
+            }
+        }
+
+        async function updateCartBadge() {
+            try {
+                const cartResponse = await makeRequest('https://localhost:7272/api/Pedido');
+                const cartItemCount = cartResponse.length;
+
+                const badgeElement = document.getElementById('cart-badge');
+                if (cartItemCount > 0) {
+                    badgeElement.textContent = cartItemCount;
+                    badgeElement.style.display = 'inline-block';
+                } else {
+                    badgeElement.style.display = 'none';
+                }
+            } catch (error) {
+                console.error('Erro ao atualizar badge do carrinho:', error);
+            }
+        }
+
+        document.getElementById('scheduleForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const message = document.getElementById('message').value;
+
+            // Aqui você pode enviar esses dados para o servidor para processamento ou manipulá-los de outra forma
+
+            document.getElementById('fullname').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('date').value = '';
+            document.getElementById('time').value = '';
+            document.getElementById('message').value = '';
+
+            alert('Mensagem enviada com sucesso. Aguarde! Brevemente será contactado para confirmação do seu agendamento.');
+
+            updateCartBadge();
+        });
+
+        window.addEventListener('load', fillServiceDetails);
+        window.addEventListener('load', updateCartBadge);
+    </script>
+</body>
+</html>
