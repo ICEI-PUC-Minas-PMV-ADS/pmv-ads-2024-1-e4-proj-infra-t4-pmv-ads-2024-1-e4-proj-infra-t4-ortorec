@@ -1,12 +1,14 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { router } from 'expo-router'
 
-const ProductCard = ({ nome, foto, preco }) => {
+const ProductCard = ({ nome, foto, preco, handlePress }) => {
   return (
     <View className='flex-col p-6 py-10 mb-10 bg-secondary-200 rounded-xl mx-5'>
 
         <View>
             <TouchableOpacity
+                onPress={handlePress}
                 className='w-full h-60 rounded-xl mt-5 relative justify-center items-center'
             >
                 <Text className='text-xl text-white h-[90px]'>{nome}</Text>

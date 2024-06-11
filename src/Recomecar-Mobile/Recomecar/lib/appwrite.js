@@ -82,7 +82,8 @@ client
           Permission.delete(Role.any())
         ]
       );
-  
+      
+      console.log(newUser)
       return newUser;
     } catch (error) {
       throw new Error(error);
@@ -94,6 +95,8 @@ client
      try {
         const session = await account.createEmailPasswordSession(email, password);
 
+        console.log(session);
+
          return session;
 
      } catch (error) {
@@ -103,23 +106,14 @@ client
 // Verificar se o usuário está logado
  export const getCurrentUser = async () => {
     try {
-        const currentAccount = await account.get();
+      return await account.get();
+  } catch (error) {
+      // throw error;
+      console.log("Usuário não encontrado", error);
+  }
 
-        if(!currentAccount) throw Error;
+  return ;
 
-        const currentUser = await databases.listDocuments(
-          config.databaseId,
-          config.userCollectionId,
-          [Query.equal('accountid', currentAccount.$id)]
-        )
-
-        if(!currentUser) throw Error;
-
-        return currentUser.documents[0];
-
-    } catch (error) {
-        console.log(error);
-    }
  }
 // Puxa os produtos do banco de dados
  export const getAllPosts = async () => {
@@ -187,6 +181,26 @@ export const searchPosts = async (query) => {
 
     if (!posts) throw new Error("Something went wrong");
 
+    return posts.documents;
+
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+
+export const productInfo = async (id) => {
+ 
+  try {
+
+    const posts = await databases.listDocuments(
+      databaseId,
+      produtoCollectionId,
+      [Query.search('$id', id)]
+    );
+
+    if (!posts) throw new Error("Something went wrong");
+
+    console.log(posts.documents)
     return posts.documents;
 
   } catch (error) {
