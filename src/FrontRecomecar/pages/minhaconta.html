@@ -1,74 +1,116 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Minha Conta - Loja Ortopédica</title>
-        <link rel="stylesheet" href="../styles/minhaconta.css">
+        <title>Login</title>
+        <link rel="stylesheet" href="../styles/login.css">
+        <script src="/scripts/loading.js" defer></script>
+        <script src="/script.js"></script>
+        <script src="/scripts/scriptStyle.js"></script>
+        <script src="https://kit.fontawesome.com/75ea6c2770.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     </head>
-
-    <body>
-        <header>
-            <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
-            <nav>
-                <a href="quemsomos.html">Quem somos</a>
-                <a href="equipamentos.html">Produtos</a>
-                <a href="servicos.html">Serviços</a>
-                <a href="atendimento.html">Atendimento</a>
-                <a href="login.html">Sair</a>
-            </nav>
-        </header>
-        <main>
-            <section class="account-info">
-                <h1>Informações Conta de Usuário</h1>
-                <form class="account-form" id="accountForm">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome">
-                    <div>
-                        <label for="email">Email:</label>
-                        <input type="text" id="email" name="email">
+<body>
+    <header>
+        <div class="top-right">
+            <span id="clienteNome" style="display:none;"></span>
+            <a href="minhaconta.html" class="button">Minha Conta</a>
+            <div class="cart-container">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-badge" class="badge" style="display:none;">0</span>
+            </div>
+        </div>
+        <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="quemsomos.html">Quem somos</a>
+            <a href="equipamentos.html">Produtos</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="atendimento.html">Atendimento</a>
+            <a href="login.html">Sair</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="login-register">
+                <div class="login">
+                    <h1 class="login-text">LOGIN</h1>
+                    <div class="login-box">
+                        <form id="loginForm">
+                            <!-- <input type="number" id="usuarioId" placeholder="Sua Id" required> -->
+                            <input type="text" id="email" placeholder="Email" required>
+                            <div class="senha">
+                                <input type="password" id="password" placeholder="Senha" required>
+                                <button id="olhoSenha" type="button" class="fa-regular fa-eye" onclick="mostrarSenha()"></button>
+                            </div>
+                            <button type="submit" id="submit" onclick="login()">Login</button>
+                        </form>
+                        <div class="options">
+                            <a href="recuperar.html">Esqueci minha senha</a>
+                        </div>
                     </div>
-                    <div>
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password">
-                    </div>
-                    <div class="action-buttons">
-                        <button id="createUserBtn" type="button" onclick="createUser()">Criar Usuário</button>
-                        <button id="editUserBtn" type="button" onclick="editUser()">Editar Usuário</button>
-                        <button id="deleteUserBtn" type="button" onclick="deleteUser()">Remover Usuário</button>
-                        <button id="getUserBtn" type="button" onclick="getUser()">Buscar Usuário</button>
-                    </div>
-                </form>
-            </section>
-        </main>
-        <footer id="footer" class="footer-container">
-                <div class="footer-bottom">
-                    &copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.
                 </div>
-        </footer>
+                <div class="register">
+                    <h1 class="registre-text">REGISTRE-SE</h1>
+                    <div class="registre-box">
+                        <form id="registre-box" onsubmit="handleSubmit(Event)">
+                            <input id="nome" type="text" name="nome" placeholder="Nome de Usuário" required>
+                            <input id="email" type="email" name="email" placeholder="Email" required>
+                            <div class="senhaForm">
+                                <div class="senha">
+                                    <input type="password" id="password" placeholder="Senha" required>
+                                    <button id="olhoSenha" type="button" class="fa-regular fa-eye" onclick="mostrarSenha()"></button>
+                                </div>
+                                <div class="senha">
+                                    <input type="password" id="passwordConfirm" placeholder="Confirmar Senha" required>
+                                    <button id="olhoSenhaConfirmar" type="button" class="fa-regular fa-eye" onclick="mostrarSenhaConfirmar()"></button>
+                                </div>
+                            </div>
+                            <button type="submit">Registrar</button>
+                        </form>
+                        <div class="options">
+                            <a href="login.html">Já tem cadastro? Realize o Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer" class="footer-container">
+        <div class="footer-bottom">
+            &copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.
+        </div>
+    </footer>
+    <script>
+        // Função para definir o nome do cliente após o login
+        function setClienteNome(nome) {
+            document.getElementById('clienteNome').innerText = nome;
+            document.getElementById('clienteNome').style.display = 'inline'; // Exibir o nome
+        }
 
-        <script>
-            // requisição genérica c/ fetch
-            async function makeRequest(url, method, data = null) {
-                try {
-                    const response = await fetch(url, {
-                        method: method,
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(data)
-                    });
-                    return await response.json();
-                } catch (error) {
-                    console.error('Erro ao fazer requisição:', error);
-                    throw error;
-                }
-            }
+        // Função para redirecionar para home.html
+        function redirectToHome() {
+            window.location.href = "home.html";
+        }
 
-            // Função para criar um novo usuário
-            async function createUser() {}
+        // Adicionar evento de clique para o botão de Login
+        document.getElementById("submit").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevenir o envio do formulário
+            // Simulando um login bem-sucedido e definindo o nome do cliente
+            setClienteNome("Nome do Cliente"); // Substitua "Nome do Cliente" pelo nome real
+            redirectToHome(); // Redirecionar para home.html
+        });
 
-        </script>
-    </body>
+        // Adicionar evento de clique para o botão de Registrar
+        document.querySelector(".register button[type='submit']").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevenir o envio do formulário
+            // Simulando um registro bem-sucedido e definindo o nome do cliente
+            setClienteNome("Nome do Cliente"); // Substitua "Nome do Cliente" pelo nome real
+            redirectToHome(); // Redirecionar para home.html
+        });
+    </script>
+</body>
 </html>

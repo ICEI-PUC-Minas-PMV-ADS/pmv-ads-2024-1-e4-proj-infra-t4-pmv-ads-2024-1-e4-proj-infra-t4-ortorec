@@ -1,7 +1,92 @@
 body {
     background-color: white;
-    font-family: Roboto;
+    font-family: Roboto, Arial, sans-serif;
     margin: 0;
+    padding: 0;
+    color: #333;
+}
+header {
+    background-color: #DCB5F6;
+    padding: 2px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: block;
+    margin: 0;
+    width: 250px;
+    margin-bottom: -27px;
+}
+
+nav {
+    background-color: #DCB5F6;
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 205px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 17px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #ce91f7;
+}
+
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.top-right .button {
+    color: black;
+    background-color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+    border: 1px solid #333;
+    transition: background-color 0.3s ease;
+}
+
+.top-right .button:hover {
+    background-color: #f0f0f0;
+}
+
+main {
+    padding: 20px;
+}
+.cart-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.cart-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-size: 12px;
 }
 
 .logo {
@@ -10,7 +95,7 @@ body {
     width: 300px;
     margin-top: 30px;
     margin-bottom: 0px;
-}
+}  
 
 .container {
     display: flex;
@@ -26,6 +111,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
+
 .registre-box {
     display: flex;
     width: 100%;
@@ -34,6 +120,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .regSuccess {
     margin-bottom: 30px;
 }
@@ -47,6 +134,7 @@ button[type="button"] {
     border-radius: 10px;
     cursor: pointer;
 }
+
 button[type="button"]:active {
     background-color: rgb(0, 0, 42);
 }

@@ -54,31 +54,11 @@
 
     <main>
         <div class="service-container">
-            <!-- Lista de serviços será preenchida dinamicamente -->
-            <!-- <section id="serviceList">
+            <!-- Lista de serviços será preenchida dinamicamente --> 
+            <section id="serviceList">
                 <h2>Serviços Disponíveis</h2>
                 <div id="services" class="row-container">
                 </div>
-            </section> -->
-
-            <section class="service">
-                <div class="service-content">
-                    <h2>MANUTENÇÃO EM EQUIPAMENTOS</h2>
-                    <p>Para garantir eficiência operacional e prolongar a vida útil de seu aparelho, oferecemos serviço de manutenção por uma equipe altamente qualificada e comprometida.</p>
-                    <h2>Manutenção Preventiva:</h2>
-                    <p>Realizamos inspeções, substituição de peças e ajustes necessários para garantir o desempenho ideal do seu equipamento.</p>
-                    <h2>Manutenção Corretiva:</h2>
-                    <p>Em caso de falhas ou avarias, nossa equipe de técnicos está pronta para intervir realizando diagnóstico, reparos e substituição de componentes defeituosos. Entre em contato conosco e agende um horário! Atendemos a domicílio (RMBH) ou você pode trazer seu equipamento.</p>
-                </div>
-                <img class="ilustration" src="../assets/calibracao.jpeg" alt="Manutenção em Equipamentos">
-            </section>
-
-            <section class="service reverse">
-                <div>
-                    <h2>RECOMEÇAR SOCIAL</h2>
-                    <p>Nosso programa Recomeçar Social oferece suporte e assistência para pessoas necessitando de equipamentos ortopédicos, proporcionando inclusão e melhoria na qualidade de vida.</p>
-                </div>
-                <img class="ilustration" src="../assets/assistência.jpg" alt="Recomeçar Social">
             </section>
         </div>
     </main>
@@ -126,8 +106,7 @@
 
                 const img = document.createElement('img');
                 img.src = service.imagem;
-                img.style.width = '200px';
-                img.style.height = '200px';
+                img.classList.add('card-img');
 
                 const cardBody = document.createElement('div');
                 cardBody.classList.add('card-body');
@@ -141,7 +120,7 @@
                 price.textContent = `Preço: ${service.preco}`;
 
                 const buyButton = document.createElement('button');
-                buyButton.textContent = 'Detalhe do Produto';
+                buyButton.textContent = 'Agende seu horário';
                 buyButton.classList.add('buy-button');
 
                 // Adicionando evento de clique ao card
@@ -150,11 +129,11 @@
                 });
 
                     // Adicionar elementos ao card
-                    card.appendChild(img);
                     card.appendChild(cardBody);
                     cardBody.appendChild(description);
                     cardBody.appendChild(price);
                     cardBody.appendChild(buyButton);
+                    card.appendChild(img);
 
                     // Adicionar o card à lista de produtos
                     serviceListElement.appendChild(card);
