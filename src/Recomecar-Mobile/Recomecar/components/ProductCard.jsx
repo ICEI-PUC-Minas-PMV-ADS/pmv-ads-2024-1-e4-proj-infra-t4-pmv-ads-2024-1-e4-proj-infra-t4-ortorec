@@ -4,21 +4,21 @@ import { router, Link } from 'expo-router'
 
 const ProductCard = ({ nome, foto, preco, handlePress }) => {
   return (
-    <View className='flex-col p-6 py-10 mb-10 bg-secondary-200 rounded-xl mx-5'>
+    <View className='flex-col space-y-5  mb-10 bg-secondary-200 items-center rounded-xl mx-5'>
         
         <View>
             
             <TouchableOpacity
                 onPress={handlePress}
-                className='w-full h-60 rounded-xl mt-5 relative justify-center items-center'
+                className='w-full rounded-xl mt-5 relative justify-center items-center'
             >
                 
 
-                <Text className='text-xl text-white h-[90px]'>{nome}</Text>
+                <Text className='text-xl text-white mb-5 p-3'>{nome}</Text>
 
                 <Image
                     source={{ uri: foto }}
-                    className='w-full h-full rounded-xl'
+                    className='w-[250px] h-[250px] rounded-xl'
                     resizeMode='cover'
                 />
                 
@@ -26,7 +26,7 @@ const ProductCard = ({ nome, foto, preco, handlePress }) => {
             
         </View>
         
-        <View className='h-[30px] justify-center mt-14 bg-white rounded px-2'>
+        <View className=' justify-center  bg-white rounded px-2 mb-5'>
             <Text className='text-xl text-black'>R${preco}</Text>
         </View>
     </View>
