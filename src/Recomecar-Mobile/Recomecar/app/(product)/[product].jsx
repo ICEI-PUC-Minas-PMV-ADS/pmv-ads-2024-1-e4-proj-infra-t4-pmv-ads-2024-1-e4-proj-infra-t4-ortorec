@@ -1,24 +1,37 @@
-import { useEffect, useState } from "react";
-import { useLocalSearchParams } from "expo-router";
-import { View, Text, FlatList, RefreshControl } from "react-native";
+import { View, Text, FlatList, Image } from "react-native";
+import { useNavigation, useRouter, useLocalSearchParams } from "expo-router";
+import { productInfo } from "@/lib/appwrite";
+import useAppwrite from "../../lib/useAppwrite";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import useAppwrite from "../../lib/useAppwrite";
-import { getAllPosts, productInfo, searchPosts } from "../../lib/appwrite";
-import { EstadoVazio, SearchInput } from "../../components";
-import ProductCard from "../../components/ProductCard";
+import ProductDetail from "../../components/ProductDetail";
 
-import { productId } from "../(tabs)/home"
+export default function Product() {
+  const navigation = useNavigation();
+  const router = useRouter();
+  const params = useLocalSearchParams();
 
-const Product = () => {
+  const { product } = params;
 
-  
+  const { data: posts, refetch } = useAppwrite(
+    () => productInfo(product));
+
   return (
-    <SafeAreaView className='h-full'>
-      <Text>{productId}</Text>
-        
-    </SafeAreaView>
-  )
-}
+    <SafeAreaView className='h-full '>
+      <FlatList
+      data={posts}
+      keyExtractor={(item) => item.$id}
+      renderItem={({ item }) => (
+        <ProductDetail 
+            nome={item.nome}
+            foto={item.foto}
+            preco={item.preco}
+            descricao={item.descricao}
+          />
+      )}
+      >
 
-export default Product
+      </FlatList>
+    </SafeAreaView>
+  );
+}

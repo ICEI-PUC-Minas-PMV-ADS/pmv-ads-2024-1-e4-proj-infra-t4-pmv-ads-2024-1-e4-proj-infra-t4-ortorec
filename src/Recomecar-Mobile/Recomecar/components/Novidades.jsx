@@ -2,6 +2,8 @@ import { View, Text, FlatList, ImageBackground, Image, TouchableOpacity } from '
 import * as Animatable from 'react-native-animatable'
 import { useState } from 'react'
 
+import { router } from 'expo-router'
+
 const zoomIn = {
   0: {
     scale: 0.7,
@@ -24,14 +26,18 @@ const NewProductItem = ({ activeItem, item}) => {
     
   return(
     <Animatable.View
-      className='mr-5'
+      className='mr-2'
       animation={activeItem === item.$id ? zoomIn : zoomOut}
       duration={500}
     >
 
-      <TouchableOpacity className='relative justify-center items-center bg-secondary-200 rounded-xl p-1' activeOpacity={0.7}>
+      <TouchableOpacity className='relative justify-center items-center bg-secondary-200 rounded-xl p-1 w-[100%]' activeOpacity={0.7}
+      onPress={() => {
+        router.push({ pathname: `(product)/${item.$id}`})
+      }}
+      >
 
-      <Text className='text-white w-[70%] text-center'>{item.nome}</Text>
+      <Text className='text-white w-[300px] text-center'>{item.nome}</Text>
 
         <Image
           source={{ uri: item.foto }}

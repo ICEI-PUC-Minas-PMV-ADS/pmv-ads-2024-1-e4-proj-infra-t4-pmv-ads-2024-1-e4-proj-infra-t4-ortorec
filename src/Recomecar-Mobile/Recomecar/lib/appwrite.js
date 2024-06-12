@@ -200,7 +200,6 @@ export const productInfo = async (id) => {
 
     if (!posts) throw new Error("Something went wrong");
 
-    console.log(posts.documents)
     return posts.documents;
 
   } catch (error) {

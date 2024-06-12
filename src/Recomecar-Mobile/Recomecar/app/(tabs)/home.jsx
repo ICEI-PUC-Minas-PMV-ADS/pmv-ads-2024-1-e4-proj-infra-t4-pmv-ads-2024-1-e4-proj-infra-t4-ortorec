@@ -13,10 +13,10 @@ import useAppwrite from '../../lib/useAppwrite'
 import ProductCard from '../../components/ProductCard'
 import Destaque from '../../components/Destaques'
 import  InfoBox  from '../../components/InfoBox'
-import { router, useLocalSearchParams } from 'expo-router'
+import { router, useLocalSearchParams, Link, navigation, navigate } from 'expo-router'
 import  GlobalProvider  from '../../context/GlobalProvider'
 
-const Home = () => {
+const Home = ({ navigation }) => {
 
   const { item } = useLocalSearchParams();
   const { user, setUser, setIsLogged } = useGlobalContext();
@@ -46,6 +46,7 @@ const Home = () => {
             foto={item.foto}
             preco={item.preco}
             handlePress={() => {
+              router.push({ pathname: `(product)/${item.$id}`})
               
             }}
           />
@@ -80,7 +81,8 @@ const Home = () => {
                 Novidades!
               </Text>
 
-              <Novidades posts={latestProducts ?? []} />
+              <Novidades 
+              posts={latestProducts ?? []} />
             </View>
 
             <View className='w-full flex-1 pt-5 pb-8'>
@@ -112,3 +114,6 @@ const Home = () => {
 }
 
 export default Home
+
+
+

@@ -5,6 +5,7 @@ import Loader from "./Loader";
 import SearchInput from "./SearchInput";
 import EstadoVazio from "./EstadoVazio";
 import ProductCard from "./ProductCard";
+import ProductDetail from "./ProductDetail";
 
 export {
   FormField,
@@ -14,4 +15,5 @@ export {
   SearchInput,
   EstadoVazio,
   ProductCard,
+  ProductDetail,
 };

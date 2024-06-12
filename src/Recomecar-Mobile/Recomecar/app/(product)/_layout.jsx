@@ -8,7 +8,7 @@ const ProductLayout = () => {
     <>
       <Stack>
         <Stack.Screen 
-          name='product'
+          name='[product]'
           options={{ headerShown: false }}
         />
       </Stack>
