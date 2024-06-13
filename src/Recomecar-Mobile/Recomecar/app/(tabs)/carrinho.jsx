@@ -1,17 +1,44 @@
-import { View, Text, SafeAreaView, Image, ScrollView, SectionList } from 'react-native'
+import { View, Text, SafeAreaView, Image, ScrollView, SectionList, FlatList, RefreshControl, Alert } from 'react-native'
 import { Link, router } from "expo-router";
 import React from 'react'
-
+import { useState, useEffect } from 'react'
 import { images } from "../../constants"
 import CustomButton from '@/components/CustomButton'
+import useAppwrite from '../../lib/useAppwrite'
+import { removeCart, showCartProducts } from '../../lib/appwrite'
+import { CartProduct } from '@/components';
+import { useGlobalContext } from "../../context/GlobalProvider";
+
 
 const Carrinho = () => {
 
+  const { user, setUser, setIsLogged } = useGlobalContext();
+
+  const userId = user.$id;
+
+  const [refreshing, setRefreshing] = useState(false)
+
+  const { data: compras, refetch } = useAppwrite(
+    () => showCartProducts(userId));
+
+    const onRefresh = async () => {
+      setRefreshing(true);
+      await refetch();
+      setRefreshing(false);
+    }
+
+
   return (
     <SafeAreaView className='h-full '>
-
-      <ScrollView>
-
+      <FlatList
+        data={compras}
+        keyExtractor={(item) => item.$id}
+        renderItem={({ item }) => (
+          <CartProduct 
+          nome={item.nome}
+          preco={item.preco}/>
+        )}
+        ListHeaderComponent={( ) => (
         <View className='mt-20 mb-10 px-8 space-y-6'>
           <View className="justify-between items-center flex-row mb-6">
 
@@ -31,58 +58,39 @@ const Carrinho = () => {
 
           </View>
 
-          {/* Tabela de compras */}
-          <View className='border-2 rounded border-secondary'>
+          <View className='border-2 rounded-xl border-secondary-200'>
 
-            <View className='flex-row justify-around bg-white'>
-
-              <View className='flex-row space-x-5 bg-secondary w-full py-5 justify-around'>
-                <Text className='text-white'>Produtos</Text>
-                <Text className='text-white'>Quantidade</Text>
-                <Text className='text-white'>Subtotal</Text>
-              </View>
-
-            </View>
-
-            <View className='flex-collum justify-around bg-white'>
-
-              <View className='flex-row space-x-5 w-full py-5 justify-around'>
-                <Text>Produto 1</Text>
-                <Text>1</Text>
-                <Text>R$ 10,00</Text>
-              </View>
-              <View className='flex-row space-x-5 w-full py-5 justify-around'>
-                <Text>Produto 2</Text>
-                <Text>1</Text>
-                <Text>R$ 10,00</Text>
-              </View>
-              <View className='flex-row space-x-5 w-full py-5 justify-around'>
-                <Text>Produto 3</Text>
-                <Text>1</Text>
-                <Text>R$ 10,00</Text>
-              </View>
-
+            <View className='flex-row justify-between p-5 bg-secondary-200 rounded-lg'>
+              <Text className='text-xl text-white font-psemibold'>Produto</Text>
+              <Text className='text-xl text-white font-psemibold'>Valor</Text>
             </View>
 
           </View>
-        
-          <View className='flex-row justify-between'>
-            <Text className="text-xl font-psemibold">
-              Total a pagar:
-            </Text>
-            <Text className="text-xl font-psemibold">
-              R$30,00
-            </Text>
-          </View>
-
-          <CustomButton
-            title='Finalizar compra'
-            containerStyles='mt-7' handlePress={undefined} textStyles={undefined} isLoading={undefined}          />
 
         </View>
-
-      </ScrollView>
-
+        )}
+        ListFooterComponent={( ) => (
+          <CustomButton
+            title="Finalizar Compra"
+            containerStyles='p-2 mt-10 w-[90%] items-center justify-center  rounded-xl mx-auto mb-10'
+            textStyles='text-xl'
+            handlePress={() => {
+              Alert.alert('Finalizar Compra?', 'Deseja finalizar a compra?', [
+                {
+                  text: 'Cancelar',
+                  onPress: () => console.log('Cancel Pressed'),
+                  style: 'cancel'
+                },
+                {
+                  text: 'Finalizar',
+                  onPress: () => removeCart()
+                }
+              ])
+            }}
+          />
+        )}
+        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+      />
     </SafeAreaView>
   )
 }

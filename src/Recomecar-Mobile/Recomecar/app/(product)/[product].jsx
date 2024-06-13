@@ -27,6 +27,7 @@ export default function Product() {
             foto={item.foto}
             preco={item.preco}
             descricao={item.descricao}
+            productId={item.$id}
           />
       )}
       >

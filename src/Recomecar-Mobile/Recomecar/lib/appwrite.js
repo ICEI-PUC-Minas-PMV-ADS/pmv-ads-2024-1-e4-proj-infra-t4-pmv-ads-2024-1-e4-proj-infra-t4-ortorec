@@ -1,4 +1,5 @@
-import { Client, Account, ID, Avatars, Databases, Query } from 'react-native-appwrite';
+import { PreventRemoveContext } from '@react-navigation/native';
+import { Client, Account, ID, Avatars, Databases, Query, Permission, Role } from 'react-native-appwrite';
 
 export const config = {
 
@@ -10,7 +11,6 @@ export const config = {
      databaseId: "66561bdf003dc4b9dca2",
     userCollectionId: "66561c44002c41d228b5",
     produtoCollectionId: "66561c8b00357fa4457b",
-    comprasCollectionId: "66561eeb0025396a28cb",
     storageId: "6656206000240bcf7db2",
 
     // ---------- Para banco de dados local
@@ -63,7 +63,7 @@ client
   
       const avatarUrl = avatars.getInitials(username);
   
-      // await signIn(email, password);
+      await signIn(email, password);
   
       const newUser = await databases.createDocument(
         config.databaseId,
@@ -75,12 +75,6 @@ client
           username: username,
           avatar: avatarUrl,
         }
-        [
-          Permission.read(Role.any()),
-          Permission.create(Role.any()),
-          Permission.update(Role.any()),
-          Permission.delete(Role.any())
-        ]
       );
       
       console.log(newUser)
@@ -187,7 +181,7 @@ export const searchPosts = async (query) => {
     throw new Error(error)
   }
 }
-
+// Puxa as informações de um produto específico
 export const productInfo = async (id) => {
  
   try {
@@ -204,5 +198,85 @@ export const productInfo = async (id) => {
 
   } catch (error) {
     throw new Error(error)
+  }
+}
+// Adiciona um produto ao carrinho
+export async function addToCart( productId, userId ) {
+  try {
+
+    const userDoc = await databases.listDocuments(
+      databaseId,
+      userCollectionId,
+      [Query.search('accountid', userId)]
+    );
+
+    if (!userDoc) throw new Error("Something went wrong ");
+
+    const userIdUp = userDoc.documents[0].$id;
+  
+    const produto = productId;
+
+    const addCart = await databases.updateDocument(
+      databaseId,
+      produtoCollectionId,
+      produto,
+      {
+        carrinho: true,
+      }
+        
+    );
+
+    
+    console.log(addToCart)
+    return addCart;
+
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+// Puxa os produtos do carrinho do usuário atual
+export async function showCartProducts(  ) {
+
+  try {
+    const compras = await databases.listDocuments(
+      databaseId,
+      produtoCollectionId,
+      [Query.equal('carrinho', true)]
+    );
+
+    return compras.documents;
+    
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
+export async function removeCart(  ) {
+  
+  const trueProducts = await databases.listDocuments(
+    databaseId,
+    userCollectionId,
+    [Query.equal('carrinho', [true])]
+  );
+
+  if (!trueProducts) throw new Error("Something went wrong ");
+
+  const cartTrue = trueProducts.documents[0].$id;
+
+  try {
+    const compras = await databases.updateDocument(
+      databaseId,
+      produtoCollectionId,
+      cartTrue,
+      {
+        carrinho: false,
+      }
+    );
+
+    console.log(compras)
+    return compras.documents;
+    
+  } catch (error) {
+    throw new Error(error);
   }
 }

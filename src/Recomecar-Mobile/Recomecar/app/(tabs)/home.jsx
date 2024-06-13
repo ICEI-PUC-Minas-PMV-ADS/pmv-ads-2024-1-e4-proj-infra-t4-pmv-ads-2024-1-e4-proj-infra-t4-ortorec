@@ -32,8 +32,6 @@ const Home = ({ navigation }) => {
     setRefreshing(false);
   }
 
-  //console.log(posts)
-
   return (
     <GlobalProvider>
     <SafeAreaView className='h-full'>

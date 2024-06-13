@@ -1,10 +1,19 @@
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, Image, TouchableOpacity, ScrollView, Alert } from 'react-native'
 import React from 'react'
 import { router, Link } from 'expo-router'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import CustomButton from '../components/CustomButton';
+import { addToCart } from '@/lib/appwrite';
+import { useGlobalContext } from "../context/GlobalProvider";
 
-const ProductDetail = ({ nome, foto, preco, descricao, handlePress }) => {
+const ProductDetail = ({ productId, nome, foto, preco, descricao, handlePress }) => {
+
+  
+  const { user, setUser, setIsLogged } = useGlobalContext();
+
+  const userId = user.$id;
+
+
   return (
     <SafeAreaView className='flex-1  rounded-xl items-center'>
         <Text className='text-xl bg-secondary-200 p-5 mx-2 text-white  rounded-xl'>{nome}</Text>
@@ -26,6 +35,29 @@ const ProductDetail = ({ nome, foto, preco, descricao, handlePress }) => {
                 title="Adicionar ao Carrinho"
                 containerStyles='p-2'
                 textStyles='text-base'
+                handlePress={() => {
+                  Alert.alert('Adicionar produto ao carrinho?', 'Deseja adicionar este produto ao carrinho?', [
+                    {
+                      text: 'Cancelar',
+                      onPress: () => console.log('Cancel Pressed'),
+                      style: 'cancel'
+                    },
+                    {
+                      text: 'Adicionar',
+                      onPress: () => { addToCart(productId, userId), Alert.alert('Produto adicionado ao carrinho!', 'Deseja continuar comprando? Ou ir para o carrinho?', [
+                        {
+                          text: 'Continuar',
+                          onPress: () => console.log('Cancel Pressed'),
+                          style: 'cancel'
+                        },
+                        {
+                          text: 'Carrinho',
+                          onPress: () => router.push({ pathname: `(tabs)/carrinho`})
+                        }
+                      ])}
+                    }
+                  ]);
+                }}
               />
 
           <Text className='text-xl border-2 border-secondary p-3 rounded-xl'>R${preco}</Text>

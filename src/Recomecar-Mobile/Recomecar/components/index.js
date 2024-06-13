@@ -6,6 +6,7 @@ import SearchInput from "./SearchInput";
 import EstadoVazio from "./EstadoVazio";
 import ProductCard from "./ProductCard";
 import ProductDetail from "./ProductDetail";
+import CartProduct from "./CartProduct";
 
 export {
   FormField,
@@ -16,4 +17,5 @@ export {
   EstadoVazio,
   ProductCard,
   ProductDetail,
+  CartProduct,
 };
