@@ -63,7 +63,7 @@ client
   
       const avatarUrl = avatars.getInitials(username);
   
-      await signIn(email, password);
+      // await signIn(email, password);
   
       const newUser = await databases.createDocument(
         config.databaseId,
@@ -221,7 +221,7 @@ export async function addToCart( productId, userId ) {
       produtoCollectionId,
       produto,
       {
-        carrinho: true,
+        usuarios: userIdUp,
       }
         
     );
@@ -235,13 +235,21 @@ export async function addToCart( productId, userId ) {
   }
 }
 // Puxa os produtos do carrinho do usuário atual
-export async function showCartProducts(  ) {
+export async function showCartProducts( userId ) {
+
+  const userDoc = await databases.listDocuments(
+    databaseId,
+    userCollectionId,
+    [Query.search('accountid', userId)]
+  );
+  const userIdUp = userDoc.documents[0].$id;
+  
 
   try {
     const compras = await databases.listDocuments(
       databaseId,
       produtoCollectionId,
-      [Query.equal('carrinho', true)]
+      [Query.equal("usuarios", [userIdUp])]
     );
 
     return compras.documents;
@@ -251,32 +259,32 @@ export async function showCartProducts(  ) {
   }
 }
 
-export async function removeCart(  ) {
+// export async function removeCart(  ) {
   
-  const trueProducts = await databases.listDocuments(
-    databaseId,
-    userCollectionId,
-    [Query.equal('carrinho', [true])]
-  );
+//   const trueProducts = await databases.listDocuments(
+//     databaseId,
+//     userCollectionId,
+//     [Query.equal('carrinho', [true])]
+//   );
 
-  if (!trueProducts) throw new Error("Something went wrong ");
+//   if (!trueProducts) throw new Error("Something went wrong ");
 
-  const cartTrue = trueProducts.documents[0].$id;
+//   const cartTrue = trueProducts.documents[0].$id;
 
-  try {
-    const compras = await databases.updateDocument(
-      databaseId,
-      produtoCollectionId,
-      cartTrue,
-      {
-        carrinho: false,
-      }
-    );
+//   try {
+//     const compras = await databases.updateDocument(
+//       databaseId,
+//       produtoCollectionId,
+//       cartTrue,
+//       {
+//         carrinho: false,
+//       }
+//     );
 
-    console.log(compras)
-    return compras.documents;
+//     console.log(compras)
+//     return compras.documents;
     
-  } catch (error) {
-    throw new Error(error);
-  }
-}
+//   } catch (error) {
+//     throw new Error(error);
+//   }
+// }

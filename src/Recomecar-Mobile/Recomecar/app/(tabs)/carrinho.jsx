@@ -83,7 +83,7 @@ const Carrinho = () => {
                 },
                 {
                   text: 'Finalizar',
-                  onPress: () => removeCart()
+                  // onPress: () => removeCart()
                 }
               ])
             }}
