@@ -58,7 +58,7 @@ const Home = ({ navigation }) => {
                 <Text className="font-pmedium text-sm text-secondary">
                   Bem-Vindo de volta!
                 </Text>
-                <Text className='text-lg font-psemibold'>{user.name}</Text>
+                <Text className='text-lg font-psemibold'>{user?.username}</Text>
               </View>
 
               <View className="mt-1.5">

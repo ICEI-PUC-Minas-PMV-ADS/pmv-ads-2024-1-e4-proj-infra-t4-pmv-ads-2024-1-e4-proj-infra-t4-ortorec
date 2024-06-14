@@ -97,18 +97,47 @@ client
          throw new Error(error)
      }
  }
-// Verificar se o usuário está logado
- export const getCurrentUser = async () => {
+// Buscar usuário logado
+ export const getAccount = async () => {
     try {
-      return await account.get();
+      const currentAccount = await account.get();
+
+      return currentAccount;
   } catch (error) {
       // throw error;
       console.log("Usuário não encontrado", error);
   }
-
-  return ;
-
  }
+// Pega os documentos do usuário atual
+ export async function getCurrentUser() {
+  try {
+    const currentAccount = await getAccount();
+    if (!currentAccount) throw Error;
+
+    const currentUser = await databases.listDocuments(
+      config.databaseId,
+      config.userCollectionId,
+      [Query.equal("accountid", currentAccount.$id)]
+    );
+
+    if (!currentUser) throw Error;
+
+    return currentUser.documents[0];
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+// Sai da conta
+export async function signOut() {
+  try {
+    const session = await account.deleteSession("current");
+
+    return session;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
 // Puxa os produtos do banco de dados
  export const getAllPosts = async () => {
  
@@ -204,26 +233,13 @@ export const productInfo = async (id) => {
 export async function addToCart( productId, userId ) {
   try {
 
-    const userDoc = await databases.listDocuments(
-      databaseId,
-      userCollectionId,
-      [Query.search('accountid', userId)]
-    );
-
-    if (!userDoc) throw new Error("Something went wrong ");
-
-    const userIdUp = userDoc.documents[0].$id;
-  
-    const produto = productId;
-
     const addCart = await databases.updateDocument(
       databaseId,
       produtoCollectionId,
-      produto,
+      productId,
       {
-        usuarios: userIdUp,
-      }
-        
+        usuarios: userId,
+      },
     );
 
     
@@ -237,19 +253,11 @@ export async function addToCart( productId, userId ) {
 // Puxa os produtos do carrinho do usuário atual
 export async function showCartProducts( userId ) {
 
-  const userDoc = await databases.listDocuments(
-    databaseId,
-    userCollectionId,
-    [Query.search('accountid', userId)]
-  );
-  const userIdUp = userDoc.documents[0].$id;
-  
-
   try {
     const compras = await databases.listDocuments(
       databaseId,
       produtoCollectionId,
-      [Query.equal("usuarios", [userIdUp])]
+      [Query.equal("usuarios", [userId])]
     );
 
     return compras.documents;
@@ -262,17 +270,10 @@ export async function showCartProducts( userId ) {
 export async function removeCart( userId ) {
   try {
 
-    const userDoc = await databases.listDocuments(
-      databaseId,
-      userCollectionId,
-      [Query.search('accountid', userId)]
-    );
-    const userIdUp = userDoc.documents[0].$id;
-
     const compras = await databases.listDocuments(
       databaseId,
       produtoCollectionId,
-      [Query.equal("usuarios", [userIdUp])]
+      [Query.equal("usuarios", [userId])]
     );
 
     const produto = compras.documents[0].$id;

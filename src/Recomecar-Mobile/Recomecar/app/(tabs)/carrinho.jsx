@@ -14,7 +14,7 @@ const Carrinho = () => {
 
   const { user, setUser, setIsLogged } = useGlobalContext();
 
-  const userId = user.$id;
+  const userId = user?.$id;
 
   const [refreshing, setRefreshing] = useState(false)
 

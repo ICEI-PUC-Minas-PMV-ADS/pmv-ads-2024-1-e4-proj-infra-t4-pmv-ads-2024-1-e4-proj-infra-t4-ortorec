@@ -11,8 +11,7 @@ const ProductDetail = ({ productId, nome, foto, preco, descricao, handlePress })
   
   const { user, setUser, setIsLogged } = useGlobalContext();
 
-  const userId = user.$id;
-
+  const userId = user?.$id;
 
   return (
     <SafeAreaView className='flex-1  rounded-xl items-center'>
