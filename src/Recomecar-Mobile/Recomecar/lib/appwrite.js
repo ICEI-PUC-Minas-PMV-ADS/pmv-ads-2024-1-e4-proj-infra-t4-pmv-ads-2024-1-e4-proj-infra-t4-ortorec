@@ -1,5 +1,6 @@
 import { PreventRemoveContext } from '@react-navigation/native';
 import { Client, Account, ID, Avatars, Databases, Query, Permission, Role } from 'react-native-appwrite';
+import { get } from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
 
 export const config = {
 
@@ -230,15 +231,18 @@ export const productInfo = async (id) => {
   }
 }
 // Adiciona um produto ao carrinho
-export async function addToCart( productId, userId ) {
+export async function addToCart( productId  ) {
   try {
+
+    const currentAccount = await getCurrentUser();
+    if (!currentAccount) throw Error;
 
     const addCart = await databases.updateDocument(
       databaseId,
       produtoCollectionId,
       productId,
       {
-        usuarios: userId,
+        usuarios: currentAccount,
       },
     );
 
@@ -251,21 +255,33 @@ export async function addToCart( productId, userId ) {
   }
 }
 // Puxa os produtos do carrinho do usuário atual
-export async function showCartProducts( userId ) {
+export async function showCartProducts(  ) {
 
-  try {
-    const compras = await databases.listDocuments(
-      databaseId,
-      produtoCollectionId,
-      [Query.equal("usuarios", [userId])]
-    );
+  const currentAccount = await getCurrentUser();
 
-    return compras.documents;
-    
-  } catch (error) {
-    throw new Error(error);
+  if (currentAccount == null) {
+
+    console.log("Usuário não encontrado")
+
+  } else {
+
+    try {
+
+      const compras = await databases.listDocuments(
+        databaseId,
+        produtoCollectionId,
+        [Query.equal("usuarios", [currentAccount.$id])]
+      );
+
+      return compras.documents;
+      
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 }
+
+
 // Retira itens do Carrinho
 export async function removeCart( userId ) {
   try {

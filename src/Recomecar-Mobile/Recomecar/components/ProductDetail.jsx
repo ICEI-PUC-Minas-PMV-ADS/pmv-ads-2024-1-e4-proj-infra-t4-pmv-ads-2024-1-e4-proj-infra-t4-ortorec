@@ -11,7 +11,6 @@ const ProductDetail = ({ productId, nome, foto, preco, descricao, handlePress })
   
   const { user, setUser, setIsLogged } = useGlobalContext();
 
-  const userId = user?.$id;
 
   return (
     <SafeAreaView className='flex-1  rounded-xl items-center'>
@@ -43,7 +42,7 @@ const ProductDetail = ({ productId, nome, foto, preco, descricao, handlePress })
                     },
                     {
                       text: 'Adicionar',
-                      onPress: () => { addToCart(productId, userId), Alert.alert('Produto adicionado ao carrinho!', 'Deseja continuar comprando? Ou ir para o carrinho?', [
+                      onPress: () => { addToCart(productId), Alert.alert('Produto adicionado ao carrinho!', 'Deseja continuar comprando? Ou ir para o carrinho?', [
                         {
                           text: 'Continuar',
                           onPress: () => console.log('Cancel Pressed'),
