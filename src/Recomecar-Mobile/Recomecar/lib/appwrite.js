@@ -258,33 +258,39 @@ export async function showCartProducts( userId ) {
     throw new Error(error);
   }
 }
+// Retira itens do Carrinho
+export async function removeCart( userId ) {
+  try {
 
-// export async function removeCart(  ) {
-  
-//   const trueProducts = await databases.listDocuments(
-//     databaseId,
-//     userCollectionId,
-//     [Query.equal('carrinho', [true])]
-//   );
+    const userDoc = await databases.listDocuments(
+      databaseId,
+      userCollectionId,
+      [Query.search('accountid', userId)]
+    );
+    const userIdUp = userDoc.documents[0].$id;
 
-//   if (!trueProducts) throw new Error("Something went wrong ");
+    const compras = await databases.listDocuments(
+      databaseId,
+      produtoCollectionId,
+      [Query.equal("usuarios", [userIdUp])]
+    );
 
-//   const cartTrue = trueProducts.documents[0].$id;
+    const produto = compras.documents[0].$id;
 
-//   try {
-//     const compras = await databases.updateDocument(
-//       databaseId,
-//       produtoCollectionId,
-//       cartTrue,
-//       {
-//         carrinho: false,
-//       }
-//     );
-
-//     console.log(compras)
-//     return compras.documents;
+    const removeCart = await databases.updateDocument(
+      databaseId,
+      produtoCollectionId,
+      produto,
+      {
+        usuarios: '',
+      }
+        
+    );
     
-//   } catch (error) {
-//     throw new Error(error);
-//   }
-// }
+    console.log(removeCart)
+    return removeCart;
+
+  } catch (error) {
+    throw new Error(error);
+  }
+}

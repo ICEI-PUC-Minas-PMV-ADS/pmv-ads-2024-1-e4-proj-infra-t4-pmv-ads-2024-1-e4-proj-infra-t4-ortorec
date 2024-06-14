@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import { images } from "../../constants"
 import CustomButton from '@/components/CustomButton'
 import useAppwrite from '../../lib/useAppwrite'
-import { removeCart, showCartProducts } from '../../lib/appwrite'
+import { removeCart, showCartProducts, getAllPosts } from '../../lib/appwrite'
 import { CartProduct } from '@/components';
 import { useGlobalContext } from "../../context/GlobalProvider";
 
@@ -27,6 +27,9 @@ const Carrinho = () => {
       setRefreshing(false);
     }
 
+    useEffect(() => {
+      refetch();
+    }, [compras]);
 
   return (
     <SafeAreaView className='h-full '>
@@ -36,7 +39,9 @@ const Carrinho = () => {
         renderItem={({ item }) => (
           <CartProduct 
           nome={item.nome}
-          preco={item.preco}/>
+          preco={item.preco}
+          productId={item.$id}
+          />
         )}
         ListHeaderComponent={( ) => (
         <View className='mt-20 mb-10 px-8 space-y-6'>
@@ -83,7 +88,7 @@ const Carrinho = () => {
                 },
                 {
                   text: 'Finalizar',
-                  // onPress: () => removeCart()
+                  onPress: () => removeCart(userId)
                 }
               ])
             }}
