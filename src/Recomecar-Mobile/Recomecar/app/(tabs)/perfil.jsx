@@ -1,53 +1,72 @@
-import { View, Text, SafeAreaView, Image, ScrollView } from 'react-native'
-import { Link, router } from "expo-router";
-import React from 'react'
-
+import { View, Text, FlatList, RefreshControl, Image, TouchableOpacity } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { router } from "expo-router";
+ 
+import { signOut } from "../../lib/appwrite";
+ 
+import { useGlobalContext } from "../../context/GlobalProvider";
 import { images } from "../../constants"
-import CustomButton from '@/components/CustomButton'
-
+import { icons } from '../../constants'
+ 
+ 
 const Perfil = () => {
+ 
+  const { user, setUser, setIsLoggedIn } = useGlobalContext();
+ 
+  const logout = async () => {
+    await signOut();
+    setUser(null);
+    setIsLoggedIn(false);
+ 
+    router.replace("/login");
+  };
+ 
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <View className='mt-20 mb-10 px-8 space-y-6'>
-          <View className="justify-between items-center flex-row mb-6">
-
-            <View>
-              <Text className="text-2xl font-psemibold">
-                Perfil
-              </Text>
-            </View>
-
-            <View className="mt-1.5">
-              <Image
-                source={images.recomecarLogoPequeno}
-                className="w-20 h-20"
+<SafeAreaView className=''>
+<View className="">
+<View className="">
+ 
+          <View>
+<Text className="">
+              Perfil...
+</Text>
+</View>
+ 
+          <View className="">
+<TouchableOpacity className=""
+            onPress={logout}
+>
+<Text className="">Sair</Text>
+<Image
+                source={icons.logout}
+                className=""
                 resizeMode="contain"
-                
               />
-            </View>
-
-          </View>
-
-          <Text className="text-lg">
-            Nome: João da Silva
-          </Text>
-
-          <Text className="text-lg">
-            CPF: 123.456.789-00
-          </Text>
-
-          <Text className="text-lg">
-            Telefone: (31) 9 9999-9999
-          </Text>
-
-          <Text className="text-lg">
-            E-mail:
-          </Text>
-          </View>
-      </ScrollView>
-    </SafeAreaView>
+</TouchableOpacity>
+</View>
+</View>
+ 
+        <View className=''>
+<Image
+            source={{ uri: user?.avatar }}
+            className=""
+          />
+<View className=''>
+<Text className=' '>
+<Text className="">Nome:</Text> {user?.username}
+</Text>
+<Text className=' '>
+<Text className="">Email:</Text> {user?.email}
+</Text>
+<Text className=' '>
+<Text className="">ID:</Text> {user?.$id}
+</Text>
+</View>
+</View>
+ 
+      </View>
+</SafeAreaView>
   )
 }
-
+ 
 export default Perfil
