@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/details.css">
+    <link rel="stylesheet" href="../styles/equipamentodetails.css">
     <title>Detalhes do Produto</title>
     <style>
-        /* Adicione algumas estilizações básicas para o ícone do carrinho e o badge */
         .cart-container {
             position: relative;
             display: inline-block;
@@ -148,12 +147,11 @@
             }
         }
 
-        async function addToCart_Click(product, userId) {
+        async function addToCart_Click(product) {
             const cartItem = {
                 nomeProduto: product.nomeProduto,
                 preco: product.preco,
-                userId: userId,
-                }
+                userId: 'someUserId' // Substitua 'someUserId' pelo ID real do usuário
             };
 
             try {
@@ -175,17 +173,17 @@
             } catch (error) {
                 console.error('Erro ao adicionar produto ao carrinho:', error);
             }
-        
+        }
 
         async function updateCartBadge() {
             try {
                 const cartResponse = await makeRequest('https://localhost:7272/api/Pedido');
                 const cartItemCount = cartResponse.length;
 
-                 const badgeElement = document.getElementById('cart-badge');
+                const badgeElement = document.getElementById('cart-badge');
                 if (cartItemCount > 0) {
                     badgeElement.textContent = cartItemCount;
-                     badgeElement.style.display = 'inline-block';
+                    badgeElement.style.display = 'inline-block';
                 } else {
                     badgeElement.style.display = 'none';
                 }

@@ -28,6 +28,37 @@
             color: white;
             font-size: 12px;
         }
+        
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+            width: 200px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .card-text {
+            margin: 10px 0;
+        }
+
+        .buy-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -46,13 +77,13 @@
             <div class="dropdown">
                 <a href="equipamentos.html" class="dropbtn">Produtos</a>
                 <div class="dropdown-content">
-                    <a href="#">Cadeiras de rodas</a>
-                    <a href="#">Andarilhos</a>
-                    <a href="#">Bengalas</a>
-                    <a href="#">Acessórios auxiliares</a>
-                    <a href="#">Camas hospitalares</a>
-                    <a href="#">Poltronas hospitalares</a>
-                    <a href="#">Almofadas ortopédicas</a>
+                    <a href="#" class="filter" id="1" data-category="cadeira-de-rodas">Cadeira de rodas</a>
+                    <a href="#" class="filter" id="2" data-category="andarilhos">Andarilhos</a>
+                    <a href="#" class="filter" id="4"  data-category="bengalas">Bengalas</a>
+                    <a href="#" class="filter" id="7"  data-category="acessorios-auxiliares">Acessórios auxiliares</a>
+                    <a href="#" class="filter" id="3"  data-category="camas-hospitalares">Camas hospitalares</a>
+                    <a href="#" class="filter" id="5" data-category="poltronas-hospitalares">Poltronas hospitalares</a>
+                    <a href="#" class="filter" id="6" data-category="almofadas-ortopedicas">Almofadas ortopédicas</a>
                 </div>
             </div>
             <a href="servicos.html">Serviços</a>
@@ -88,6 +119,30 @@
         </div>
     </footer>
     <script>
+        let allProducts = [];
+
+        document.querySelectorAll('.filter').forEach(item => {
+            item.addEventListener('click', event => {
+                event.preventDefault();
+                const id = event.target.getAttribute('id');
+                filterProducts(id);
+            });
+        });
+
+        function filterProducts(id) {
+            const productListElement = document.getElementById('products');
+            productListElement.innerHTML = '';
+            const filteredProducts = allProducts.filter(product => product.CategoriaID === id);
+            if (filteredProducts.length > 0) {
+                filteredProducts.forEach(product => {
+                    const card = createProductCard(product);
+                    productListElement.appendChild(card);
+                });
+            } else {
+                productListElement.innerHTML = 'Nenhum produto encontrado para esta categoria.';
+            }
+        }
+
         async function makeRequest(url) {
             try {
                 const response = await fetch(url);
@@ -102,58 +157,72 @@
             const productListElement = document.getElementById('products');
             try {
                 const products = await makeRequest('https://localhost:7109/api/Produtos/GetProdutos');
+                allProducts = products;
                 productListElement.innerHTML = '';
 
                 products.forEach(product => {
-                const card = document.createElement('div');
-                card.classList.add('card');
-                card.setAttribute('data-id', product.id);
-
-                const img = document.createElement('img');
-                img.src = product.imagem;
-                img.alt = product.nomeProduto;
-                img.style.width = '200px';
-                img.style.height = '200px';
-
-                const cardBody = document.createElement('div');
-                cardBody.classList.add('card-body');
-
-                const title = document.createElement('h5');
-                title.classList.add('card-title');
-                title.textContent = product.nomeProduto;
-
-                const price = document.createElement('p');
-                price.classList.add('card-text');
-                price.textContent = `Preço: ${product.preco}`;
-
-                const description = document.createElement('p');
-                description.classList.add('card-text');
-                description.textContent = product.descricao;
-
-                const buyButton = document.createElement('button');
-                buyButton.textContent = 'Detalhe do Produto';
-                buyButton.classList.add('buy-button');
-
-                // Adicionando evento de clique ao card
-                card.addEventListener('click', function() {
-                    window.location.href = `equipamentodetails.html?id=${product.produtoId}`;
-                });
-
-                    // Adicionar elementos ao card
-                    card.appendChild(img);
-                    card.appendChild(cardBody);
-                    cardBody.appendChild(title);
-                    cardBody.appendChild(price);
-                    cardBody.appendChild(description);
-                    cardBody.appendChild(buyButton);
-
-                    // Adicionar o card à lista de produtos
+                    const card = createProductCard(product);
                     productListElement.appendChild(card);
                 });
-
             } catch (error) {
                 console.error('Erro ao preencher lista de produtos:', error);
             }
+        }
+
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.setAttribute('data-id', product.id);
+										  
+										   
+
+            const img = document.createElement('img');
+            img.src = product.imagem;
+            img.alt = product.nomeProduto;
+            img.style.width = '200px';
+            img.style.height = '200px';
+
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+														
+
+            const title = document.createElement('h5');
+            title.classList.add('card-title');
+            title.textContent = product.nomeProduto;
+
+            const price = document.createElement('p');
+            price.classList.add('card-text');
+            price.textContent = `Preço: ${product.preco}`;
+
+            const description = document.createElement('p');
+															 
+            description.classList.add('card-text');
+            description.textContent = product.descricao;
+
+            const buyButton = document.createElement('button');
+            buyButton.textContent = 'Detalhe do Produto';
+            buyButton.classList.add('buy-button');
+				   
+
+            // Adicionando evento de clique ao card
+            card.addEventListener('click', function() {
+                window.location.href = `equipamentodetails.html?id=${product.produtoId}`;
+            });
+												
+													  
+													
+
+            // Adicionar elementos ao card
+            card.appendChild(img);
+            card.appendChild(cardBody);
+            cardBody.appendChild(title);
+            cardBody.appendChild(price);
+            cardBody.appendChild(description);
+            cardBody.appendChild(buyButton);
+
+            return card;
+																			 
+			 
         }
 
         window.addEventListener('load', fillProductList);

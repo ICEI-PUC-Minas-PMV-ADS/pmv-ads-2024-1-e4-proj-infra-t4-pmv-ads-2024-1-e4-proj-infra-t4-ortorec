@@ -1,45 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/details.css">
-    <title>Detalhes do Produto</title>
-    <style>
-        
-.button {
-  background-color: #04AA6D; /* Green */
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.button1 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #04AA6D;
-}
-
-.button1:hover {
-  background-color: #04AA6D;
-  color: white;
-}
+    <link rel="stylesheet" href="../styles/pedidos.css">
+    <title>Carrinho de Compra</title>
+    <style>  
     </style>
 </head>
-<body>
+
+<body id="category" class="lang-pt country-pt currency-eur layout-left-column page-category tax-display-enabled category-id-201 category-mobilidade category-id-parent-2 category-depth-level-2 fullwidth">
     <header>
         <div class="top-right">
             <a href="minhaconta.html" class="button">Minha Conta</a>
+            <div class="cart-container">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-badge" class="badge" style="display:none;">0</span>
+            </div>
         </div>
         <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
         <nav>
+            <a href="home.html">Home</a>
             <a href="quemsomos.html">Quem somos</a>
             <a href="equipamentos.html">Produtos</a>
             <a href="servicos.html">Serviços</a>
@@ -52,21 +34,13 @@
             <h2>Finalizar Pedido</h2>
             <div id="product" class="product-container">
                 <!-- Detalhes do produto serão preenchidos dinamicamente -->
-            <div>
-                <center>
-                    <div style="width: 50vh; height: 25px; padding: 20px;">
-                        <div>
-                            <label for="html">CPF</label><br>
-                            <input type="text" style="width: 50vh; height: 15px; margin-bottom: 20px;"><br>
-                            <label for="html">Endereço</label><br>
-                            <input type="text" style="width: 50vh; height: 15px; margin-bottom: 20px;"><br>
-                            <label for="html">Metodo Pagamento</label><br>
-                            <input type="text" style="width: 50vh; height: 15px; margin-bottom: 20px;"><br>
-                        </div>
-                        <button class="button button1">Finalizar Pedido</button>
-                    </div>
-                </center>
-            </div>
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco">
+                <label for="metodoPagamento">Método Pagamento</label>
+                <input type="text" id="metodoPagamento">
+                <button class="button">Finalizar Pedido</button>
             </div>
         </section>
     </main>
@@ -115,7 +89,7 @@
             const productDetailsElement = document.getElementById('product');
             try {
                 const product = await getProductDetails(productId);
-                
+
                 // Limpa o conteúdo existente
                 productDetailsElement.innerHTML = '';
 
@@ -152,14 +126,14 @@
             }
         }
 
-        async function FinalizarPedido(){
-            
+        async function FinalizarPedido() {
+
         }
 
         async function addToCart_Click(product) {
             const cartItem = {
                 id: "string",
-                numeroPedido: 0, 
+                numeroPedido: 0,
                 dataHoraPedido: new Date().toISOString(),
                 valorTotal: product.preco,
                 totalItens: 1,
@@ -199,4 +173,5 @@
         window.addEventListener('load', fillProductDetails);
     </script>
 </body>
+
 </html>
