@@ -132,7 +132,7 @@
         function filterProducts(id) {
             const productListElement = document.getElementById('products');
             productListElement.innerHTML = '';
-            const filteredProducts = allProducts.filter(product => product.CategoriaID === id);
+            const filteredProducts = allProducts.filter(product => product.categoriaID == id);
             if (filteredProducts.length > 0) {
                 filteredProducts.forEach(product => {
                     const card = createProductCard(product);
@@ -173,9 +173,7 @@
             const card = document.createElement('div');
             card.classList.add('card');
             card.setAttribute('data-id', product.id);
-										  
-										   
-
+										
             const img = document.createElement('img');
             img.src = product.imagem;
             img.alt = product.nomeProduto;
@@ -185,7 +183,6 @@
             const cardBody = document.createElement('div');
             cardBody.classList.add('card-body');
 														
-
             const title = document.createElement('h5');
             title.classList.add('card-title');
             title.textContent = product.nomeProduto;
@@ -207,10 +204,7 @@
             // Adicionando evento de clique ao card
             card.addEventListener('click', function() {
                 window.location.href = `equipamentodetails.html?id=${product.produtoId}`;
-            });
-												
-													  
-													
+            });																					
 
             // Adicionar elementos ao card
             card.appendChild(img);
@@ -220,11 +214,8 @@
             cardBody.appendChild(description);
             cardBody.appendChild(buyButton);
 
-            return card;
-																			 
-			 
+            return card;	 
         }
-
         window.addEventListener('load', fillProductList);
     </script>
 </body>
