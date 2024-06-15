@@ -33,11 +33,10 @@ const Registrar = () => {
       const result = await createUser(form.email, form.password, form.username);
       
       // setUser(result);
-
+      router.replace("loginr");
 
     } catch (error) {
-      Alert.alert("Sucesso", "Email registrado com sucesso!");
-      router.replace("login");
+      Alert.alert("Erro", "Erro ao registrar!");
     } finally {
       setSubmitting(false);
     }

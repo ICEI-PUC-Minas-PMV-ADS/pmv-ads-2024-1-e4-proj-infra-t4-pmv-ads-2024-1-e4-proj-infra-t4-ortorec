@@ -1,4 +1,6 @@
-import { Client, Account, ID, Avatars, Databases, Query } from 'react-native-appwrite';
+import { PreventRemoveContext } from '@react-navigation/native';
+import { Client, Account, ID, Avatars, Databases, Query, Permission, Role } from 'react-native-appwrite';
+import { get } from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
 
 export const config = {
 
@@ -10,7 +12,6 @@ export const config = {
      databaseId: "66561bdf003dc4b9dca2",
     userCollectionId: "66561c44002c41d228b5",
     produtoCollectionId: "66561c8b00357fa4457b",
-    comprasCollectionId: "66561eeb0025396a28cb",
     storageId: "6656206000240bcf7db2",
 
     // ---------- Para banco de dados local
@@ -75,14 +76,9 @@ client
           username: username,
           avatar: avatarUrl,
         }
-        [
-          Permission.read(Role.any()),
-          Permission.create(Role.any()),
-          Permission.update(Role.any()),
-          Permission.delete(Role.any())
-        ]
       );
-  
+      
+      console.log(newUser)
       return newUser;
     } catch (error) {
       throw new Error(error);
@@ -94,33 +90,55 @@ client
      try {
         const session = await account.createEmailPasswordSession(email, password);
 
+        console.log(session);
+
          return session;
 
      } catch (error) {
          throw new Error(error)
      }
  }
-// Verificar se o usuário está logado
- export const getCurrentUser = async () => {
+// Buscar usuário logado
+ export const getAccount = async () => {
     try {
-        const currentAccount = await account.get();
+      const currentAccount = await account.get();
 
-        if(!currentAccount) throw Error;
-
-        const currentUser = await databases.listDocuments(
-          config.databaseId,
-          config.userCollectionId,
-          [Query.equal('accountid', currentAccount.$id)]
-        )
-
-        if(!currentUser) throw Error;
-
-        return currentUser.documents[0];
-
-    } catch (error) {
-        console.log(error);
-    }
+      return currentAccount;
+  } catch (error) {
+      // throw error;
+      console.log("Usuário não encontrado", error);
+  }
  }
+// Pega os documentos do usuário atual
+ export async function getCurrentUser() {
+  try {
+    const currentAccount = await getAccount();
+    if (!currentAccount) throw Error;
+
+    const currentUser = await databases.listDocuments(
+      config.databaseId,
+      config.userCollectionId,
+      [Query.equal("accountid", currentAccount.$id)]
+    );
+
+    if (!currentUser) throw Error;
+
+    return currentUser.documents[0];
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+// Sai da conta
+export async function signOut() {
+  try {
+    const session = await account.deleteSession("current");
+
+    return session;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
 // Puxa os produtos do banco de dados
  export const getAllPosts = async () => {
  
@@ -191,5 +209,105 @@ export const searchPosts = async (query) => {
 
   } catch (error) {
     throw new Error(error)
+  }
+}
+// Puxa as informações de um produto específico
+export const productInfo = async (id) => {
+ 
+  try {
+
+    const posts = await databases.listDocuments(
+      databaseId,
+      produtoCollectionId,
+      [Query.search('$id', id)]
+    );
+
+    if (!posts) throw new Error("Something went wrong");
+
+    return posts.documents;
+
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+// Adiciona um produto ao carrinho
+export async function addToCart( productId  ) {
+  try {
+
+    const currentAccount = await getCurrentUser();
+    if (!currentAccount) throw Error;
+
+    const addCart = await databases.updateDocument(
+      databaseId,
+      produtoCollectionId,
+      productId,
+      {
+        usuarios: currentAccount,
+      },
+    );
+
+    
+    console.log(addToCart)
+    return addCart;
+
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+// Puxa os produtos do carrinho do usuário atual
+export async function showCartProducts(  ) {
+
+  const currentAccount = await getCurrentUser();
+
+  if (currentAccount == null) {
+
+    console.log("Usuário não encontrado")
+
+  } else {
+
+    try {
+
+      const compras = await databases.listDocuments(
+        databaseId,
+        produtoCollectionId,
+        [Query.equal("usuarios", [currentAccount.$id])]
+      );
+
+      return compras.documents;
+      
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+}
+
+
+// Retira itens do Carrinho
+export async function removeCart( userId ) {
+  try {
+
+    const compras = await databases.listDocuments(
+      databaseId,
+      produtoCollectionId,
+      [Query.equal("usuarios", [userId])]
+    );
+
+    const produto = compras.documents[0].$id;
+
+    const removeCart = await databases.updateDocument(
+      databaseId,
+      produtoCollectionId,
+      produto,
+      {
+        usuarios: '',
+      }
+        
+    );
+    
+    console.log(removeCart)
+    return removeCart;
+
+  } catch (error) {
+    throw new Error(error);
   }
 }

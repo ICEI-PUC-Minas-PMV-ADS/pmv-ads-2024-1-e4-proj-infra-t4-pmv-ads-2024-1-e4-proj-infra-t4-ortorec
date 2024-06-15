@@ -19,7 +19,7 @@ const Login = () => {
   const {isLoading, isLoggedIn } = useGlobalContext();
 
   if(!isLoading && isLoggedIn) return <Redirect href="/home" />
-  
+
   const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     username: "",
@@ -37,11 +37,11 @@ const Login = () => {
     try {
       await signIn(form.email, form.password);
       const result = await getCurrentUser();
-      
+
       setUser(result);
       setIsLoggedIn(true);
 
-      
+
       router.replace("/home");
 
     } catch (error) {
@@ -62,7 +62,7 @@ const Login = () => {
             </Image>
 
             <Text className='text-xl font-semibold mt-5 font-psemibold'>Entre na sua conta Recomeçar</Text>
-          
+
             <FormField
               title='Email'
               value={form.email}
@@ -77,9 +77,9 @@ const Login = () => {
               otherStyles='mt-7'
             />
 
-            {/* Alterar para a função submit quando o backend estiver pronto */}
             <CustomButton
               title="Entrar"
+              //handlePress={router.push('/home')}
               handlePress={submit}
               containerStyles='mt-9'
               isLoading={isSubmitting}
@@ -92,7 +92,7 @@ const Login = () => {
 
               <Link href="/registrar" className='text-lg font-psemibold text-secondary'>Registrar-se</Link>
             </View>
-            
+
           </View>
         </ScrollView>
       </SafeAreaView>

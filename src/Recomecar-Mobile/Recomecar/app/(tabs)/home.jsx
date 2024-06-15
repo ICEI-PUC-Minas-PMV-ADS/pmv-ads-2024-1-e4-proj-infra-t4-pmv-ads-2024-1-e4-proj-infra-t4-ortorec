@@ -7,13 +7,19 @@ import { images } from "../../constants"
 import SearchInput from "../../components/SearchInput"
 import Novidades from "../../components/Novidades"
 import EstadoVazio from '@/components/EstadoVazio'
-import { getAllPosts, getNewProductsPosts, getTrendingPosts } from '../../lib/appwrite'
+import { getAllPosts, searchPosts, getCurrentUser, getNewProductsPosts, getTrendingPosts, productInfo } from '../../lib/appwrite'
+import { useGlobalContext } from "../../context/GlobalProvider";
 import useAppwrite from '../../lib/useAppwrite'
 import ProductCard from '../../components/ProductCard'
 import Destaque from '../../components/Destaques'
+import  InfoBox  from '../../components/InfoBox'
+import { router, useLocalSearchParams, Link, navigation, navigate } from 'expo-router'
+import  GlobalProvider  from '../../context/GlobalProvider'
 
-const Home = () => {
+const Home = ({ navigation }) => {
 
+  const { item } = useLocalSearchParams();
+  const { user, setUser, setIsLogged } = useGlobalContext();
   const { data: posts, refetch } = useAppwrite(getAllPosts);
   const { data: latestProducts } = useAppwrite(getNewProductsPosts);
   const { data: trendingProducts } = useAppwrite(getTrendingPosts);
@@ -26,9 +32,8 @@ const Home = () => {
     setRefreshing(false);
   }
 
-  console.log(posts)
-
   return (
+    <GlobalProvider>
     <SafeAreaView className='h-full'>
       <FlatList
         data={posts}
@@ -38,6 +43,10 @@ const Home = () => {
             nome={item.nome}
             foto={item.foto}
             preco={item.preco}
+            handlePress={() => {
+              router.push({ pathname: `(product)/${item.$id}`})
+              
+            }}
           />
         )}
         ListHeaderComponent={( ) => (
@@ -49,9 +58,7 @@ const Home = () => {
                 <Text className="font-pmedium text-sm text-secondary">
                   Bem-Vindo de volta!
                 </Text>
-                <Text className="text-2xl font-psemibold">
-                  Usuário
-                </Text>
+                <Text className='text-lg font-psemibold'>{user?.username}</Text>
               </View>
 
               <View className="mt-1.5">
@@ -72,7 +79,8 @@ const Home = () => {
                 Novidades!
               </Text>
 
-              <Novidades posts={latestProducts ?? []} />
+              <Novidades 
+              posts={latestProducts ?? []} />
             </View>
 
             <View className='w-full flex-1 pt-5 pb-8'>
@@ -99,7 +107,11 @@ const Home = () => {
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
       />
     </SafeAreaView>
+    </GlobalProvider>
   )
 }
 
 export default Home
+
+
+

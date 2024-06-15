@@ -39,11 +39,13 @@ Para rodar de fato a aplicação mobile, será necessário instalar algumas bibl
 
 ```npm install --save-dev tailwindcss@3.3.2```
 
-```npm install node-appwrite@11.1.1```
+```npm install node-appwrite@13.0.0```
 
-```npm install appwrite@14.0.1```
+```npm install appwrite@15.0.0```
 
 ```npm install react-native-animatable```
+
+``npm install react-native-appwrite@0.4.0``
 
 Agora você vai precisar rodar o tailwind para que ele crie um arquivo chamado tailwind.config.js, coloque este código no terminal: 
 
@@ -98,7 +100,7 @@ Isso vair referenciar a biblioteca do nativewind para as edições. Mas para gar
 
 Depois vá no seu terminal do visual studio code e coloque:
 
-`npm expo start -c`
+`npx expo start -c`
 
 Com este comando ele vai limpar o cache antes de rodar o expo. Assim o app estará com todas suas depêndencias e estará pronto para ser executado.
 
