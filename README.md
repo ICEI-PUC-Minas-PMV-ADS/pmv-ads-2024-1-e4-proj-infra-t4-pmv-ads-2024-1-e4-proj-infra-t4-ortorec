@@ -100,7 +100,7 @@ Isso vair referenciar a biblioteca do nativewind para as edições. Mas para gar
 
 Depois vá no seu terminal do visual studio code e coloque:
 
-`npm expo start -c`
+`npx expo start -c`
 
 Com este comando ele vai limpar o cache antes de rodar o expo. Assim o app estará com todas suas depêndencias e estará pronto para ser executado.
 
