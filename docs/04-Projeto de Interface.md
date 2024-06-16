@@ -9,13 +9,10 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 ## Wireframes
 
-### Cadastro
+### Login/Cadastro
 
-![Registro](https://github.com/sil-barbosa/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/06bf1c02-12da-47a2-a64f-34c90faa65cd)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/809d4987-08ec-44b0-8bcd-9c58ce713508)
 
-### Login
-
-![Login](https://github.com/sil-barbosa/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/ffba7a7b-6613-434c-ae56-f705bc7f248d)
 
 ### Recuperação de Senha
 
@@ -27,7 +24,8 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 ### Página Principal
 
-  ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/c04d23f4-7e9d-4cf8-812f-ed0e4ace180d)
+ ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/8242d180-2917-4c54-a486-a3c764d1b9bd)
+
 
 
 ### Quem somos
@@ -47,5 +45,6 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 ### Atendimento
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/e053586f-a24f-4f76-8487-4e6e19f7d5ca)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106809153/a1e76011-4b02-468f-a242-062048c6e8ef)
+
 
