@@ -40,13 +40,13 @@
                     <h1 class="login-text">LOGIN</h1>
                     <div class="login-box">
                         <form id="loginForm">
-                            <!-- <input type="number" id="usuarioId" placeholder="Sua Id" required> -->
+																									   
                             <input type="text" id="email" placeholder="Email" required>
                             <div class="senha">
                                 <input type="password" id="password" placeholder="Senha" required>
                                 <button id="olhoSenha" type="button" class="fa-regular fa-eye" onclick="mostrarSenha()"></button>
                             </div>
-                            <button type="submit" id="submit" onclick="login()">Login</button>
+                            <button type="submit" id="submit">Login</button>
                         </form>
                         <div class="options">
                             <a href="recuperar.html">Esqueci minha senha</a>
@@ -56,13 +56,13 @@
                 <div class="register">
                     <h1 class="registre-text">REGISTRE-SE</h1>
                     <div class="registre-box">
-                        <form id="registre-box" onsubmit="handleSubmit(Event)">
+                        <form id="registerForm">
                             <input id="nome" type="text" name="nome" placeholder="Nome de Usuário" required>
-                            <input id="email" type="email" name="email" placeholder="Email" required>
+                            <input id="emailRegister" type="email" name="email" placeholder="Email" required>
                             <div class="senhaForm">
                                 <div class="senha">
-                                    <input type="password" id="password" placeholder="Senha" required>
-                                    <button id="olhoSenha" type="button" class="fa-regular fa-eye" onclick="mostrarSenha()"></button>
+                                    <input type="password" id="passwordRegister" placeholder="Senha" required>
+                                    <button id="olhoSenhaRegister" type="button" class="fa-regular fa-eye" onclick="mostrarSenha()"></button>
                                 </div>
                                 <div class="senha">
                                     <input type="password" id="passwordConfirm" placeholder="Confirmar Senha" required>
@@ -96,21 +96,79 @@
             window.location.href = "home.html";
         }
 
-        // Adicionar evento de clique para o botão de Login
-        document.getElementById("submit").addEventListener("click", function(event) {
+        // Função para realizar a chamada à API no login
+        async function login(event) {
             event.preventDefault(); // Prevenir o envio do formulário
-            // Simulando um login bem-sucedido e definindo o nome do cliente
-            setClienteNome("Nome do Cliente"); // Substitua "Nome do Cliente" pelo nome real
-            redirectToHome(); // Redirecionar para home.html
-        });
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const response = await fetch('https://localhost:7109/api/Usuarios/GetUsuario/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setClienteNome(data.nome);
+                redirectToHome();
+            } else {
+                alert('Falha no login');
+            }
+        }
+
+        // Função para realizar a chamada à API no registro
+        async function register(event) {
+            event.preventDefault(); // Prevenir o envio do formulário
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("emailRegister").value;
+            const password = document.getElementById("passwordRegister").value;
+            const passwordConfirm = document.getElementById("passwordConfirm").value;
+
+            if (password !== passwordConfirm) {
+                alert('As senhas não coincidem');
+                return;
+            }
+
+            // Defina os valores padrão para os campos que não têm input no formulário
+            const usuarioId = 0;
+            const image = " ";
+            const tipoUsuario = 0;
+
+            // Crie o objeto com todos os campos necessários
+            const requestData = {
+                usuarioId: usuarioId,
+                nome: nome,
+                email: email,
+                password: password,
+                image: image,
+                tipoUsuario: tipoUsuario
+            };
+
+            const response = await fetch('https://localhost:7109/api/Usuarios/PostUsuario', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestData),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setClienteNome(data.nome);
+                redirectToHome();
+            } else {
+                alert('Falha no registro');
+            }
+        }
+
+
+        // Adicionar evento de clique para o botão de Login
+        document.getElementById("loginForm").addEventListener("submit", login);
 
         // Adicionar evento de clique para o botão de Registrar
-        document.querySelector(".register button[type='submit']").addEventListener("click", function(event) {
-            event.preventDefault(); // Prevenir o envio do formulário
-            // Simulando um registro bem-sucedido e definindo o nome do cliente
-            setClienteNome("Nome do Cliente"); // Substitua "Nome do Cliente" pelo nome real
-            redirectToHome(); // Redirecionar para home.html
-        });
+        document.getElementById("registerForm").addEventListener("submit", register);
     </script>
 </body>
 </html>
