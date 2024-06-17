@@ -33,7 +33,7 @@ const Registrar = () => {
       const result = await createUser(form.email, form.password, form.username);
       
       // setUser(result);
-      router.replace("loginr");
+      router.replace("login");
 
     } catch (error) {
       Alert.alert("Erro", "Erro ao registrar!");

@@ -7,7 +7,7 @@ import useAppwrite from "../../lib/useAppwrite";
 import { getAllPosts, searchPosts } from "../../lib/appwrite";
 import { EstadoVazio, SearchInput } from "../../components";
 import ProductCard from "../../components/ProductCard";
-
+import { router } from "expo-router";
 
 const Busca = () => {
 
@@ -29,6 +29,10 @@ const Busca = () => {
             nome={item.nome}
             foto={item.foto}
             preco={item.preco}
+            handlePress={() => {
+              router.push({ pathname: `(product)/${item.$id}`})
+              
+            }}
           />
         )}
         ListHeaderComponent={() => (
