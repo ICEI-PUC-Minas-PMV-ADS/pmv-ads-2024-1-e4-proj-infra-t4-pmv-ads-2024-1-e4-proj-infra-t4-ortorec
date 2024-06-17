@@ -11,7 +11,7 @@
             display: inline-block;
             margin-left: 20px;
         }
-        
+
         .cart-icon {
             font-size: 24px;
             cursor: pointer;
@@ -34,7 +34,7 @@
         <div class="top-right">
             <a href="minhaconta.html" class="button">Minha Conta</a>
             <div class="cart-container">
-                <span class="cart-icon">🛒</span>
+                <span class="cart-icon" id="cart-icon">🛒</span>
                 <span id="cart-badge" class="badge" style="display:none;">0</span>
             </div>
         </div>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="footer-links">
                     <p><a href="#">POLÍTICA DE PRIVACIDADE</a></p>
-                    <p><a href="#">TERMOS E CONDIÇÕES</a></p> 
+                    <p><a href="#">TERMOS E CONDIÇÕES</a></p>
                     <p><a href="#">LIVRO DE RECLAMAÇÕES</a></p>
                 </div>
             </div>
@@ -76,9 +76,9 @@
         </div>
     </footer>
     <script>
-        async function makeRequest(url) {
+        async function makeRequest(url, options = {}) {
             try {
-                const response = await fetch(url);
+                const response = await fetch(url, options);
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
@@ -110,7 +110,7 @@
             const productDetailsElement = document.getElementById('product');
             try {
                 const product = await getProductDetails(productId);
-                
+
                 // Limpa o conteúdo existente
                 productDetailsElement.innerHTML = '';
 
@@ -191,9 +191,14 @@
                 console.error('Erro ao atualizar badge do carrinho:', error);
             }
         }
+        function redirectToOrdersPage() {
+            window.location.href = 'pedidos.html';
+        }
 
         window.addEventListener('load', fillProductDetails);
         window.addEventListener('load', updateCartBadge);
+        
+        document.getElementById('cart-icon').addEventListener('click', redirectToOrdersPage);
     </script>
 </body>
 </html>

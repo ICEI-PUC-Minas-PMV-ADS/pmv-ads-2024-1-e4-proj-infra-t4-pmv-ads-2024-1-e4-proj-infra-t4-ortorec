@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/pedidos.css">
     <title>Carrinho de Compra</title>
-    <style>  
-    </style>
 </head>
 
 <body id="category" class="lang-pt country-pt currency-eur layout-left-column page-category tax-display-enabled category-id-201 category-mobilidade category-id-parent-2 category-depth-level-2 fullwidth">
@@ -32,15 +30,52 @@
     <main>
         <section id="productDetails">
             <h2>Finalizar Pedido</h2>
-            <div id="product" class="product-container">
-                <!-- Detalhes do produto serão preenchidos dinamicamente -->
-                <label for="cpf">CPF</label>
-                <input type="text" id="cpf">
-                <label for="endereco">Endereço</label>
-                <input type="text" id="endereco">
-                <label for="metodoPagamento">Método Pagamento</label>
-                <input type="text" id="metodoPagamento">
-                <button class="button">Finalizar Pedido</button>
+            <div class="container">
+                <div class="shipping-address">
+                    <h2>Endereço para Envio</h2>
+                    <form id="shipping-form">
+                        <label for="firstName">Nome:</label>
+                        <input type="text" id="firstName" name="firstName" required>
+
+                        <label for="lastName">Sobrenome:</label>
+                        <input type="text" id="lastName" name="lastName" required>
+
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" id="endereco" name="endereco" required>
+
+                        <label for="telefone">Telefone:</label>
+                        <input type="text" id="telefone" name="telefone" required>
+
+                        <label for="shipping-method">Método de Envio:</label>
+                        <select id="shipping-method" name="shipping-method" required>
+                            <option value="pac">PAC</option>
+                            <option value="sedex">SEDEX</option>
+                            <option value="recolha">Recolha em Loja</option>
+                            <option value="transportadora">Transportadora</option>
+                        </select>
+                    </form>
+                </div>
+
+                <div class="order-summary">
+                    <h2>Resumo do Pedido</h2>
+                    <ul id="order-summary-list">
+                        <!-- Os itens do pedido serão adicionados dinamicamente aqui -->
+                    </ul>
+
+                    <p id="order-subtotal">Subtotal: R$0,00</p>
+                    <p id="shipping-cost">Custo de Envio: R$0,00</p>
+                    <p id="order-total">Total: R$0,00</p>
+
+                    <label for="payment-method">Método de Pagamento:</label>
+                    <select id="payment-method" name="payment-method" required>
+                        <option value="credit-card">Cartão de Crédito</option>
+                        <option value="debit-card">Cartão de Débito</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="bank-transfer">Transferência Bancária</option>
+                    </select>
+
+                    <button class="button" onclick="finalizarPedido()">Finalizar Encomenda</button>
+                </div>
             </div>
         </section>
     </main>
@@ -54,7 +89,7 @@
                 </div>
                 <div class="footer-links">
                     <p><a href="#">POLÍTICA DE PRIVACIDADE</a></p>
-                    <p><a href="#">TERMOS E CONDIÇÕES</a></p> 
+                    <p><a href="#">TERMOS E CONDIÇÕES</a></p>
                     <p><a href="#">LIVRO DE RECLAMAÇÕES</a></p>
                 </div>
             </div>
@@ -68,7 +103,7 @@
             try {
                 const response = await fetch(url);
                 if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
+                    throw new Error(`Erro HTTP! Status: ${response.status}`);
                 }
                 return await response.json();
             } catch (error) {
@@ -126,10 +161,6 @@
             }
         }
 
-        async function FinalizarPedido() {
-
-        }
-
         async function addToCart_Click(product) {
             const cartItem = {
                 id: "string",
@@ -170,7 +201,47 @@
             }
         }
 
-        window.addEventListener('load', fillProductDetails);
+        async function updateCartBadge() {
+            try {
+                const cartItems = await makeRequest('https://localhost:7272/api/CarrinhoCompra?UserId=1');
+                const cartBadge = document.getElementById('cart-badge');
+                const cartCount = cartItems.length;
+
+                if (cartCount > 0) {
+                    cartBadge.textContent = cartCount;
+                    cartBadge.style.display = 'inline-block';
+                } else {
+                    cartBadge.style.display = 'none';
+                }
+
+                document.getElementById('cart-count').textContent = cartCount;
+            } catch (error) {
+                console.error('Erro ao atualizar o carrinho:', error);
+            }
+        }
+
+        async function finalizarPedido() {
+            const shippingForm = document.getElementById('shipping-form');
+            const firstName = shippingForm.elements['firstName'].value;
+            const lastName = shippingForm.elements['lastName'].value;
+            const endereco = shippingForm.elements['endereco'].value;
+            const telefone = shippingForm.elements['telefone'].value;
+            const metodoEnvio = shippingForm.elements['shipping-method'].value;
+            const metodoPagamento = document.getElementById('payment-method').value;
+
+            if (!firstName || !lastName || !endereco || !telefone || !metodoEnvio || !metodoPagamento) {
+                alert('Por favor, preencha todos os campos antes de finalizar a encomenda.');
+                return;
+            }
+
+            // Aqui você pode adicionar a lógica para enviar esses dados ao servidor para finalizar a encomenda.
+            alert('Encomenda finalizada com sucesso!');
+        }
+
+        window.addEventListener('load', () => {
+            fillProductDetails();
+            updateCartBadge();
+        });
     </script>
 </body>
 

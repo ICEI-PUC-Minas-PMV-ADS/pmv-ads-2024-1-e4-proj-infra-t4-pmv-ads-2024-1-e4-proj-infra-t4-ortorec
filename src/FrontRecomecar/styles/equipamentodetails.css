@@ -19,7 +19,7 @@ header {
 .logo {
     display: block;
     margin: 0;
-    width: 250px; 
+    width: 250px;
     margin-bottom: -27px;
 }
 
@@ -70,8 +70,9 @@ main {
 }
 
 h2 {
-    color: blue;
     text-align: center;
+    margin-top: 50px;
+    color: blue;
 }
 
 .product-container {
@@ -124,8 +125,8 @@ h2 {
     padding: 20px 0;
     width: 100%;
     text-align: center;
-    position: absolute;
-    bottom: 0vh;
+    position: relative;
+    bottom: 0;
 }
 
 .footer-container .container {
@@ -137,7 +138,7 @@ h2 {
 .footer-column {
     display: flex;
     justify-content: space-between;
-    align-items: center;  /* Ensures vertical alignment */
+    align-items: center;
     width: 80%;
     max-width: 800px;
     margin-bottom: 20px;
@@ -176,10 +177,16 @@ h2 {
 }
 
 .footer-bottom {
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .footer-bottom p {
     margin: 0;
     font-size: 14px;
+}
+
+@media only screen and (max-width: 600px) {
+    .main {
+        padding: 10px;
+    }
 }

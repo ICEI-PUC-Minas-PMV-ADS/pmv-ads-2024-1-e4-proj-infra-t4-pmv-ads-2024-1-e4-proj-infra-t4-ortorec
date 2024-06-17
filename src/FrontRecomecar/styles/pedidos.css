@@ -1,9 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: white;
-    color: #333;
+    font-family: Roboto, Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 header {
@@ -64,7 +64,7 @@ nav a:hover {
 .top-right .button:hover {
     background-color: #f0f0f0;
 }
-
+/* Estilos do conteúdo principal */
 main {
     padding: 20px;
 }
@@ -72,17 +72,27 @@ main {
 .product-container {
     background-color: #DCB5F6;
     border: 1px solid #ccc;
-    padding: 20px;
-    margin: 20px 0;
+    padding: 20px; /* Espaçamento interno dos cards */
+    margin: 60px 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    width: calc(50%); /* Largura dos cards com margens laterais */
+    margin-bottom: 20px; /* Espaçamento entre os cards */
+    padding: 15px; /* Espaçamento interno dos cards */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
 }
 
 .product-container h2 {
     color: #333;
-    margin: 0 0 10px;
+    margin-bottom: 10px;
 }
 
 .product-container label {
@@ -91,12 +101,13 @@ main {
     margin-bottom: 5px;
 }
 
-.product-container input {
+.product-container input,
+.product-container select {
     width: 100%;
-    max-width: 50vh;
-    height: 25px;
-    margin-bottom: 20px;
-    padding: 5px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .product-container button {
@@ -108,21 +119,21 @@ main {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
+    margin-top: 10px;
+    border-radius: 5px;
     cursor: pointer;
+    transition-duration: 0.4s;
 }
 
 .product-container button:hover {
     background-color: #03a05c;
 }
 
-
+/* Estilos do rodapé */
 .footer-container {
     background-color: #DCB5F6;
     color: white;
     padding: 20px 0;
-    width: 100%;
     text-align: center;
 }
 
@@ -135,19 +146,19 @@ main {
 .footer-column {
     display: flex;
     justify-content: space-between;
-    align-items: center;  /* Ensures vertical alignment */
+    align-items: center;
     width: 80%;
     max-width: 800px;
     margin-bottom: 20px;
 }
 
-.footer-info {
+.footer-info,
+.footer-links {
     flex: 1;
     text-align: left;
 }
 
 .footer-links {
-    flex: 1;
     text-align: right;
 }
 
@@ -174,11 +185,7 @@ main {
 }
 
 .footer-bottom {
-    margin-top: 0px;
-}
-
-.footer-bottom p {
-    margin: 0;
+    margin-top: 20px;
     font-size: 14px;
 }
 
@@ -202,4 +209,56 @@ main {
     background-color: red;
     color: white;
     font-size: 12px;
+}
+
+/* Estilos específicos de pedidos */
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shipping-address,
+.order-summary {
+    width: 48%;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type=text],
+select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.order-summary ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.order-summary li {
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #039e5a;
 }
