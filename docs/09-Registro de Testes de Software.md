@@ -146,6 +146,11 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ad
     }
  }
 ```
+## Teste Ponta a Ponta
+
+### Mobile
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106103247/0a7f764f-5eb0-4721-a4c8-a8fd767a21ba
 
 ## Avaliação
 
