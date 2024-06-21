@@ -4,6 +4,11 @@
 
 Conjunto de slides em um arquivo PowerPoint ou PDF com a apresentação do projeto contemplando todos os itens trabalhados nos demais artefatos.
 
+## Vídeo de Apresentação
+O vídeo de apresentação foi enviado ao youtube:
+
+https://www.youtube.com/watch?v=W7FTmSeLQLw&ab_channel=Educacional
+
 ## Título do Projeto
 
 Nome e marca do projeto
