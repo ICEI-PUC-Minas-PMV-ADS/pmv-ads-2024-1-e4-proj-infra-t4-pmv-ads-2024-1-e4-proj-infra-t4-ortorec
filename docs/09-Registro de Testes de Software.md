@@ -146,6 +146,115 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ad
     }
  }
 ```
+## Teste do Carrinho
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106103247/e50cd57c-437e-41ab-b039-bac889b93ebc
+
+### Código do Carrinho
+
+````
+// Adiciona um produto ao carrinho
+export async function addToCart( productId  ) {
+  try {
+
+    const currentAccount = await getCurrentUser();
+    if (!currentAccount) throw Error;
+
+    const addCart = await databases.updateDocument(
+      databaseId,
+      produtoCollectionId,
+      productId,
+      {
+        usuarios: currentAccount,
+      },
+    );
+
+    
+    console.log(addToCart)
+    return addCart;
+
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+// Puxa os produtos do carrinho do usuário atual
+export async function showCartProducts(  ) {
+
+  const currentAccount = await getCurrentUser();
+
+  if (currentAccount == null) {
+
+    console.log("Usuário não encontrado")
+
+  } else {
+
+    try {
+
+      const compras = await databases.listDocuments(
+        databaseId,
+        produtoCollectionId,
+        [Query.equal("usuarios", [currentAccount.$id])]
+      );
+
+      return compras.documents;
+      
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+}
+
+
+// Retira itens do Carrinho
+export async function removeCart( userId ) {
+  try {
+
+    const compras = await databases.listDocuments(
+      databaseId,
+      produtoCollectionId,
+      [Query.equal("usuarios", [userId])]
+    );
+
+    const produto = compras.documents[0].$id;
+
+    const removeCart = await databases.updateDocument(
+      databaseId,
+      produtoCollectionId,
+      produto,
+      {
+        usuarios: '',
+      }
+        
+    );
+    
+    console.log(removeCart)
+    return removeCart;
+
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+````
+
+## Teste do Logout
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106103247/761a1d6c-33d2-44c9-a876-9511ecc3c308
+
+### Teste do Logout
+
+````
+// Sai da conta
+export async function signOut() {
+  try {
+    const session = await account.deleteSession("current");
+
+    return session;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+````
+
 ## Teste Ponta a Ponta
 
 ### Mobile
