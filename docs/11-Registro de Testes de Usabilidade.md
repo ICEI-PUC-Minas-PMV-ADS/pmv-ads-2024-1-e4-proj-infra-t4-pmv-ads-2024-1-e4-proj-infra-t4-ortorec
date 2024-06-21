@@ -6,7 +6,7 @@
 RNF-02: O tempo de resposta da Aplicação deve ser inferior a 5 segundos para operações críticas, como login, pesquisa de produtos e finalização de compra.
 
 
-Uploading Teste Ponta a Ponta - Mobile.mp4…
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec/assets/106103247/2c303231-f047-4f5b-8746-4524b5a83285
 
 
 ### CT-03-Contraste e Design
