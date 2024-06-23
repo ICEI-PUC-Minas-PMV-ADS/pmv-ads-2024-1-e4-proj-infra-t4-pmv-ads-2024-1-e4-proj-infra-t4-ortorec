@@ -1,0 +1,26 @@
+message: Please cite this software using these metadata.
+title: Projeto Recomeçar
+authors:
+  - family-names: Moreira Siqueira Junior
+    given-names: Ricardo
+  - family-names: Paulo Assiz Maciel
+    given-names: Marcos
+  - family-names: Henrique de Oliveira Reis
+    given-names: Leandro
+  - family-names: Leal Couto
+    given-names: Janaina
+  - family-names: Eugênio Barbosa
+    given-names: Silmara
+  - family-names: Merlo Correa
+    given-names: Ian
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Alves de Oliveira
+    given-names: Pedro
+keywords:
+  - Projeto
+  - Ortopédico
+  - Loja
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t4-pmv-ads-2024-1-e4-proj-infra-t4-ortorec.git
+version: 1.0.0
+date-released: 2024-06-23
