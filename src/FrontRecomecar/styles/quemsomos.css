@@ -76,11 +76,27 @@ main {
     margin-bottom: 40px;
 }
 
+    .company-header .service-content {
+        flex: 1;
+        padding: 10px;
+        max-width: 50%; /* Increased max-width to 50% */
+        text-align: justify;
+        margin-right: 20px; /* Reduced margin-right */
+    }
+
+    .company-header .company-image {
+        padding: 17px; /* Reduced padding */
+        max-width: 50%; /* Adjusted max-width to match text */
+        height: 500px;
+        border-radius: 10px;
+    }
+
+/*
 .company-header .service-content {
     flex: 1;
     padding: 70px;
     max-width: 40%;
-    text-align: left;
+    text-align: justify;
     margin-right: 30px;
 }
 
@@ -91,6 +107,7 @@ main {
     border-radius: 10px;
 }
 
+*/
 .company-info {
     display: flex;
     justify-content: space-between;

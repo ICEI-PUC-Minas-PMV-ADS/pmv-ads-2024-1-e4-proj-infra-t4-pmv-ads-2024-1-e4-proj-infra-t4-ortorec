@@ -12,7 +12,7 @@
             display: inline-block;
             margin-left: 20px;
         }
-        
+
         .cart-icon {
             font-size: 24px;
             cursor: pointer;
@@ -96,27 +96,27 @@
                 </div>
             </div>
 
-        <div class="service-container">
-            <section class="service">
-                <img class="ilustration" src="../assets/calibracao.jpeg" alt="Manutenção em Equipamentos">
-                <div class="service-content">
-                    <h2>MANUTENÇÃO EM EQUIPAMENTOS</h2>
-                    <p>Para garantir eficiência operacional e prolongar a vida útil de seu aparelho, oferecemos serviço de manutenção por uma equipe altamente qualificada e comprometida.</p>
-                    <h2>Manutenção Preventiva:</h2>
-                    <p>Realizamos inspeções, substituição de peças e ajustes necessários para garantir o desempenho ideal do seu equipamento.</p>
-                    <h2>Manutenção Corretiva:</h2>
-                    <p>Em caso de falhas ou avarias, nossa equipe de técnicos está pronta para intervir realizando diagnóstico, reparos e substituição de componentes defeituosos. Entre em contato conosco e agende um horário! Atendemos a domicílio (RMBH) ou você pode trazer seu equipamento.</p>
-                </div>
-            </section>
+            <div class="service-container">
+                <section class="service">
+                    <img class="ilustration" src="../assets/calibracao.jpeg" alt="Manutenção em Equipamentos">
+                    <div class="service-content">
+                        <h2>MANUTENÇÃO EM EQUIPAMENTOS</h2>
+                        <p>Para garantir eficiência operacional e prolongar a vida útil de seu aparelho, oferecemos serviço de manutenção por uma equipe altamente qualificada e comprometida.</p>
+                        <h2>Manutenção Preventiva:</h2>
+                        <p>Realizamos inspeções, substituição de peças e ajustes necessários para garantir o desempenho ideal do seu equipamento.</p>
+                        <h2>Manutenção Corretiva:</h2>
+                        <p>Em caso de falhas ou avarias, nossa equipe de técnicos está pronta para intervir realizando diagnóstico, reparos e substituição de componentes defeituosos. Entre em contato conosco e agende um horário! Atendemos a domicílio (RMBH) ou você pode trazer seu equipamento.</p>
+                    </div>
+                </section>
 
-            <section class="service reverse">
-                <img class="ilustration" src="../assets/assistência.jpg" alt="Recomeçar Social">
-                <div>
-                    <h2>RECOMEÇAR SOCIAL</h2>
-                    <p>Nosso programa Recomeçar Social oferece suporte e assistência para pessoas necessitando de equipamentos ortopédicos, proporcionando inclusão e melhoria na qualidade de vida.</p>
-                </div>
-            </section>
-        </div>
+                <section class="service reverse">
+                    <img class="ilustration" src="../assets/assistência.jpg" alt="Recomeçar Social">
+                    <div>
+                        <h2>RECOMEÇAR SOCIAL</h2>
+                        <p>Nosso programa Recomeçar Social oferece suporte e assistência para pessoas necessitando de equipamentos ortopédicos, proporcionando inclusão e melhoria na qualidade de vida.</p>
+                    </div>
+                </section>
+            </div>
     </main>
     <footer id="footer" class="footer-container">
         <div class="container">
@@ -128,7 +128,7 @@
                 </div>
                 <div class="footer-links">
                     <p><a href="#">POLÍTICA DE PRIVACIDADE</a></p>
-                    <p><a href="#">TERMOS E CONDIÇÕES</a></p> 
+                    <p><a href="#">TERMOS E CONDIÇÕES</a></p>
                     <p><a href="#">LIVRO DE RECLAMAÇÕES</a></p>
                 </div>
             </div>
@@ -137,8 +137,8 @@
             </div>
         </div>
     </footer>
-    
-    
+
+
     <script>
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slide');
@@ -187,39 +187,39 @@
                 productListElement.innerHTML = '';
 
                 products.forEach(product => {
-                const card = document.createElement('div');
-                card.classList.add('card');
-                card.setAttribute('data-id', product.id);
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+                    card.setAttribute('data-id', product.id);
 
-                const img = document.createElement('img');
-                img.src = product.imagem;
-                img.alt = product.nomeProduto;
-                img.style.width = '200px';
-                img.style.height = '200px';
+                    const img = document.createElement('img');
+                    img.src = product.imagem;
+                    img.alt = product.nomeProduto;
+                    img.style.width = '200px';
+                    img.style.height = '200px';
 
-                const cardBody = document.createElement('div');
-                cardBody.classList.add('card-body');
+                    const cardBody = document.createElement('div');
+                    cardBody.classList.add('card-body');
 
-                const title = document.createElement('h5');
-                title.classList.add('card-title');
-                title.textContent = product.nomeProduto;
+                    const title = document.createElement('h5');
+                    title.classList.add('card-title');
+                    title.textContent = product.nomeProduto;
 
-                const price = document.createElement('p');
-                price.classList.add('card-text');
-                price.textContent = `Preço: ${product.preco}`;
+                    const price = document.createElement('p');
+                    price.classList.add('card-text');
+                    price.textContent = `Preço: ${product.preco}`;
 
-                const description = document.createElement('p');
-                description.classList.add('card-text');
-                description.textContent = product.descricao;
+                    const description = document.createElement('p');
+                    description.classList.add('card-text');
+                    description.textContent = product.descricao;
 
-                const buyButton = document.createElement('button');
-                buyButton.textContent = 'Comprar';
-                buyButton.classList.add('buy-button');
+                    const buyButton = document.createElement('button');
+                    buyButton.textContent = 'Comprar';
+                    buyButton.classList.add('buy-button');
 
-                // Adicionando evento de clique ao card
-                card.addEventListener('click', function() {
-                    window.location.href = `details.html?id=${product.produtoId}`;
-                });
+                    // Adicionando evento de clique ao card
+                    card.addEventListener('click', function () {
+                        window.location.href = `details.html?id=${product.produtoId}`;
+                    });
 
                     // Adicionar elementos ao card
                     card.appendChild(img);
@@ -232,11 +232,12 @@
                     // Adicionar o card à lista de produtos
                     productListElement.appendChild(card);
                 });
-
             } catch (error) {
-                console.error('Erro ao preencher lista de produtos:', error);
+                productListElement.innerHTML = '<p>Erro ao carregar a lista de produtos.</p>';
             }
         }
 
-        window.addEventListener('load', fillProductList);
+        fillProductList();
     </script>
+</body>
+</html>

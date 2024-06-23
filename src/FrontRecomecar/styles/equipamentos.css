@@ -111,13 +111,14 @@ h3 {
     font-weight: bold;
 }
 
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        text-align: center;
+    }
 
 .submit-button {
     background-color: #DCB5F6;
@@ -127,6 +128,8 @@ h3 {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 20px; 
+    align-self: flex-end;
 }
 
 .submit-button:hover {

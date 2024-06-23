@@ -5,39 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recuperar Senha</title>
     <link rel="stylesheet" href="../styles/recuperar.css">
+    <script src="/scripts/loading.js" defer></script>
+    <script src="/script.js"></script>
+    <script src="/scripts/scriptStyle.js"></script>
+    <script src="https://kit.fontawesome.com/75ea6c2770.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <img src="../assets/logoinicial.PNG" alt="Logo" class="logo">
-    <div class="container">
-        <h1 class="recuperar-text">RECUPERAR SENHA</h1>
-        <div class="recuperar-box">
-            <form action="recuperar.php" method="post">
-                <input type="text" name="email" placeholder="Email Cadastrado" required>
-                <button type="submit">Enviar Link para Recuperação</button>
-            </form>
-            <div class="options">
-                <a href="login.html">Voltar a Página Inicial</a>
+    <header>
+        <div class="top-right">
+            <span id="clienteNome" style="display:none;"></span>
+            <div class="cart-container">
+                <a href="minhaconta.html" class="button">Minha Conta</a>
+                <span class="cart-icon">🛒</span>
+                <span id="cart-badge" class="badge" style="display:none;">0</span>
             </div>
         </div>
-    </div>
-    <footer id="footer" class="footer-container">
+        <img src="../assets/logoinicial.PNG" alt="logo" class="logo">
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="quemsomos.html">Quem somos</a>
+            <a href="equipamentos.html">Produtos</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="atendimento.html">Atendimento</a>
+            <a href="login.html">Sair</a>
+        </nav>
+    </header>
+    <main>
         <div class="container">
-            <div class="footer-column">
-                <div class="footer-info">
-                    <h4>APOIO AO CLIENTE</h4>
-                    <p>+351 217 151 606 / +351 219 890 697</p>
-                    <p>Chamada para a rede fixa nacional</p>
-                </div>
-                <div class="footer-links">
-                    <p><a href="#">POLÍTICA DE PRIVACIDADE</a></p>
-                    <p><a href="#">TERMOS E CONDIÇÕES</a></p> 
-                    <p><a href="#">LIVRO DE RECLAMAÇÕES</a></p>
+            <h1 class="recuperar-text">RECUPERAR SENHA</h1>
+            <div class="recuperar-box">
+                <form id="recuperarForm" action="recuperar.php" method="post">
+                    <input type="text" name="email" placeholder="Email Cadastrado" required>
+                    <button type="submit" id="enviarLink">Enviar Link para Recuperação</button>
+                </form>
+                <div id="mensagem" class="mensagem-sucesso"></div>
+                <div class="options">
+                    <a href="login.html">Voltar a Página Inicial</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                &copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.
-            </div>
+        </div>
+    </main>
+    <footer id="footer" class="footer-container">
+        <div class="footer-bottom">
+            &copy; 2024 Recomeçar Equipamentos Ortopédicos. Todos os direitos reservados.
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('recuperarForm');
+            const mensagemElement = document.getElementById('mensagem');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); 
+                enviarFormulario();
+            });
+
+            function enviarFormulario() {
+                
+                setTimeout(function () {
+                    // Lógica para verificar se o formulário foi enviado com sucesso
+                    const sucesso = true; // Simula o sucesso do envio do formulário
+
+                    if (sucesso) {
+                        mensagemElement.innerText = 'Email enviado com sucesso!';
+
+                        alert('Email enviado com sucesso!');
+
+                        form.reset(); // Limpa o formulário após o envio
+                    } else {
+                        
+                    }
+                }, 1000); 
+            }
+        });
+    </script>
 </body>
 </html>

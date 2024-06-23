@@ -85,6 +85,7 @@ h2 {
 .carousel-inner {
     display: flex;
     height: 100%;
+    width: 100%
 }
 
 .slide {
@@ -95,6 +96,7 @@ h2 {
 .slide img {
     width: auto;
     height: 100%;
+    width: 100%;
 }
 
 .prev, .next {
@@ -445,8 +447,8 @@ h2 {
 }
 
 .buy-button {
-    background-color: #DCB5F6;
-    color: black;
+    background-color: #f9f9f9;
+    color: #f9f9f9;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
@@ -454,6 +456,3 @@ h2 {
     transition: background-color 0.3s ease;
 }
 
-.buy-button:hover {
-    background-color: #ce91f7;
-}

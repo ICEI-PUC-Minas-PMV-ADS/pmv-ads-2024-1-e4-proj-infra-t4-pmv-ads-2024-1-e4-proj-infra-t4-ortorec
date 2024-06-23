@@ -1,41 +1,87 @@
 body {
-    background-color: white;
-    font-family: Roboto, sans-serif;
+    background-color: #f3f3f3; /* Cor de fundo do corpo */
+    font-family: Roboto, Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color: #333; /* Cor do texto principal */
+}
+
+header {
+    background-color: #DCB5F6; /* Cor de fundo do cabeçalho */
+    padding: 2px;
+    text-align: center;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 97vh;
+    justify-content: space-between;
 }
 
 .logo {
     display: block;
-    margin: 30px auto;
-    width: 300px;
+    margin: 0;
+    width: 250px;
+    margin-bottom: -27px; /* Ajuste para alinhar com o cabeçalho */
+}
+
+nav {
+    background-color: #DCB5F6; /* Cor de fundo da barra de navegação */
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 205px; /* Ajuste para espaço com o botão direito superior */
+}
+
+    nav a {
+        color: #333; /* Cor dos links */
+        text-decoration: none;
+        margin: 17px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+        nav a:hover {
+            background-color: #ce91f7; /* Cor de fundo ao passar o mouse */
+        }
+
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+    .top-right .button {
+        color: black;
+        background-color: white;
+        padding: 5px 10px;
+        margin-left: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 12px;
+        border: 1px solid #333;
+        transition: background-color 0.3s ease;
+    }
+
+        .top-right .button:hover {
+            background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
+        }
+
+main {
+    padding: 20px;
 }
 
 .container {
-    margin: -37px;
-    padding: 40px;
-    background-color: rgb(255, 223, 251);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 85px;
-    width: 35%;
-    height: auto;
-    justify-content: center;
-    align-items: center;
+    max-width: 450px;
+    margin: 60px auto; /* Margem para centralizar o container */
+    background-color: #fbf7f7; /* Cor de fundo do container */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 60px;
 }
 
 .recuperar-text {
     text-align: center;
-    color: #333333;
+    color: #333333; /* Cor do texto */
+    margin-bottom: 20px; /* Margem inferior */
 }
 
 .recuperar-box {
@@ -44,27 +90,28 @@ body {
 }
 
     .recuperar-box input {
-        display: block;
         width: 100%;
         padding: 8px;
         box-sizing: border-box;
         margin-bottom: 10px;
+        border: 1px solid #ccc; /* Adicione uma borda para melhorar a aparência */
+        border-radius: 4px; /* Bordas arredondadas para os inputs */
     }
 
 button[type="submit"] {
     color: white;
-    background-color: blue;
+    background-color: blue; /* Cor de fundo do botão */
     width: 100%;
-    height: 35px;
+    height: 35px; /* Altura do botão */
     border: 0;
-    border-radius: 10px;
+    border-radius: 10px; /* Bordas arredondadas */
     cursor: pointer;
     display: block;
-    margin: 20px auto 0;
+    margin: 20px auto 0; /* Margem superior */
 }
 
     button[type="submit"]:active {
-        background-color: rgb(0, 0, 42);
+        background-color: rgb(0, 0, 42); /* Cor de fundo ao pressionar */
     }
 
 .options {
@@ -73,16 +120,16 @@ button[type="submit"] {
 }
 
     .options a {
-        color: #007bff;
+        color: #007bff; /* Cor dos links */
         text-decoration: none;
     }
 
         .options a:hover {
-            text-decoration: underline;
+            text-decoration: underline; /* Sublinhado ao passar o mouse */
         }
 
 footer {
-    background-color: #DCB5F6;
+    background-color: #DCB5F6; /* Cor de fundo do rodapé */
     padding: 10px;
     text-align: center;
     position: fixed;
@@ -92,7 +139,7 @@ footer {
 
     footer p {
         margin: 0;
-        color: #ffffff;
+        color: #ffffff; /* Cor do texto no rodapé */
     }
 
 /* Responsividade */
@@ -108,5 +155,3 @@ footer {
 
     button[type="submit"] {
         width: 100%;
-    }
-}
